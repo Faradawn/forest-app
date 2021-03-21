@@ -8,7 +8,7 @@ import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 function HomeScreen({navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text>Home Screen 2</Text>
       <Button title='go to detail' onPress={() => navigation.navigate('Detail')}></Button>
     </View>
   );
