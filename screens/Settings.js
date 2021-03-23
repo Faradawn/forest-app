@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer'
+import styles from '../assets/styles'
 
 const Drawer = createDrawerNavigator()
 
@@ -30,12 +31,3 @@ export default function Settings() {
     
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: 'cornsilk',
-    padding: 20,
-  }
-})

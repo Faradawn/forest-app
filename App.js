@@ -1,4 +1,3 @@
-// In App.js in a new project
 
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
@@ -7,22 +6,10 @@ import { createStackNavigator, HeaderTitle } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import Settings from './screens/Settings';
-import Map from './screens/Map'
-import styles from './assets/styles';
-
+import Home from './screens/Home'
+import Card from './screens/Card'
 
 const Tabs = createBottomTabNavigator()
-
-
-function Home(){
-  return(
-  <View style={styles.home}>
-    <Text style={styles.text}> 你好！</Text>
-  </View>
-  )
-}
-
-
 
 
 function App() {
@@ -41,9 +28,10 @@ function App() {
           }
         })}
         tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
-        <Tabs.Screen name='Card' component={Home}/>
+
+        <Tabs.Screen name='Card' component={Card}/>
         <Tabs.Screen name='Home' component={Home}/>
-        <Tabs.Screen name='Settings' component={Map}/>
+        <Tabs.Screen name='Settings' component={Settings}/>
         
       </Tabs.Navigator>
     </NavigationContainer>
