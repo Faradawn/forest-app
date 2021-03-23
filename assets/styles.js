@@ -28,5 +28,12 @@ export default StyleSheet.create({
   },
   text: {
     color: 'black'
+  },
+  card: {
+    width: 200,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'cornsilk'
   }
 })

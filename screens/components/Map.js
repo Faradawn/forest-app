@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, Text, Button} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import styles from '../assets/styles';
+import styles from '../../assets/styles';
 
 
 export default function Map() {

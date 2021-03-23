@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import Settings from './screens/Settings';
 import Home from './screens/Home'
-import Card from './screens/Card'
+import Cards from './screens/Cards'
 
 const Tabs = createBottomTabNavigator()
 
@@ -29,7 +29,7 @@ function App() {
         })}
         tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
 
-        <Tabs.Screen name='Card' component={Card}/>
+        <Tabs.Screen name='Card' component={Cards}/>
         <Tabs.Screen name='Home' component={Home}/>
         <Tabs.Screen name='Settings' component={Settings}/>
         
