@@ -19,4 +19,13 @@ export default StyleSheet.create({
     height: Dimensions.get('window').height - 400,
     marginBottom: 10,
   },
+  home: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  text: {
+    color: 'black'
+  }
 })
