@@ -35,5 +35,15 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'cornsilk'
+  },
+  touchLeft: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'cornsilk'
+  },
+  touchRight: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'coral'
   }
 })
