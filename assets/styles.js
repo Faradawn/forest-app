@@ -36,10 +36,21 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'cornsilk'
   },
+
+  // cards pages
+  cardsContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1
+  },
+  touchContainer: {
+    display: 'flex',
+    flexDirection: 'row', 
+  },
   touchLeft: {
     width: 100,
     height: 100,
-    backgroundColor: 'cornsilk'
+    backgroundColor: 'green'
   },
   touchRight: {
     width: 100,

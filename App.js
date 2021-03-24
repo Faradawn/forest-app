@@ -8,14 +8,14 @@ import { Ionicons } from '@expo/vector-icons';
 import Settings from './screens/Settings';
 import Home from './screens/Home'
 import Cards from './screens/Cards'
-
+import API from './screens/api/API'
 const Tabs = createBottomTabNavigator()
 
 
 function App() {
   return (
     <NavigationContainer>
-      <Tabs.Navigator initialRouteName='Home'
+      <Tabs.Navigator initialRouteName='Card'
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
             let icon;
@@ -29,7 +29,7 @@ function App() {
         })}
         tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
 
-        <Tabs.Screen name='Card' component={Cards}/>
+        <Tabs.Screen name='Card' component={API}/>
         <Tabs.Screen name='Home' component={Home}/>
         <Tabs.Screen name='Settings' component={Settings}/>
         
