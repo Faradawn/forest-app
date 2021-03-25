@@ -24,7 +24,7 @@ const styles = (a) =>  StyleSheet.create({
     alignItems: 'flex-start',
   },
   rectangle: {
-    width: a * 10,
+    width: a * (Dimensions.get('window').width - 50),
     height: 10,
     backgroundColor: 'orange',
     borderRadius: 5,    

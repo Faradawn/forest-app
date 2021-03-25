@@ -1,14 +1,13 @@
 import * as React from 'react'
-import { Button, Text, View } from 'react-native'
+import { Alert, Button, Text, View } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Data from './Data'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-export const setProgress = async(key, input) => {
+export const setProgress = async(input) => {
   try {
-    await AsyncStorage.setItem('@key1', 'thing1')
-    console.log('Stored: ' + 'thing1')
+    await AsyncStorage.setItem('@key1', input.toString())
   } catch (e) {
     console.log('error storing '+ e)
   }
