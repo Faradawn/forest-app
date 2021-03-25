@@ -3,6 +3,8 @@ import { StyleSheet, Dimensions } from 'react-native'
 export default StyleSheet.create({
   container: {
     alignItems: 'center',
+    paddingTop: 20,
+    paddingBottom: 20,
     flex: 1,
   },
   search: {
@@ -34,8 +36,8 @@ export default StyleSheet.create({
   cardUnit: {
     borderRadius: 20,
     backgroundColor: 'white',
-    width: Dimensions.get('window').width - 40,
-    height: 100,
+    width: Dimensions.get('window').width - 60,
+    height: 200,
     shadowRadius: 30,
     shadowColor: 'grey',
     alignItems: 'center',

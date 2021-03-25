@@ -2,12 +2,12 @@ import * as React from 'react'
 import { Button, Text, View, } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import styles from '../assets/styles'
-import CardSet from './components/CardSet'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
+import CardSet from './components/CardSet'
+import wordset1 from './api/wordset1.json'
 
 const Stack = createStackNavigator();
-
 
 function SetHome({ navigation }) {
   return (
@@ -24,7 +24,7 @@ function SetHome({ navigation }) {
 }
 function Set1() {
   return(
-    <CardSet/>
+    <CardSet wordset={wordset1.Sheet1}/>
   )
 }
 

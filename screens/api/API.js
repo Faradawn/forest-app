@@ -4,7 +4,8 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Data from './Data'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const store = async(key, input) => {
+
+export const setProgress = async(key, input) => {
   try {
     await AsyncStorage.setItem('@key1', 'thing1')
     console.log('Stored: ' + 'thing1')
@@ -13,9 +14,12 @@ const store = async(key, input) => {
   }
 }
 
+export const getProgress = () => {  
+    return AsyncStorage.getItem('@key1')
+}
 
 
-export default function API(){
+export function API(){
   const [a, setA] = React.useState('')
 
   async function getbig() {  

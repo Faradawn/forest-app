@@ -10,7 +10,7 @@ export default function Card(props) {
 
   return(
     <View>
-      <TouchableOpacity style={styles.card} onPress={() => setFlip(!flip)}>
+      <TouchableOpacity style={styles.cardUnit} onPress={() => setFlip(!flip)}>
         <Text>{flip ? props.latin : props.chinese}</Text> 
       </TouchableOpacity>
     </View>
