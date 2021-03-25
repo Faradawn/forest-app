@@ -1,33 +1,36 @@
-import React from 'react'
-import { View, Text, Button, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer'
+import * as React from 'react'
+import { Button, Text, View, } from 'react-native'
+import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import styles from '../assets/styles'
 
-const Drawer = createDrawerNavigator()
+import { createStackNavigator } from '@react-navigation/stack'
 
-function Account({ navigation }) {
+
+const Stack = createStackNavigator();
+
+
+function SettingPage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text> Account </Text>
-      <Button title='Back to Home ' onPress={() => navigation.navigate('Home')}/>
+      <Button title='通用' onPress={() => navigation.navigate('General')}></Button>
+      
     </View>
   )
 }
 function General() {
-  return (
-    <View style={styles.container}>
-      <Text> General </Text>
+  return(
+    <View>
+      <Text> 暗黑模式</Text>
     </View>
   )
 }
-export default function Settings() {
-  return (
-    
-      <Drawer.Navigator>
-        <Drawer.Screen name='General' component={General}/>
-        <Drawer.Screen name='Account' component={Account}/>
-      </Drawer.Navigator>
-    
+
+export default function Home() {  
+  return(
+    <Stack.Navigator initialRouteName='SettingPage'>
+      <Stack.Screen name='SettingPage' component={SettingPage}/>
+      <Stack.Screen name='General' component={General}/>
+    </Stack.Navigator>
+
   )
 }

@@ -15,7 +15,6 @@ const store = async(key, input) => {
 
 
 
-
 export default function API(){
   const [a, setA] = React.useState('')
 

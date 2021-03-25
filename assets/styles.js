@@ -2,8 +2,6 @@ import { StyleSheet, Dimensions } from 'react-native'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
   },
@@ -20,12 +18,7 @@ export default StyleSheet.create({
     height: Dimensions.get('window').height - 400,
     marginBottom: 10,
   },
-  home: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-    flex: 1,
-  },
+ 
   text: {
     color: 'black'
   },
@@ -35,6 +28,22 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'cornsilk'
+  },
+
+  // card set
+  cardUnit: {
+    borderRadius: 20,
+    backgroundColor: 'white',
+    width: Dimensions.get('window').width - 40,
+    height: 100,
+    shadowRadius: 30,
+    shadowColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cardPage: {
+    alignItems: 'center',
+    padding: 20,
   },
 
   // cards pages
@@ -56,5 +65,24 @@ export default StyleSheet.create({
     width: 100,
     height: 100,
     backgroundColor: 'coral'
-  }
+  },
+
+  // Home Page
+  homePage: {
+    alignItems: 'center',
+    padding: 30,
+    flex: 1,
+  },
+  homeCard: {
+    borderRadius: 20,
+    backgroundColor: 'white',
+    width: Dimensions.get('window').width - 40,
+    height: 300,
+    shadowRadius: 30,
+    shadowColor: 'grey',
+    alignItems: 'center',
+    justifyContent: 'center',
+    
+  },
+  
 })

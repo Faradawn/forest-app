@@ -15,7 +15,7 @@ const Tabs = createBottomTabNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Tabs.Navigator initialRouteName='Card'
+      <Tabs.Navigator initialRouteName='Cards'
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
             let icon;
@@ -23,13 +23,13 @@ function App() {
               icon=focused? 'home' : 'home-outline'
             }
             else if (route.name === 'Settings') {icon=focused?'settings' : 'settings-outline'}
-            else if (route.name === 'Card') {icon=focused? 'file-tray' : 'file-tray-outline'}
+            else if (route.name === 'Cards') {icon=focused? 'file-tray' : 'file-tray-outline'}
             return <Ionicons name={icon} size={size} color={color} />
           }
         })}
         tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
 
-        <Tabs.Screen name='Card' component={API}/>
+        <Tabs.Screen name='Cards' component={Cards}/>
         <Tabs.Screen name='Home' component={Home}/>
         <Tabs.Screen name='Settings' component={Settings}/>
         
