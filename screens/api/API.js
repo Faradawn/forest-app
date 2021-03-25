@@ -3,7 +3,14 @@ import { Alert, Button, Text, View } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Data from './Data'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
+import wordset1 from './wordset1.json'
 
+const allsets = [wordset1]
+
+export const loadWordSet = async(id) => {
+  return allsets[id-1].Sheet1
+}
 
 export const setProgress = async(input) => {
   try {

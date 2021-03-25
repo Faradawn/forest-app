@@ -5,36 +5,37 @@ import styles from '../../assets/styles'
 import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
 import ProgressBar from './ProgressBar'
-import {setProgress, getProgress} from '../api/API'
+import {loadWordSet, setProgress, getProgress} from '../api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function Cards(props) {
-  const Data = props.wordset  
+  const id = props.id
+  const loading = [{id:1, chinese:'加载中...', latin:'', family:'', category:''}]
   const [count, setCount] = React.useState(1)
+  const [loaded, setLoaded] = React.useState(loading)
   
-
+  
   async function get() {
-    const b = await getProgress()
-    if (b) { setCount(JSON.parse(b)) } else {setCount(1)}
-    
+    const value = await getProgress()
+    if (value) { setCount(JSON.parse(value)) } else { setCount(1) }    
   }
 
+  async function load() {
+    const value = await loadWordSet(id)
+    if (value) { setLoaded(value) } else { loading }
+  }
+
+  React.useEffect(() => {load()}, [])
   React.useEffect(() => {get()}, [])
 
   return(
     <View style={styles.container}>
 
-      <ProgressBar progress={count/Data.length} />
-        
-
-      
+      <ProgressBar progress={count/loaded.length} />
 
       <View style={{height: 20}}></View>
 
-      <Card 
-        id={Data[count-1].id}
-        latin={Data[count-1].latin}
-        chinese={Data[count-1].chinese}/>
+      <Card data={(loaded) ? loaded[count - 1] : loading}/>
 
       <View style={{height: 30}}></View>
 
@@ -42,7 +43,7 @@ export default function Cards(props) {
         <TouchableOpacity onPress={() => (count > 1) ? (setProgress(count-1), get()) : {}}>
             <Ionicons name="caret-back" size={24} color="black" />
           </TouchableOpacity>
-        <TouchableOpacity onPress={() => (count < Data.length) ? (setProgress(count+1), get()):{}}>
+        <TouchableOpacity onPress={() => (count < loaded.length) ? (setProgress(count+1), get()) : {}}>
             <Ionicons name="caret-forward" size={24} color="black" />
           </TouchableOpacity>
       </View>
