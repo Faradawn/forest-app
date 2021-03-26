@@ -12,16 +12,17 @@ export const loadWordSet = async(id) => {
   return allsets[id-1].Sheet1
 }
 
-export const setProgress = async(input) => {
+// input is an object
+export const setProgress = async(key, input) => {
   try {
-    await AsyncStorage.setItem('@key1', input.toString())
+    await AsyncStorage.setItem(key, JSON.stringify(input))
   } catch (e) {
     console.log('error storing '+ e)
   }
 }
 
-export const getProgress = () => {  
-    return AsyncStorage.getItem('@key1')
+export const getProgress = (key) => {  
+    return AsyncStorage.getItem(key)
 }
 
 

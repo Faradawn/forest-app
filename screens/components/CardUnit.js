@@ -5,12 +5,10 @@ import styles from '../../assets/styles'
 
 
 export default function Card(props) {
-  const [flip, setFlip] = React.useState('false')
+  const [flip, setFlip] = React.useState(props.initflip)
   const some = {id:1, chinese:'加载中...', latin:'', family:'', category:''}
   const data = props.data
   const keylist = Object.keys(data).slice(2, Object.keys(data).length)
-
-  React.useEffect(() => {setFlip(true)}, [])
   
   function front(){
     return(
