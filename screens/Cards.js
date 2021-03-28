@@ -12,7 +12,11 @@ function SetHome({ navigation }) {
   return (
     <View style={styles.cardPage}>
       <TouchableOpacity style={styles.cardUnit} onPress={() => navigation.navigate('Set1')} >
-        <Text style={{color: 'grey'}}>150个拉丁名</Text>
+        <Text style={{color: 'grey'}}>园林树木拉丁名150个</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.cardUnit} onPress={() => navigation.navigate('Set2')} >
+        <Text style={{color: 'grey'}}>园林花卉拉丁名200个</Text>
       </TouchableOpacity>
     </View>
   )
@@ -23,11 +27,18 @@ function Set1() {
   )
 }
 
+function Set2() {
+  return (
+    <CardSet id={2}/>
+  )
+}
+
 export default function Cards() {  
   return(
     <Stack.Navigator initialRouteName='SetHome'>
       <Stack.Screen name='SetHome' component={SetHome}/>
       <Stack.Screen name='Set1' component={Set1}/>
+      <Stack.Screen name='Set2' component={Set2}/>
     </Stack.Navigator>
 
   )

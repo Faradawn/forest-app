@@ -29,15 +29,17 @@ export default function Cards(props) {
       setLoaded(wordset)
       const storage = await getProgress(STORAGE_KEY)
       const obj = JSON.parse(storage)
-      if (obj.progress && obj.starred) { // progress and star
-        setCount(obj.progress)
-        setArrayStar(obj.starred)
+      if (obj) {
+        if (obj.progress && obj.starred) { // progress and star
+          setCount(obj.progress)
+          setArrayStar(obj.starred)
+        }
+        else if (obj.progress) { // only progress no star
+          setCount(obj.progress)
+          setArrayStar(buildArray(wordset.length))
+        }
       }
-      else if (obj.progress) { // only progress no star
-        setCount(obj.progress)
-        setArrayStar(buildArray(wordset.length))
-      }
-      else { // no progress
+      else {
         setCount(1)
         setArrayStar(buildArray(wordset.length))
       }
@@ -57,7 +59,7 @@ export default function Cards(props) {
 
   function set(num) {
     setCount(num)
-    const obj = {progress: num, starred: arrayStar}
+    const obj = {progress: num, starred: arrayStar, totalLength: loaded.length}
     setProgress(STORAGE_KEY, obj)
     console.log('set data')
   }
@@ -104,7 +106,7 @@ export default function Cards(props) {
 
       <Button 
         title='重新开始'
-        onPress={() => (setCount(1), setArrayStar(arr1), console.log(arrayStar))}/>
+        onPress={() => (setCount(1), setArrayStar(buildArray(wordset.length)), console.log(arrayStar))}/>
       <Button 
         title='清除记录'
         onPress={() => AsyncStorage.clear()}/>
