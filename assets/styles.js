@@ -1,4 +1,14 @@
+/**
+ * @providesModule login
+ */
+
 import { StyleSheet, Dimensions } from 'react-native'
+
+export const theme = {
+  border: 20,
+  width: Dimensions.get('window').width - 50,
+  padding: 30,
+} 
 
 export default StyleSheet.create({
   container: {
@@ -36,7 +46,7 @@ export default StyleSheet.create({
   cardUnit: {
     borderRadius: 20,
     backgroundColor: 'white',
-    width: Dimensions.get('window').width - 60,
+    width: theme.width,
     height: 200,
     shadowRadius: 30,
     shadowColor: 'grey',
@@ -72,13 +82,14 @@ export default StyleSheet.create({
   // Home Page
   homePage: {
     alignItems: 'center',
-    padding: 30,
+    padding: theme.padding,
     flex: 1,
+    backgroundColor: 'white',
   },
   homeCard: {
     borderRadius: 20,
     backgroundColor: 'white',
-    width: Dimensions.get('window').width - 40,
+    width: theme.width,
     height: 300,
     shadowRadius: 30,
     shadowColor: 'grey',

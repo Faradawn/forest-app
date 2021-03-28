@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Button, Text, View } from 'react-native'
+import { Button, Text, View, StyleSheet } from 'react-native'
 import { TextInput, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
-import styles from '../../assets/styles'
+import styles, { theme } from '../../assets/styles'
 import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
 import ProgressBar from './ProgressBar'
@@ -85,33 +85,43 @@ export default function Cards(props) {
       <View style={{height: 20}}></View>
 
       <TouchableOpacity onPress={() => setOneStar(!onestar)}>
-        <Ionicons name= {onestar ? 'star' : 'star-outline'} size={24} color="black" />
+        <Ionicons name= {onestar ? 'star' : 'star-outline'} size={24} color="orange" />
       </TouchableOpacity>
+
+      <View style={{height: 20}}></View>
 
       <Card data={(loaded) ? loaded[count - 1] : loading} initflip={true}/>
 
-      <View style={{height: 30}}></View>
+      <View style={{height: 20}}></View>
+      <Text> 第 {count} / {loaded ? loaded.length : '?'} 个</Text>
+
+      <View style={{height: 20}}></View>
 
       <View style={styles.touchContainer}>
         <TouchableOpacity onPress={() => (count > 1) ? (set(count-1), back()) : {}}>
-            <Ionicons name="caret-back" size={24} color="black" />
-          </TouchableOpacity>
+            <Ionicons name="caret-back" size={50} color="black" />
+        </TouchableOpacity>
+        <View style={{width:100}}/>
         <TouchableOpacity onPress={() => (count < loaded.length) ? (set(count+1), next()) : {}}>
-            <Ionicons name="caret-forward" size={24} color="black" />
+            <Ionicons name="caret-forward" size={50} color="black" />
           </TouchableOpacity>
       </View>
-        
-      <Text>count: {count}</Text>
-      <Text>star? {onestar}</Text>
 
-      <Button 
-        title='重新开始'
-        onPress={() => (setCount(1), setArrayStar(buildArray(wordset.length)), console.log(arrayStar))}/>
-      <Button 
-        title='清除记录'
-        onPress={() => AsyncStorage.clear()}/>
       
       
     </View>
   )
 }
+
+const style1 = StyleSheet.create({
+  imageCard: {
+    height: 100,
+    borderRadius: theme.border,
+    width: theme.width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowOffset: {width: 5, height: 5},
+    shadowRadius: 20,
+    shadowOpacity: 0.4,
+  }
+})

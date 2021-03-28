@@ -19,7 +19,7 @@ const styles = (a) =>  StyleSheet.create({
   barContainer: {
     width: Dimensions.get('window').width - 50,
     height: 10,
-    backgroundColor: '#d8d8d8',
+    backgroundColor: '#e6e6e6',
     borderRadius: 5,
     alignItems: 'flex-start',
   },

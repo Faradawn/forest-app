@@ -1,13 +1,14 @@
 import * as React from 'react'
-import { Button, Text, View, Image} from 'react-native'
+import { Button, Text, View, Image, StyleSheet, Dimensions, ImageBackground} from 'react-native'
 import { TextInput, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
-import styles from '../assets/styles'
+import styles, { theme } from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import ProgressBar from './components/ProgressBar'
 import { buildArray, getProgress } from './api/API'
+import { HomeQuote } from './components/HomeQuote'
 import { get } from 'react-native/Libraries/Utilities/PixelRatio'
-const Stack = createStackNavigator();
 
+const Stack = createStackNavigator();
 
 function HomePage({ navigation }) {
   const [fraction1, setFraction1] = React.useState(0)
@@ -28,18 +29,8 @@ function HomePage({ navigation }) {
   React.useEffect(() => {getFraction()})
 
   return (
-    <View style={styles.homePage}>
-      <TouchableOpacity style={styles.homeCard} onPress={() => navigation.navigate('Quote')}>
-        <Text>一曲未终 已被</Text>
-        <Image 
-          source={require('../assets/latinapp_raw_assets/3_wallpaper/1.jpg')}
-          style={{resizeMode: 'contain', width: 300, height: 200}}/>
-      </TouchableOpacity>
-
-
-      <TouchableHighlight onPress={() => getFraction()}>
-        <Text>刷新</Text>
-      </TouchableHighlight>
+    <ImageBackground style={styles.homePage} source={require('../assets/wallpaper/bg-1.png')}>
+      <HomeQuote/>
       <View style={{height: 50}}></View>
       <View>
         <Text>园林树木拉丁名150个</Text>
@@ -50,12 +41,17 @@ function HomePage({ navigation }) {
         <Text>园林花卉拉丁名200个</Text>
         <View style={{height: 10}}></View>
         <ProgressBar progress={fraction2}/>
-        
+
+        <View style={{height: 90}}></View>
+        <TouchableOpacity style={{alignItems:'center'}}onPress={() => get()}>
+          <View style={{height: 230, width: 130, }}></View>
+        </TouchableOpacity>
+
         
       </View>
       
       
-    </View>
+    </ImageBackground>
   )
 }
 function Quote() {

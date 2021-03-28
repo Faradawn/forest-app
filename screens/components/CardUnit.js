@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { FlatList, Text, View, StyleSheet } from 'react-native'
+import { FlatList, Text, View, StyleSheet, ImageBackground } from 'react-native'
 import {TouchableOpacity } from 'react-native-gesture-handler'
-import styles from '../../assets/styles'
+import styles, {theme} from '../../assets/styles'
 
 
 export default function Card(props) {
@@ -9,6 +9,8 @@ export default function Card(props) {
   const some = {id:1, chinese:'加载中...', latin:'', family:'', category:''}
   const data = props.data
   const keylist = Object.keys(data).slice(2, Object.keys(data).length)
+
+  React.useEffect(() => {setFlip(true)}, [])
   
   function front(){
     return(
@@ -31,25 +33,37 @@ export default function Card(props) {
 
   function back() {
     return(
-      <View>
-        <Text>拉丁名：{data.latin}</Text>
-        <Text>{data.family}科</Text>
-        <Text>{data.category}属</Text>
+      <View style={{alignItems: 'center',}}>
+        <Text style={{fontStyle: 'italic'}}>{data.latin}</Text>
+        <View style={{height: 3}}></View>
+        <Text>{data.family} {data.category}</Text>
       </View>
     )
   }
   return(
     <View>
-      <TouchableOpacity style={styles.cardUnit} onPress={() => setFlip(!flip)}>
-        {flip ? front() : back()}
+      <TouchableOpacity onPress={() => setFlip(!flip)}>
+        <ImageBackground
+          source={require('../../assets/wallpaper/card-orange.png')}
+          imageStyle={{borderRadius: theme.border}}
+          style={style1.imageCard}>
+            {flip ? front() : back()}
+        </ImageBackground> 
       </TouchableOpacity>
     </View>
   )
 }
 
-const stylelocal = StyleSheet.create({
-  back: {
-    paddingTop: 10,
-    backgroundColor: 'cornsilk'
+
+const style1 = StyleSheet.create({
+  imageCard: {
+    height: 200,
+    borderRadius: theme.border,
+    width: theme.width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowOffset: {width: 5, height: 5},
+    shadowRadius: 4,
+    shadowOpacity: 0.4,
   }
 })
