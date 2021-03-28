@@ -25,6 +25,16 @@ export const getProgress = (key) => {
     return AsyncStorage.getItem(key)
 }
 
+export function buildArray(num) {
+  let i = 0;
+  let arr = [];
+  while(i < num){
+    arr.push(false)
+    i ++
+  }
+  console.log('built a length of: ' + arr.length)
+  return arr
+}
 
 export function API(){
   const [a, setA] = React.useState('')
