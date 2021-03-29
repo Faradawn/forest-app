@@ -15,23 +15,23 @@ const Tabs = createBottomTabNavigator()
 function App() {
   return (
     <NavigationContainer>
-      <Tabs.Navigator initialRouteName='Cards'
+      <Tabs.Navigator initialRouteName='首页'
         screenOptions={({route}) => ({
           tabBarIcon: ({focused, color, size}) => {
             let icon;
-            if (route.name === 'Home') {
+            if (route.name === '首页') {
               icon=focused? 'home' : 'home-outline'
             }
-            else if (route.name === 'Settings') {icon=focused?'settings' : 'settings-outline'}
-            else if (route.name === 'Cards') {icon=focused? 'file-tray' : 'file-tray-outline'}
+            else if (route.name === '设置') {icon=focused?'settings' : 'settings-outline'}
+            else if (route.name === '卡片') {icon=focused? 'file-tray' : 'file-tray-outline'}
             return <Ionicons name={icon} size={size} color={color} />
           }
         })}
         tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
 
-        <Tabs.Screen name='Cards' component={Cards}/>
-        <Tabs.Screen name='Home' component={Home}/>
-        <Tabs.Screen name='Settings' component={Settings}/>
+        <Tabs.Screen name='卡片' component={Cards}/>
+        <Tabs.Screen name='首页' component={Home}/>
+        <Tabs.Screen name='设置' component={Settings}/>
         
       </Tabs.Navigator>
     </NavigationContainer>

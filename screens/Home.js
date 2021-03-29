@@ -64,8 +64,8 @@ function Quote() {
 
 export default function Home() {  
   return(
-    <Stack.Navigator initialRouteName='HomePage'>
-      <Stack.Screen name='HomePage' component={HomePage}/>
+    <Stack.Navigator initialRouteName='首页'>
+      <Stack.Screen name='首页' component={HomePage}/>
       <Stack.Screen name='Quote' component={Quote}/>
     </Stack.Navigator>
 

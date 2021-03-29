@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, Text, Button} from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps'; // needs yarn install
 import styles from '../../assets/styles';
 
 

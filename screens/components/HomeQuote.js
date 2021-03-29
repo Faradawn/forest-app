@@ -28,6 +28,7 @@ export const HomeQuote = () => {
         imageStyle={{borderRadius: theme.border}}
         style={style1.imageCard}>
           <Text> {date.getMonth()} 月 {date.getDate()} 日</Text>
+          <Text>加油，奋斗的你</Text>
     </ImageBackground>  
     )
   }

@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function SetHome({ navigation }) {
   return (
     <View style={styles.homePage}>
-      <TouchableOpacity onPress={() => navigation.navigate('Set1')} >
+      <TouchableOpacity onPress={() => navigation.navigate('园林树木拉丁名150个')} >
         <ImageBackground
           source={require('../assets/wallpaper/card-slim.png')}
           imageStyle={{borderRadius: theme.border}}
@@ -22,7 +22,7 @@ function SetHome({ navigation }) {
 
       <View style={{height:30}}></View>
 
-      <TouchableOpacity onPress={() => navigation.navigate('Set2')} >
+      <TouchableOpacity onPress={() => navigation.navigate('园林花卉拉丁名200个')} >
         <ImageBackground
           source={require('../assets/wallpaper/card-slim.png')}
           imageStyle={{borderRadius: theme.border}}
@@ -48,10 +48,10 @@ function Set2() {
 
 export default function Cards() {  
   return(
-    <Stack.Navigator initialRouteName='SetHome'>
-      <Stack.Screen name='SetHome' component={SetHome}/>
-      <Stack.Screen name='Set1' component={Set1}/>
-      <Stack.Screen name='Set2' component={Set2}/>
+    <Stack.Navigator initialRouteName='所有卡片'>
+      <Stack.Screen name='所有卡片' component={SetHome}/>
+      <Stack.Screen name='园林树木拉丁名150个' component={Set1}/>
+      <Stack.Screen name='园林花卉拉丁名200个' component={Set2}/>
     </Stack.Navigator>
 
   )
