@@ -1,0 +1,1182 @@
+﻿{
+    "Sheet1": [
+        {
+            "id": "1",
+            "chinese": "藿香蓟 ",
+            "latin": "Ageratum conyzoides",
+            "definition": "conyzoides,像白酒草（conyza）的。"
+        },
+        {
+            "id": "2",
+            "chinese": "红草五色苋",
+            "latin": "Alternanthera amoena",
+            "definition": "amoena,可爱的。"
+        },
+        {
+            "id": "3",
+            "chinese": "五色苋",
+            "latin": "Alternanthera bettzickiana",
+            "definition": "bettzickiana,Bettzick（人名）的。"
+        },
+        {
+            "id": "4",
+            "chinese": "雁来红",
+            "latin": "Amaranthus tricolor",
+            "definition": "tricolor,三色的。"
+        },
+        {
+            "id": "5",
+            "chinese": "金鱼草",
+            "latin": "Antirrhinum majus",
+            "definition": "majus,较大的。"
+        },
+        {
+            "id": "6",
+            "chinese": "雏菊",
+            "latin": "Bellis perennis",
+            "definition": "perennis,不断的。"
+        },
+        {
+            "id": "7",
+            "chinese": "羽衣甘蓝",
+            "latin": "Brassica oleracea var.acephala f. tricolor",
+            "definition": "oleracea,属于厨房的。"
+        },
+        {
+            "id": "8",
+            "chinese": "金盏菊",
+            "latin": "Calendula officinalis",
+            "definition": "officinalis,药用的。"
+        },
+        {
+            "id": "9",
+            "chinese": "翠菊",
+            "latin": "Callistephus chinensis",
+            "definition": "chinensis,亚洲的、中国的。"
+        },
+        {
+            "id": "10",
+            "chinese": "鸡冠花",
+            "latin": "Celosia cristata",
+            "definition": "cristata,鸡冠状的。"
+        },
+        {
+            "id": "11",
+            "chinese": "长春花",
+            "latin": "Catharanthus roseus",
+            "definition": "roseus,玫红色的。"
+        },
+        {
+            "id": "12",
+            "chinese": "蛇目菊",
+            "latin": "Coreopsis tinctoria",
+            "definition": "tinctoria,着色的。"
+        },
+        {
+            "id": "13",
+            "chinese": "波斯菊",
+            "latin": "Cosmos bipinnatus",
+            "definition": "bipinnatus,二回羽状的。"
+        },
+        {
+            "id": "14",
+            "chinese": "锦团石竹",
+            "latin": "Dianthus chinensis var.heddewigii",
+            "definition": "Dianthus,圣花。"
+        },
+        {
+            "id": "15",
+            "chinese": "须苞石竹",
+            "latin": "Dianthus barbatus",
+            "definition": "barbatus,被髯毛的。"
+        },
+        {
+            "id": "16",
+            "chinese": "毛地黄",
+            "latin": "Digitalis purpurea",
+            "definition": "purpurea,紫色的。"
+        },
+        {
+            "id": "17",
+            "chinese": "银边翠",
+            "latin": "Euphorbia marginata",
+            "definition": "marginata,边缘的。"
+        },
+        {
+            "id": "18",
+            "chinese": "花菱草",
+            "latin": "Eschscholtzia californica",
+            "definition": "californica,加利福尼亚的。"
+        },
+        {
+            "id": "19",
+            "chinese": "千日红",
+            "latin": "Gomphrena globosa",
+            "definition": "globosa,球形的。"
+        },
+        {
+            "id": "20",
+            "chinese": "霞草",
+            "latin": "Gypsophila elegans",
+            "definition": "elegans,雅致的。"
+        },
+        {
+            "id": "21",
+            "chinese": "麦秆菊",
+            "latin": "Helichrysum bracteatum",
+            "definition": "bracteatum,具苞片的。"
+        },
+        {
+            "id": "22",
+            "chinese": "凤仙花",
+            "latin": "Impatiens balsamina",
+            "definition": "balsamina,（古）凤仙花属。"
+        },
+        {
+            "id": "23",
+            "chinese": "非洲凤仙",
+            "latin": "Impatiens walleriana",
+            "definition": "Impatiens,无耐心的，指果实成熟后易弹裂。"
+        },
+        {
+            "id": "24",
+            "chinese": "地肤",
+            "latin": "Kochia scoparia",
+            "definition": "scoparia,扫帚状的。"
+        },
+        {
+            "id": "25",
+            "chinese": "香雪球",
+            "latin": "Lobularia maritima",
+            "definition": "maritima,生于海滨的。"
+        },
+        {
+            "id": "26",
+            "chinese": "紫罗兰",
+            "latin": "Matthiola incana",
+            "definition": "incana,被灰白毛的。"
+        },
+        {
+            "id": "27",
+            "chinese": "紫茉莉",
+            "latin": "Mirabilis jalapa",
+            "definition": "jalapa,（墨西哥）哈拉帕。"
+        },
+        {
+            "id": "28",
+            "chinese": "红花烟草",
+            "latin": "Nicotiana × sanderae",
+            "definition": "Nicotiana,Jean Nicot（人名）。"
+        },
+        {
+            "id": "29",
+            "chinese": "虞美人",
+            "latin": "Papaver rhoeas",
+            "definition": "rhoeas,虞美人。"
+        },
+        {
+            "id": "30",
+            "chinese": "矮牵牛",
+            "latin": "Petunia hybrida",
+            "definition": "hybrida,杂交的。"
+        },
+        {
+            "id": "31",
+            "chinese": "大花牵牛",
+            "latin": "Pharbitis nil",
+            "definition": "nil,牵牛花（俗名）。"
+        },
+        {
+            "id": "32",
+            "chinese": "半支莲",
+            "latin": "Portulaca grandiflora",
+            "definition": "grandiflora,大花的。"
+        },
+        {
+            "id": "33",
+            "chinese": "羽叶茑萝",
+            "latin": "Quamoclit pennata",
+            "definition": "pennata,羽状的。"
+        },
+        {
+            "id": "34",
+            "chinese": "一串红",
+            "latin": "Salvia splendens",
+            "definition": "splendens,光亮的。"
+        },
+        {
+            "id": "35",
+            "chinese": "万寿菊",
+            "latin": "Tagetes erecta",
+            "definition": "erecta,直立的。"
+        },
+        {
+            "id": "36",
+            "chinese": "夏堇",
+            "latin": "Torenia fournieri",
+            "definition": "fournieri,Fournier（人名）的。"
+        },
+        {
+            "id": "37",
+            "chinese": "旱金莲",
+            "latin": "Tropaeolum majus",
+            "definition": "majus,较大的。"
+        },
+        {
+            "id": "38",
+            "chinese": "美女樱",
+            "latin": "Verbena × hybrida",
+            "definition": "Verbena,马鞭草。"
+        },
+        {
+            "id": "39",
+            "chinese": "大花三色堇",
+            "latin": "Viola × wittrockiana"
+        },
+        {
+            "id": "40",
+            "chinese": "百日草",
+            "latin": "Zinnia elegan",
+            "definition": "elegans,雅致的。"
+        },
+        {
+            "id": "41",
+            "chinese": "蓍草类",
+            "latin": "Achillea",
+            "definition": "Achillea,人名。"
+        },
+        {
+            "id": "42",
+            "chinese": "乌头类",
+            "latin": "Aconitum",
+            "definition": "Aconitum,一种植物名。"
+        },
+        {
+            "id": "43",
+            "chinese": "蜀葵",
+            "latin": "Althaea rosea",
+            "definition": "Althaea,医治;rosea,粉红的、淡红的。"
+        },
+        {
+            "id": "44",
+            "chinese": "庭荠类",
+            "latin": "Alyssum"
+        },
+        {
+            "id": "45",
+            "chinese": "耧斗菜",
+            "latin": "Aquilegia",
+            "definition": "Aquilegia,抽水者。"
+        },
+        {
+            "id": "46",
+            "chinese": "丽蚌草",
+            "latin": "Arrhenatherum elatius var. bulbosum",
+            "undefined": "‘"
+        },
+        {
+            "id": "47",
+            "chinese": "荷兰菊",
+            "latin": "Aster novi-belgii",
+            "definition": "novi-belgii,纽约的。"
+        },
+        {
+            "id": "48",
+            "chinese": "紫菀",
+            "latin": "Aster tataricus",
+            "definition": "tataricus,鞑靼人的。"
+        },
+        {
+            "id": "49",
+            "chinese": "落新妇",
+            "latin": "Astilbe chinensis",
+            "definition": "chinensis,中国的。"
+        },
+        {
+            "id": "50",
+            "chinese": "风铃草类",
+            "latin": "Campanula",
+            "definition": "Campanula,小铃。"
+        },
+        {
+            "id": "51",
+            "chinese": "矢车菊类",
+            "latin": "Centaurea",
+            "definition": "Centaurea,神话中半人半马的物。"
+        },
+        {
+            "id": "52",
+            "chinese": "铁线莲类",
+            "latin": "Clematis",
+            "definition": "Clematis,爬蔓的植物。"
+        },
+        {
+            "id": "53",
+            "chinese": "金鸡菊类",
+            "latin": "Coreopsis",
+            "definition": "Coreopsis,似臭虫的（指种子形状）。"
+        },
+        {
+            "id": "54",
+            "chinese": "大花飞燕草",
+            "latin": "Delphinium grandiflorum",
+            "definition": "Delphinium,海豚。"
+        },
+        {
+            "id": "55",
+            "chinese": "菊花",
+            "latin": "Chrysanthemum morifolium",
+            "definition": "morifolium,桑叶的。"
+        },
+        {
+            "id": "56",
+            "chinese": "常夏石竹",
+            "latin": "Dianthus plumarius",
+            "definition": "plumarius,羽毛的。"
+        },
+        {
+            "id": "57",
+            "chinese": "香石竹",
+            "latin": "Dianthus caryophyllus",
+            "definition": "caryophyllus,具有丁香香气的。"
+        },
+        {
+            "id": "58",
+            "chinese": "荷包牡丹",
+            "latin": "Dicentra spectabilis",
+            "definition": "spectabilis,醒目的。"
+        },
+        {
+            "id": "59",
+            "chinese": "紫松果菊",
+            "latin": "Echinacea purpurea",
+            "definition": "Echinacea,刺猬、海胆;purpurea,紫色的。"
+        },
+        {
+            "id": "60",
+            "chinese": "宿根天人菊",
+            "latin": "Gaillardia aristata",
+            "definition": "aristata,具芒的。"
+        },
+        {
+            "id": "61",
+            "chinese": "萱草类",
+            "latin": "Hemerocallis",
+            "definition": "Hemerocallis,一日之美，指原种花期短且易凋谢。"
+        },
+        {
+            "id": "62",
+            "chinese": "芙蓉葵",
+            "latin": "Hibiscus moscheutos",
+            "definition": "moscheutos,芙蓉葵。"
+        },
+        {
+            "id": "63",
+            "chinese": "玉簪",
+            "latin": "Hosta plantaginea",
+            "definition": "plantaginea,车前状的。"
+        },
+        {
+            "id": "64",
+            "chinese": "紫萼",
+            "latin": "Hosta ventricosa",
+            "definition": "ventricosa,偏肿的。"
+        },
+        {
+            "id": "65",
+            "chinese": "鸢尾",
+            "latin": "Iris tectorum",
+            "definition": "tectorum,生于屋顶的。"
+        },
+        {
+            "id": "66",
+            "chinese": "德国鸢尾",
+            "latin": "Iris germannica",
+            "definition": "germannica,德国的。"
+        },
+        {
+            "id": "67",
+            "chinese": "蝴蝶花",
+            "latin": "Iris japonica",
+            "definition": "japonica,日本的。"
+        },
+        {
+            "id": "68",
+            "chinese": "黄菖蒲",
+            "latin": "Iris pseudacorus",
+            "definition": "pseudacorus,假菖蒲。"
+        },
+        {
+            "id": "69",
+            "chinese": "花菖蒲",
+            "latin": "Iris ensata",
+            "definition": "ensata,剑型的。"
+        },
+        {
+            "id": "70",
+            "chinese": "燕子花",
+            "latin": "Iris laevigata",
+            "definition": "laevigata,光滑的。"
+        },
+        {
+            "id": "71",
+            "chinese": "马蔺",
+            "latin": "Iris lactea var. chinensis",
+            "definition": "lactea,乳白色的。"
+        },
+        {
+            "id": "72",
+            "chinese": "杂种火炬花",
+            "latin": "Kniphofia hybrida",
+            "definition": "Kniphofia,剑叶兰属。"
+        },
+        {
+            "id": "73",
+            "chinese": "多叶羽扇豆",
+            "latin": "Lupinus polyphyllus",
+            "definition": "polyphyllus,具多叶的。"
+        },
+        {
+            "id": "74",
+            "chinese": "剪秋萝类",
+            "latin": "Lychnis",
+            "definition": "Lychnis,电灯。"
+        },
+        {
+            "id": "75",
+            "chinese": "芍药",
+            "latin": "Paeonia lactiflora",
+            "definition": "lactiflora,乳白色花的。"
+        },
+        {
+            "id": "76",
+            "chinese": "东方罂粟",
+            "latin": "Papaver orientale",
+            "definition": "orientale,东方的。"
+        },
+        {
+            "id": "77",
+            "chinese": "冰岛罂粟",
+            "latin": "Papaver nudicaule",
+            "definition": "nudicaule,裸茎的。"
+        },
+        {
+            "id": "78",
+            "chinese": "天竺葵",
+            "latin": "Pelargonium hortorum",
+            "definition": "hortorum,庭院栽培的。"
+        },
+        {
+            "id": "79",
+            "chinese": "盾叶天竺葵",
+            "latin": "Pelargonium peltatum",
+            "definition": "peltatum,盾状的。"
+        },
+        {
+            "id": "80",
+            "chinese": "大花天竺葵",
+            "latin": "Pelargonium × domesticum"
+        },
+        {
+            "id": "81",
+            "chinese": "钓钟柳类",
+            "latin": "Penstemon",
+            "definition": "Penstemon,5个雄蕊。"
+        },
+        {
+            "id": "82",
+            "chinese": "宿根福禄考",
+            "latin": "Phlox paniculata",
+            "definition": "paniculata,圆锥花序的。"
+        },
+        {
+            "id": "83",
+            "chinese": "随意草",
+            "latin": "Physostegia virginiana",
+            "definition": "virginiana,弗吉尼亚的。"
+        },
+        {
+            "id": "84",
+            "chinese": "桔梗",
+            "latin": "Platycodon grandiflorus",
+            "definition": "grandiflorus,大花的。"
+        },
+        {
+            "id": "85",
+            "chinese": "金光菊类",
+            "latin": "Rudbeckia",
+            "definition": "Rudbeckia,人名。"
+        },
+        {
+            "id": "86",
+            "chinese": "蝎子草",
+            "latin": "Sedum spectabile",
+            "definition": "spectabile,醒目的。"
+        },
+        {
+            "id": "87",
+            "chinese": "勘察加景天",
+            "latin": "Sedum kamtschaticum",
+            "definition": "kamtschaticum,勘察加的。"
+        },
+        {
+            "id": "88",
+            "chinese": "费菜",
+            "latin": "Sedum aizoon",
+            "definition": "aizoon,景天三七。"
+        },
+        {
+            "id": "89",
+            "chinese": "垂盆草",
+            "latin": "Sedum sarmentosum",
+            "definition": "sarmentosum,具长匍匐茎的。"
+        },
+        {
+            "id": "90",
+            "chinese": "银叶菊",
+            "latin": "Senecio cineraria",
+            "definition": "cineraria,灰色的。"
+        },
+        {
+            "id": "91",
+            "chinese": "加拿大一枝黄花",
+            "latin": "Solidago canadensis",
+            "definition": "canadensis,加拿大的。"
+        },
+        {
+            "id": "92",
+            "chinese": "穗状婆婆纳",
+            "latin": "Veronica spicata",
+            "definition": "spicata,穗状的。"
+        },
+        {
+            "id": "93",
+            "chinese": "大花葱",
+            "latin": "Allium giganteum",
+            "definition": "giganteum,巨大的。"
+        },
+        {
+            "id": "94",
+            "chinese": "大花美人蕉",
+            "latin": "Canna generalis",
+            "definition": "generalis,普通的。"
+        },
+        {
+            "id": "95",
+            "chinese": "铃兰",
+            "latin": "Convallaria majalis",
+            "definition": "majalis,五月的。"
+        },
+        {
+            "id": "96",
+            "chinese": "文殊兰类",
+            "latin": "Crinum"
+        },
+        {
+            "id": "97",
+            "chinese": "番红花类",
+            "latin": "Crocus",
+            "definition": "Crocus,橙黄色。"
+        },
+        {
+            "id": "98",
+            "chinese": "大丽花",
+            "latin": "Dahlia pinnata",
+            "definition": "pinnata,羽状的。"
+        },
+        {
+            "id": "99",
+            "chinese": "唐菖蒲",
+            "latin": "Gladiolus hybridus",
+            "definition": "hybridus,杂交的。"
+        },
+        {
+            "id": "100",
+            "chinese": "杂种朱顶红",
+            "latin": "Hippeastrum hybridum",
+            "definition": "hybridum,杂交的。"
+        },
+        {
+            "id": "101",
+            "chinese": "风信子",
+            "latin": "Hyacinthus orientalis",
+            "definition": "orientalis,东方的。"
+        },
+        {
+            "id": "102",
+            "chinese": "蛇鞭菊",
+            "latin": "Liatris spicata",
+            "definition": "spicata,穗状的。"
+        },
+        {
+            "id": "103",
+            "chinese": "麝香百合",
+            "latin": "Lilium longiflorum",
+            "definition": "longiflorum,长叶的。"
+        },
+        {
+            "id": "104",
+            "chinese": "石蒜",
+            "latin": "Lycoris radiata",
+            "definition": "radiata,辐射状的。"
+        },
+        {
+            "id": "105",
+            "chinese": "忽地笑",
+            "latin": "Lycoris aurea",
+            "definition": "Lycoris,女海神的名字;aurea,金黄色的。"
+        },
+        {
+            "id": "106",
+            "chinese": "葡萄风信子",
+            "latin": "Muscari botryoides",
+            "definition": "botryoides,像一串葡萄的。"
+        },
+        {
+            "id": "107",
+            "chinese": "中国水仙",
+            "latin": "Narcissus tazetta var. chinensis",
+            "definition": "tazetta,水仙花。"
+        },
+        {
+            "id": "108",
+            "chinese": "喇叭水仙",
+            "latin": "Narcissus pseudo-narcissus",
+            "definition": "pseudo-narcissus,假水仙。"
+        },
+        {
+            "id": "109",
+            "chinese": "晚香玉",
+            "latin": "Polianthes tuberose",
+            "definition": "tuberose,块茎。"
+        },
+        {
+            "id": "110",
+            "chinese": "白头翁",
+            "latin": "Pulsatilla chinensis"
+        },
+        {
+            "id": "111",
+            "chinese": "花毛茛",
+            "latin": "Ranunculus asiaticus",
+            "definition": "asiaticus,亚洲的。"
+        },
+        {
+            "id": "112",
+            "chinese": "郁金香属",
+            "latin": "Tulipa",
+            "definition": "Tulipa,帽子和伊斯兰头巾。"
+        },
+        {
+            "id": "113",
+            "chinese": "韭兰",
+            "latin": "Zephyranthes carinata",
+            "definition": "carinata,龙骨状的。"
+        },
+        {
+            "id": "114",
+            "chinese": "葱兰",
+            "latin": "Zephyranthes candida",
+            "definition": "candida,纯白色的。"
+        },
+        {
+            "id": "115",
+            "chinese": "菖蒲",
+            "latin": "Acorus calamus",
+            "definition": "calamus,芦苇。"
+        },
+        {
+            "id": "116",
+            "chinese": "凤眼莲",
+            "latin": "Eichhornia crassipes",
+            "definition": "crassipes,粗柄的。"
+        },
+        {
+            "id": "117",
+            "chinese": "芡",
+            "latin": "Euryale ferox",
+            "definition": "ferox,多刺的。"
+        },
+        {
+            "id": "118",
+            "chinese": "千屈菜",
+            "latin": "Lythrum salicaria",
+            "definition": "salicaria,像柳树的。"
+        },
+        {
+            "id": "119",
+            "chinese": "荷花",
+            "latin": "Nelumbo nucifera",
+            "definition": "nucifera,产坚果的。"
+        },
+        {
+            "id": "120",
+            "chinese": "萍蓬莲",
+            "latin": "Nupahar pumilum",
+            "definition": "pumilum,矮小的。"
+        },
+        {
+            "id": "121",
+            "chinese": "睡莲属",
+            "latin": "Nymphaea",
+            "definition": "Nymphaea,神话中女神名。"
+        },
+        {
+            "id": "122",
+            "chinese": "荇菜",
+            "latin": "Nymphoides peltata",
+            "definition": "peltata,盾状的。"
+        },
+        {
+            "id": "123",
+            "chinese": "大薸",
+            "latin": "Pistia stratiotes",
+            "definition": "stratiotes,大薸。"
+        },
+        {
+            "id": "124",
+            "chinese": "慈姑",
+            "latin": "Sagittaria trifolia",
+            "definition": "trifolia,三叶的。"
+        },
+        {
+            "id": "125",
+            "chinese": "水葱",
+            "latin": "Scirpus tabernaemontani",
+            "definition": "tabernaemontani,Tabenaemontaus（人名）的。"
+        },
+        {
+            "id": "126",
+            "chinese": "香蒲",
+            "latin": "Typha angustata",
+            "definition": "angustata,变窄的。"
+        },
+        {
+            "id": "127",
+            "chinese": "王莲",
+            "latin": "Victoria amazonica",
+            "definition": "amazonica,亚马逊的。"
+        },
+        {
+            "id": "128",
+            "chinese": "梭鱼草",
+            "latin": "Pontederia cordata",
+            "definition": "cordata,心形的。"
+        },
+        {
+            "id": "129",
+            "chinese": "再力花",
+            "latin": "Thalia dealbata",
+            "definition": "dealbata,被白粉的。"
+        },
+        {
+            "id": "130",
+            "chinese": "花烛属",
+            "latin": "Anthurium",
+            "definition": "Anthurium,花尾巴。"
+        },
+        {
+            "id": "131",
+            "chinese": "球根秋海棠",
+            "latin": "Begonia tuberhybrida",
+            "definition": "tuberhybrida,杂交块根的。"
+        },
+        {
+            "id": "132",
+            "chinese": "四季秋海棠",
+            "latin": "Begonia semperflorens",
+            "definition": "semperflorens,常开花的。"
+        },
+        {
+            "id": "133",
+            "chinese": "丽格秋海棠",
+            "latin": "Begonia × elatior",
+            "definition": "Begonia,M. Begen（人名）。"
+        },
+        {
+            "id": "134",
+            "chinese": "蟆叶秋海棠",
+            "latin": "Begonia rex",
+            "definition": "rex,国王。"
+        },
+        {
+            "id": "135",
+            "chinese": "蒲包花",
+            "latin": "Calceolaria herbeohybrida",
+            "definition": "herbeohybrida,草本间杂交的。"
+        },
+        {
+            "id": "136",
+            "chinese": "大花君子兰",
+            "latin": "Clivia miniata",
+            "definition": "miniata,朱红色。"
+        },
+        {
+            "id": "137",
+            "chinese": "金鱼花属",
+            "latin": "Columnea",
+            "definition": "Columnea,人名。"
+        },
+        {
+            "id": "138",
+            "chinese": "仙客来",
+            "latin": "Cyclamen persicum",
+            "definition": "persicum,波斯的。"
+        },
+        {
+            "id": "139",
+            "chinese": "一品红",
+            "latin": "Euphorbia pulcherrima",
+            "definition": "pulcherrima,极美丽的。"
+        },
+        {
+            "id": "140",
+            "chinese": "小苍兰",
+            "latin": "Freesia refracta",
+            "definition": "Freesia,人名;refracta,曲折的。"
+        },
+        {
+            "id": "141",
+            "chinese": "倒挂金钟",
+            "latin": "Fuchsia hybrida",
+            "definition": "hybrida,杂交的。"
+        },
+        {
+            "id": "142",
+            "chinese": "非洲菊",
+            "latin": "Gerbera jamesonii",
+            "definition": "jamesoni,Jameson（人名）的。"
+        },
+        {
+            "id": "143",
+            "chinese": "新几内亚凤仙",
+            "latin": "Impatiens hawkeri",
+            "definition": "hawkeri,Hawker（人名）的。"
+        },
+        {
+            "id": "144",
+            "chinese": "报春花",
+            "latin": "Primula malacoides",
+            "definition": "malacoides,像锦葵的。"
+        },
+        {
+            "id": "145",
+            "chinese": "四季报春",
+            "latin": "Primula obconica",
+            "definition": "obconica,倒圆锥形的。"
+        },
+        {
+            "id": "146",
+            "chinese": "多花报春",
+            "latin": "Primula × polyantha",
+            "definition": "polyantha,多花的。"
+        },
+        {
+            "id": "147",
+            "chinese": "瓜叶菊",
+            "latin": "Senecio cruentus",
+            "definition": "cruentus,血红色。"
+        },
+        {
+            "id": "148",
+            "chinese": "大岩桐",
+            "latin": "Sinningia hybrida",
+            "definition": "hybrida,杂交的。"
+        },
+        {
+            "id": "149",
+            "chinese": "鹤望兰",
+            "latin": "Strelitzia reginae",
+            "definition": "reginae,王后。"
+        },
+        {
+            "id": "150",
+            "chinese": "马蹄莲",
+            "latin": "Zantedeschia aethiopica",
+            "definition": "aethiopica,埃塞俄比亚的。"
+        },
+        {
+            "id": "151",
+            "chinese": "豆瓣绿属",
+            "latin": "Peperomia",
+            "definition": "Peper,胡椒;omma,相似。"
+        },
+        {
+            "id": "152",
+            "chinese": "冷水花",
+            "latin": "Pilea cadierei",
+            "definition": "cadierei,Cadiere（人名）的。"
+        },
+        {
+            "id": "153",
+            "chinese": "变叶木",
+            "latin": "Codiaeum variegatum var. pictum",
+            "definition": "variegatum,具细枝的。"
+        },
+        {
+            "id": "154",
+            "chinese": "菱叶葡萄属",
+            "latin": "Cissus",
+            "definition": "Cissus,常绿藤。"
+        },
+        {
+            "id": "155",
+            "chinese": "网纹草属",
+            "latin": "Fittonia",
+            "definition": "Fittonia,人名。"
+        },
+        {
+            "id": "156",
+            "chinese": "西洋常春藤",
+            "latin": "Hedera helix",
+            "definition": "helix,螺旋形。"
+        },
+        {
+            "id": "157",
+            "chinese": "福禄桐属",
+            "latin": "Polyscias"
+        },
+        {
+            "id": "158",
+            "chinese": "鹅掌藤",
+            "latin": "Schefflera arboricola",
+            "definition": "arboricola,生于树上的。"
+        },
+        {
+            "id": "159",
+            "chinese": "袖珍椰子",
+            "latin": "Chamaedorea elegans",
+            "definition": "elegans,雅致的。"
+        },
+        {
+            "id": "160",
+            "chinese": "广东万年青属",
+            "latin": "Aglaonema",
+            "definition": "Aglaonema,有明亮的线，指雄蕊像亮丝。"
+        },
+        {
+            "id": "161",
+            "chinese": "花叶芋",
+            "latin": "Caladium hortullanum",
+            "definition": "hortullanum,园丁的。"
+        },
+        {
+            "id": "162",
+            "chinese": "花叶万年青属",
+            "latin": "Dieffenbachia",
+            "definition": "Dieffenbachia,人名。"
+        },
+        {
+            "id": "163",
+            "chinese": "绿萝",
+            "latin": "Scindapsus aureum",
+            "definition": "aureum,金黄色的"
+        },
+        {
+            "id": "164",
+            "chinese": "龟背竹",
+            "latin": "Monstera deliciosa",
+            "definition": "deliciosa,美味的。"
+        },
+        {
+            "id": "165",
+            "chinese": "春芋",
+            "latin": "Philodendron selloum",
+            "definition": "selloum,Sellow（人名）的。"
+        },
+        {
+            "id": "166",
+            "chinese": "白鹤芋属",
+            "latin": "Spathiphyllum",
+            "definition": "Spathe,佛焰苞;phyllon,叶。"
+        },
+        {
+            "id": "167",
+            "chinese": "果子蔓属",
+            "latin": "Guzmania"
+        },
+        {
+            "id": "168",
+            "chinese": "铁兰属",
+            "latin": "Tillandsia",
+            "definition": "Tillandsia,人名。"
+        },
+        {
+            "id": "169",
+            "chinese": "丽穗凤梨属",
+            "latin": "Vriesea",
+            "definition": "Vriesea,人名。"
+        },
+        {
+            "id": "170",
+            "chinese": "水塔花",
+            "latin": "Billbergia pyramidalis",
+            "definition": "pyramidalis,金字塔型的。"
+        },
+        {
+            "id": "171",
+            "chinese": "尖萼凤梨属",
+            "latin": "Aechmea",
+            "definition": "Aechmea,矛头。"
+        },
+        {
+            "id": "172",
+            "chinese": "吊竹梅",
+            "latin": "Zebrina pendula",
+            "definition": "pendula,垂花的。"
+        },
+        {
+            "id": "173",
+            "chinese": "天门冬属",
+            "latin": "Asparagus",
+            "definition": "Asparagus,强刺的。"
+        },
+        {
+            "id": "174",
+            "chinese": "一叶兰",
+            "latin": "Aspidistra elatior",
+            "definition": "elatior,较高的。"
+        },
+        {
+            "id": "175",
+            "chinese": "吊兰",
+            "latin": "Chlorophytum comosum",
+            "definition": "comosum,被簇毛的。"
+        },
+        {
+            "id": "176",
+            "chinese": "朱蕉属",
+            "latin": "Cordyline",
+            "definition": "Cordy,棍棒。"
+        },
+        {
+            "id": "177",
+            "chinese": "龙血树属",
+            "latin": "Dracaena",
+            "definition": "Drakaina,雌龙或蛇。"
+        },
+        {
+            "id": "178",
+            "chinese": "虎尾兰",
+            "latin": "Sansevieria trifasciata",
+            "definition": "trifasciata,三束的。"
+        },
+        {
+            "id": "179",
+            "chinese": "肖竹芋属",
+            "latin": "Calathea",
+            "definition": "Calathes,手篮。"
+        },
+        {
+            "id": "180",
+            "chinese": "栉花芋属",
+            "latin": "Ctenant"
+        },
+        {
+            "id": "181",
+            "chinese": "竹芋属",
+            "latin": "Maranta",
+            "definition": "Maranta,人名。"
+        },
+        {
+            "id": "182",
+            "chinese": "兰属",
+            "latin": "Cymbidium"
+        },
+        {
+            "id": "183",
+            "chinese": "卡特兰属",
+            "latin": "Cattleya",
+            "definition": "Cattleya,人名"
+        },
+        {
+            "id": "184",
+            "chinese": "蝴蝶兰属",
+            "latin": "Phalaenopsis",
+            "definition": "Phala,蛾蝶;opsis,模样。"
+        },
+        {
+            "id": "185",
+            "chinese": "石斛兰属",
+            "latin": "Dendrobium",
+            "definition": "Dendro,树;bios,生长。"
+        },
+        {
+            "id": "186",
+            "chinese": "瘤瓣兰属",
+            "latin": "Oncidium",
+            "definition": "Onkos,瘤;eides,形。"
+        },
+        {
+            "id": "187",
+            "chinese": "兜兰属",
+            "latin": "Paphiopedilum",
+            "definition": "Paphos,圣地维纳斯;pedilon,拖鞋。"
+        },
+        {
+            "id": "188",
+            "chinese": "万带兰属",
+            "latin": "Vanda",
+            "definition": "Vandaka,寄生植物。"
+        },
+        {
+            "id": "189",
+            "chinese": "金琥",
+            "latin": "Echinocactus grusonii",
+            "definition": "grusonii,Gruson（人名）。"
+        },
+        {
+            "id": "190",
+            "chinese": "令箭荷花",
+            "latin": "Nopalxochia ackermannii",
+            "definition": "ackermannii,Ackermann（人名）。"
+        },
+        {
+            "id": "191",
+            "chinese": "仙人掌",
+            "latin": "Opuntia dillenii",
+            "definition": "dillenii,Dillenius（人名）。"
+        },
+        {
+            "id": "192",
+            "chinese": "蟹爪兰",
+            "latin": "Zygocactus truncactus",
+            "definition": "truncactus，截形的。"
+        },
+        {
+            "id": "193",
+            "chinese": "生石花",
+            "latin": "Lithops pseudotruncatella",
+            "definition": "pseudotruncatella，假的。"
+        },
+        {
+            "id": "194",
+            "chinese": "铁线蕨",
+            "latin": "Adiantum capillus-veneris",
+            "definition": "capillus-veneris，维纳斯的头发。"
+        },
+        {
+            "id": "195",
+            "chinese": "二叉鹿角蕨",
+            "latin": "Platycerium bifurcatum",
+            "definition": "bifurcatum，二次分叉的。"
+        },
+        {
+            "id": "196",
+            "chinese": "巢蕨",
+            "latin": "Neottopteris nidus",
+            "definition": "nidus，鸟巢的。"
+        },
+        {
+            "id": "197",
+            "chinese": "肾蕨属",
+            "latin": "Nephrolepis",
+            "definition": "Nephrolepis，肾形鳞片的。"
+        },
+        {
+            "id": "198",
+            "chinese": "卷柏属",
+            "latin": "Selaginella"
+        }
+    ]
+}

@@ -1,0 +1,1821 @@
+{"Sheet1": [
+	{
+		"id": "1",
+		"chinese": "苏铁",
+		"latin": "Cycas revoluta",
+		"family": "苏铁科",
+		"category": "苏铁属",
+		"definition": "Cycas，源于kykas，原义是一种在埃及生长的棕榈。借用该词用做苏铁的属名是因为苏铁外形似棕榈。 "
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "revoluta，外卷的、反卷的（源自revolutivus，revolutus），与英文之revolution（革命）一词有相同词源。与revolutifolius（反卷叶的），revolubilis（外卷的、反卷的）相似。 "
+	},
+	{
+		"id": "2",
+		"chinese": "银杏",
+		"latin": "Ginkgo biloba",
+		"family": "银杏科",
+		"category": "银杏属",
+		"definition": "Ginkgo，(日)来源于粤语‘金果’。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "biloba，二浅裂的（源自bilobatus"
+	},
+	{
+		"id": "3",
+		"chinese": "辽东冷杉",
+		"latin": "Abies holophylla",
+		"family": "松科",
+		"category": "冷杉属",
+		"definition": "Abies，源于拉丁词abeo，意即升起来，指植株高大。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "holo-完整的，-phylla叶片。"
+	},
+	{
+		"id": "4",
+		"chinese": "白杄",
+		"latin": "Picea meyeri",
+		"family": "松科",
+		"category": "云杉属",
+		"definition": "picea，源于拉丁词picea，意即松脂。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "meyeri，人名。该种亦称Meyer's Spruce（麦氏云杉）"
+	},
+	{
+		"id": "5",
+		"chinese": "青杄",
+		"latin": "Picea wilsonii",
+		"family": "松科",
+		"category": "云杉属",
+		"definition": "wilsonii，人名。该种亦称Wilson's Spruce"
+	},
+	{
+		"id": "6",
+		"chinese": "华北落叶松",
+		"latin": "Larix principis-rupprechtii",
+		"family": "松科",
+		"category": "落叶松属",
+		"definition": "Larix，源于拉丁词larix，意即落叶松"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "principis-rupprechtii（巴伐利亚王储鲁伯希特，1869-1955年）。该种亦称Prince Rupprecht's Larch"
+	},
+	{
+		"id": "7",
+		"chinese": "金钱松",
+		"latin": "Pseudolarix amabilis",
+		"family": "松科",
+		"category": "金钱松属",
+		"definition": "Pseudolarix，Pseudo来源于希腊文pseudes（假的），Larix是落叶松属，意即金钱松属植物象落叶松属植物。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "amabilis，可爱的，尤指秋叶金黄，状若金钱。"
+	},
+	{
+		"id": "8",
+		"chinese": "雪松",
+		"latin": "Cedrus deodara",
+		"family": "松科",
+		"category": "雪松属",
+		"definition": "Cedrus源于希腊文kedros，意即雪松。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Deodara，神树，源于梵文devadaru。雪松在有些国家是被当作神树看待的，如印度、黎巴嫩等地。"
+	},
+	{
+		"id": "9",
+		"chinese": "马尾松",
+		"latin": "Pinus massoniana",
+		"family": "松科",
+		"category": "松属",
+		"definition": "Pinus源于拉丁词pinus（松），英文pine（松）词源相同。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "massoniana，人名。"
+	},
+	{
+		"id": "10",
+		"chinese": "油松",
+		"latin": "Pinus tabuliformis",
+		"family": "松科",
+		"category": "松属",
+		"definition": "tabulaeformis，平台状的。油松枝条轮生，老年油松封顶后为平头。英文table也与tabulae有相似词源。"
+	},
+	{
+		"id": "11",
+		"chinese": "白皮松",
+		"latin": "Pinus bungeana",
+		"family": "松科",
+		"category": "松属",
+		"definition": "bungeana，人名，在植物拉丁学名中出现的频率很高。"
+	},
+	{
+		"id": "12",
+		"chinese": "华山松",
+		"latin": "Pinus armandii",
+		"family": "松科",
+		"category": "松属",
+		"definition": "armandii，人名，在植物拉丁学名中经常出现。"
+	},
+	{
+		"id": "13",
+		"chinese": "杉木",
+		"latin": "Cunninghamia lanceolata",
+		"family": "杉科",
+		"category": "杉木属",
+		"definition": "Cunninghamia 源于人名James Cunningham，他首先发现杉木，故以其名作为属名以纪念。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "lanceolata源于lanceolatus（披针形的），杉木的叶片为披针形。带有Lanci-词头的即有披针形的意思，如Lanceifolius（披针形叶的），Lanceus（披针形的），Lancifer（具披针形的），Lancilabris(披针形唇的)，Lancilimbus（披针形叶片的），Lancipetalus（披针形花瓣的）等。"
+	},
+	{
+		"id": "14",
+		"chinese": "柳杉",
+		"latin": "Cryptomeria fortunei",
+		"family": "杉科",
+		"category": "柳杉属",
+		"definition": "Cryptomeria 源于希腊文kryptos（隐藏的）+meros（部分），该属植物球花部分隐蔽或球果的苞鳞部分不明显，或指叶基相重叠。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "fortunei源于著名植物学家Robert Fortune（罗伯特·福琼）。"
+	},
+	{
+		"id": "15",
+		"chinese": "水杉",
+		"latin": "Metasequoia glyptostroboides",
+		"family": "杉科",
+		"category": "水杉属",
+		"definition": "Metasequoia由希腊文meta（在后面，后生的）+Sequoia（北美红杉属）组成，意即与北美红杉有亲缘关系。 glyptostroboides指水松果状的，源于水松属（Glyptostrobus）。水松属名来源于希腊文glyptos（刻痕）+strobos（球果），指水松的球果具花纹。-oides相似的。"
+	},
+	{
+		"id": "16",
+		"chinese": "侧柏",
+		"latin": "Platycladus orientalis",
+		"family": "柏科",
+		"category": "侧柏属",
+		"definition": "Platycladus 源于希腊文platys（宽的、扁的）+klados（枝条），指小枝扁平，这是侧柏属非常重要的形态特征之一。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "orientalis意即东方的，太阳升起的地方。"
+	},
+	{
+		"id": "17",
+		"chinese": "日本扁柏",
+		"latin": "Chamaecyparis obtusa",
+		"family": "柏科",
+		"category": "扁柏属",
+		"definition": "Chamaecyparis源于希腊文chamai（矮小的）+kyparissos（柏），意即矮的柏树。该属有很对低矮品种。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Obtusa，钝的，指小叶先端微钝。"
+	},
+	{
+		"id": "18",
+		"chinese": "圆柏（桧柏）",
+		"latin": "Sabina chinensis",
+		"family": "柏科",
+		"category": "圆柏属（桧属）",
+		"definition": "Sabina 源于意大利一河名Sabine，指模式种发现地。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Chinensis，中国的。"
+	},
+	{
+		"id": "19",
+		"chinese": "罗汉松",
+		"latin": "Podocarpus macrophyllus",
+		"family": "罗汉松科（竹柏科）",
+		"category": "罗汉松属",
+		"definition": "Podocarpus （希）pous ，podos（足）+karpos（果），意即种子具柄（罗汉松的种子很有特点，象一个个小罗汉立于翠绿的叶丛中）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "macrophyllus，指大叶的。macro大的，phyllus叶子。"
+	},
+	{
+		"id": "20",
+		"chinese": "紫杉（东北红豆杉）",
+		"latin": "Taxus cuspidata",
+		"family": "红豆杉科（紫杉科）",
+		"category": "红豆杉属",
+		"definition": "Taxus， (希)taxis排列，指叶在枝上排列像疏齿。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "cuspidata源于cuspidatus，具尖头的、具突尖的，指紫杉的叶片具突尖。"
+	},
+	{
+		"id": "21",
+		"chinese": "粗榧",
+		"latin": "Cephalotaxus sinensis",
+		"family": "三尖杉科（粗榧科）",
+		"category": "三尖杉属",
+		"definition": "Cephalot-头的，taxus红豆杉衫属。该属种子核果状，全为肉质假种皮包被；而红豆杉属则部分包被。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "sinensis，中国。"
+	},
+	{
+		"id": "22",
+		"chinese": "木兰",
+		"latin": "Magnolia liliflora",
+		"family": "木兰科",
+		"category": "木兰属",
+		"definition": "Magnolia 源于法国植物学家Pierre Magnol(1683-1751)。liliflora，指花形似百合花（源于Liliflorus）。"
+	},
+	{
+		"id": "23",
+		"chinese": "玉兰",
+		"latin": "Magnolia denudata",
+		"family": "木兰科",
+		"category": "木兰属",
+		"definition": "denudata意即剥脱了的，使裸露的（源于denudatus），指先花后叶，开花无绿叶衬托，似花裸露；亦可理解为其果实成熟裂开，鲜红的种子露出之意。"
+	},
+	{
+		"id": "24",
+		"chinese": "广玉兰",
+		"latin": "Magnolia grandiflora",
+		"family": "木兰科",
+		"category": "木兰属",
+		"definition": "Grandiflora，大花的（源于grandiflorus）。"
+	},
+	{
+		"id": "25",
+		"chinese": "白兰花",
+		"latin": "Michelia alba",
+		"family": "木兰科",
+		"category": "含笑属",
+		"definition": "Michelia 源于意大利植物学家Pietro Antonio Micheli（1679-1737）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "alba，白色的（源于albus）。"
+	},
+	{
+		"id": "26",
+		"chinese": "含笑",
+		"latin": "Michelia figo",
+		"family": "木兰科",
+		"category": "含笑属",
+		"definition": "Michelia 人名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "figo含义不详。有可能来自figo（无花果）一词。"
+	},
+	{
+		"id": "27",
+		"chinese": "鹅掌楸",
+		"latin": "Liriodendron chinense",
+		"family": "木兰科",
+		"category": "鹅掌楸属",
+		"definition": "Liriodendron源于希腊文leirion（百合）+dendron（树木），意即花的外观象百合花的树木。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Chinense，中国的。"
+	},
+	{
+		"id": "28",
+		"chinese": "蜡梅",
+		"latin": "Chimonanthus praecox",
+		"family": "蜡梅科",
+		"category": "蜡梅属",
+		"definition": "Chimonanthus (希)cheimon-冬天的，anthos花，指冬日开花习性。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "praecox早生的，早熟的。"
+	},
+	{
+		"id": "29",
+		"chinese": "樟树",
+		"latin": "Cinnamomum camphora",
+		"family": "樟科",
+		"category": "樟属",
+		"definition": "Cinnamomum源于希腊文kinnamomum（肉桂树）。(希)kino卷，amomos香气，Cinnamomum指剥取的树皮干燥时卷曲，具浓烈的香气。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "camphora源于阿拉伯语Kamfour（樟脑）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "香樟是樟脑的原料树。"
+	},
+	{
+		"id": "30",
+		"chinese": "小檗",
+		"latin": "Berberis thunbergii",
+		"family": "小檗科",
+		"category": "小檗属",
+		"definition": "Berberis小檗的俗名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "thunbergii瑞典的姓氏。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "atropurpurea黑紫色（atro-黑色的，purpurea紫色的）"
+	},
+	{
+		"id": "31",
+		"chinese": "南天竹",
+		"latin": "Nandina domestica",
+		"family": "小檗科",
+		"category": "十大功劳属",
+		"definition": "Nandina（日）南天竹的俗名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "domestica栽培的，培育的。命名人可能是在庭院中见到的。"
+	},
+	{
+		"id": "32",
+		"chinese": "阔叶十大功劳",
+		"latin": "Mahonia bealei",
+		"family": "小檗科",
+		"category": "十大功劳属",
+		"definition": "Mahonia人名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Bealei 人名。"
+	},
+	{
+		"id": "33",
+		"chinese": "悬铃木（英桐）",
+		"latin": "Platanus acerifolia",
+		"family": "悬铃木科",
+		"category": "悬铃木属",
+		"definition": "Platanus (希)三球悬铃木的古名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "acerifolia叶形象槭树叶（acer槭树属，folia叶）"
+	},
+	{
+		"id": "34",
+		"chinese": "枫香",
+		"latin": "Liquidambar formosana",
+		"family": "金缕梅科",
+		"category": "枫香属",
+		"definition": "Liquidambar，(拉)liquidus液体的+（阿拉伯）ambar琥珀， 指本属植物分泌琥珀色香液。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "formosana 台湾省的"
+	},
+	{
+		"id": "35",
+		"chinese": "杜仲",
+		"latin": "Eucommia ulmoides",
+		"family": "杜仲科",
+		"category": "杜仲属",
+		"definition": "ulmoides像榆树的，指叶形像榆树。"
+	},
+	{
+		"id": "36",
+		"chinese": "榆树",
+		"latin": "Ulmus pumila",
+		"family": "榆科",
+		"category": "榆属",
+		"definition": "Ulmus榆树的古名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "pumila矮小的。可能命名人最早看到的榆树是绿篱状栽培的。"
+	},
+	{
+		"id": "37",
+		"chinese": "榔榆",
+		"latin": "Ulmus parvifolia",
+		"family": "榆科",
+		"category": "榆属",
+		"definition": "parvifolia小叶的（parvi-小的）"
+	},
+	{
+		"id": "38",
+		"chinese": "小叶朴",
+		"latin": "Celtis bungeana",
+		"family": "榆科",
+		"category": "朴属",
+		"definition": "bungeana，人名，邦基（bunge）。"
+	},
+	{
+		"id": "39",
+		"chinese": "榉树（大叶榉）",
+		"latin": "Zelkova schneideriana",
+		"family": "榆科",
+		"category": "榉属",
+		"definition": "Zelkova，人名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Schneideriana，人名，施耐德（Schneider）。"
+	},
+	{
+		"id": "40",
+		"chinese": "桑树",
+		"latin": "Morus alba",
+		"family": "桑科",
+		"category": "桑属",
+		"definition": "Alba，白色的，指果实白色。"
+	},
+	{
+		"id": "41",
+		"chinese": "榕树",
+		"latin": "Ficus microcarpa",
+		"family": "桑科",
+		"category": "榕属",
+		"definition": "Ficus无花果的古名。"
+	},
+	{
+		"id": "",
+		"chinese": "（小叶榕）",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "microcarpa小果的（micro-小的，-carpa果实），指榕树果实小，直径仅8mm。"
+	},
+	{
+		"id": "42",
+		"chinese": "构树",
+		"latin": "Broussonetia papyrifera",
+		"family": "桑科",
+		"category": "构属",
+		"definition": "papyrifera可制纸的，指植株纤维发达"
+	},
+	{
+		"id": "43",
+		"chinese": "胡桃（核桃）",
+		"latin": "Juglans regia",
+		"family": "胡桃科",
+		"category": "胡桃属",
+		"definition": "Juglan，神爱吃的果实，寓意高贵（古罗马主神Jupiter 和果实glans合成）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "regia国王的，指此种核果较高贵"
+	},
+	{
+		"id": "44",
+		"chinese": "栓皮栎",
+		"latin": "Quercus variabilis",
+		"family": "山毛榉科（壳斗科）",
+		"category": "栎属（麻栎属）",
+		"definition": "variabilis易变的"
+	},
+	{
+		"id": "45",
+		"chinese": "槲树",
+		"latin": "Quercus dentata",
+		"family": "山毛榉科（壳斗科）",
+		"category": "栎属（麻栎属）",
+		"definition": "dentata，锯齿的"
+	},
+	{
+		"id": "46",
+		"chinese": "槲栎",
+		"latin": "Quercus aliena",
+		"family": "山毛榉科（壳斗科）",
+		"category": "栎属（麻栎属）",
+		"definition": "aliena （alienus）"
+	},
+	{
+		"id": "47",
+		"chinese": "白桦",
+		"latin": "Betula platyphylla",
+		"family": "桦木科",
+		"category": "桦木属",
+		"definition": "platyphylla阔叶的（platy-宽阔的）"
+	},
+	{
+		"id": "48",
+		"chinese": "牡丹",
+		"latin": "Paeonia suffruticosa",
+		"family": "牡丹科",
+		"category": "牡丹属",
+		"definition": "Paeonia牡丹植物的古名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "suffruticosa亚灌木的。"
+	},
+	{
+		"id": "49",
+		"chinese": "山茶",
+		"latin": "Camellia japonica",
+		"family": "山茶科",
+		"category": "山茶属",
+		"definition": "Camellia人名 Camellus "
+	},
+	{
+		"id": "50",
+		"chinese": "猕猴桃",
+		"latin": "Actinidia chinensis",
+		"family": "猕猴桃科",
+		"category": "猕猴桃属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "51",
+		"chinese": "蒙椴",
+		"latin": "Tilia mongolica",
+		"family": "椴树科",
+		"category": "椴树属",
+		"definition": "mongolica蒙古的。"
+	},
+	{
+		"id": "52",
+		"chinese": "梧桐",
+		"latin": "Firmiana simplex",
+		"family": "梧桐科",
+		"category": "梧桐属",
+		"definition": "Firmiana（人）德国植物学家Karl Joseph von Firmian。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "simplex，不分枝的，指分枝少。"
+	},
+	{
+		"id": "53",
+		"chinese": "木槿",
+		"latin": "Hibiscus syriacus",
+		"family": "锦葵科",
+		"category": "木槿属",
+		"definition": "Hibiscus (希)hibiskos一种沼泽锦葵的古名，传说鸟要取食这类植物"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "syriacus叙利亚的。"
+	},
+	{
+		"id": "54",
+		"chinese": "柽柳",
+		"latin": "Tamarix chinensis",
+		"family": "柽柳科",
+		"category": "柽柳属",
+		"definition": "Tamarix来自圣经tamar，即Palm，多指枣椰树（date palm tree）"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Chinensis中国的。"
+	},
+	{
+		"id": "55",
+		"chinese": "毛白杨",
+		"latin": "Populus tomentosa",
+		"family": "杨柳科",
+		"category": "杨属",
+		"definition": "Populus民众的，大众的，指该属分布广泛。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Tomentosa被绒毛的，指叶片被毛。"
+	},
+	{
+		"id": "56",
+		"chinese": "加拿大杨（加杨）",
+		"latin": "Populus canadensis",
+		"family": "杨柳科",
+		"category": "杨属",
+		"definition": "canadensis加拿大的"
+	},
+	{
+		"id": "57",
+		"chinese": "旱柳",
+		"latin": "Salix matsudana",
+		"family": "杨柳科",
+		"category": "柳属",
+		"definition": "Salix水边的（sal-近，-lis水），指该属喜水湿地。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "matsudana满洲里的。"
+	},
+	{
+		"id": "58",
+		"chinese": "垂柳",
+		"latin": "Salix babylonica",
+		"family": "杨柳科",
+		"category": "柳属",
+		"definition": "babylonica巴比伦的（亚洲西南部一古国）"
+	},
+	{
+		"id": "59",
+		"chinese": "杜鹃花（映山红）",
+		"latin": "Rhododendron simsii",
+		"family": "杜鹃花科",
+		"category": "杜鹃花属",
+		"definition": "Rhododendron (希)rhodon蔷薇花，红色，dendron树木，指某些种类的花红色，或指顶端花簇的外貌。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "simsii人名，Sims姓氏。"
+	},
+	{
+		"id": "60",
+		"chinese": "柿树",
+		"latin": "Diospyros kaki",
+		"family": "柿树科",
+		"category": "柿树属",
+		"definition": "Diospyros (希)Dios神的，神圣的，pyros小麦，谷物，Diospyros意指神的食物，指果味美可食。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Kaki（日）柿子。"
+	},
+	{
+		"id": "61",
+		"chinese": "海桐",
+		"latin": "Pittosporum tobira",
+		"family": "海桐科",
+		"category": "海桐属",
+		"definition": "Pittosporum 指种子藏于有胶粘质的果肉内（Pitto-树脂，sporum种子）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "tobira（日）海桐花俗名。"
+	},
+	{
+		"id": "62",
+		"chinese": "太平花",
+		"latin": "Philadelphus pekinensis",
+		"family": "绣球花科",
+		"category": "山梅花属",
+		"definition": "pekinensis北京的，指原产北京，亦名京山梅花。"
+	},
+	{
+		"id": "63",
+		"chinese": "溲疏",
+		"latin": "Deutzia scabra",
+		"family": "绣球花科",
+		"category": "溲疏属",
+		"definition": "Deutzia人名，荷兰植物赞助家Johann van der Deutz."
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "scabra粗糙的，指叶片粗糙。"
+	},
+	{
+		"id": "64",
+		"chinese": "大花溲疏",
+		"latin": "Deutzia grandiflora",
+		"family": "绣球花科",
+		"category": "溲疏属",
+		"definition": "grandiflora大花的。"
+	},
+	{
+		"id": "65",
+		"chinese": "八仙花",
+		"latin": "Hydrangea macrophylla",
+		"family": "绣球花科",
+		"category": "绣球花属（八仙花属）",
+		"definition": "Hydrangea (希)花序似水杯状（hydro-水，angeion盛器、容器）。"
+	},
+	{
+		"id": "",
+		"chinese": "（绣球花）",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "macrophylla大叶的（macro-大的，phylla叶的）。"
+	},
+	{
+		"id": "66",
+		"chinese": "三桠绣线菊",
+		"latin": "Spiraea trilobata",
+		"family": "蔷薇科",
+		"category": "绣线菊属",
+		"definition": "Spiraea源于希腊文speira"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "trilobata，三裂的。 "
+	},
+	{
+		"id": "67",
+		"chinese": "珍珠梅",
+		"latin": "Sorbaria kirilowii",
+		"family": "蔷薇科",
+		"category": "珍珠梅属",
+		"definition": "Sorbaria源于Sorbus（花楸属）+-aris（属于......的）。指叶形似花楸属植物。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "kirilowii为人名。"
+	},
+	{
+		"id": "68",
+		"chinese": "玫瑰",
+		"latin": "Rosa rugosa",
+		"family": "蔷薇科",
+		"category": "蔷薇属",
+		"definition": "Rosa 意即拉丁词rosa(玫瑰、蔷薇)。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "rugosa源于rugosus，意即多皱纹的。玫瑰叶片表面凹陷而有皱。"
+	},
+	{
+		"id": "69",
+		"chinese": "黄刺玫",
+		"latin": "Rosa xanthina",
+		"family": "蔷薇科",
+		"category": "蔷薇属",
+		"definition": "xanthina，黄色的，指花黄色。"
+	},
+	{
+		"id": "70",
+		"chinese": "木香",
+		"latin": "Rosa banksiae",
+		"family": "蔷薇科",
+		"category": "蔷薇属",
+		"definition": "banksiae源于植物学家人名Banks。"
+	},
+	{
+		"id": "71",
+		"chinese": "棣棠",
+		"latin": "Kerria japonica",
+		"family": "蔷薇科",
+		"category": "棣棠属",
+		"definition": "Kerria源于18世纪英国采集家William Kerr。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "japonica，日本的（源于japonicus）。"
+	},
+	{
+		"id": "72",
+		"chinese": "李",
+		"latin": "Prunus salicina",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "Prunus源于拉丁词prunum（李、梅）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "salicina源于salicinus（象柳的），指叶形狭长。"
+	},
+	{
+		"id": "73",
+		"chinese": "‘紫叶’李",
+		"latin": "Prunus cerasifera‘Pissardii’",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "cerasifera产樱桃的（cerasus樱桃树），指果实似樱桃，"
+	},
+	{
+		"id": "74",
+		"chinese": "山杏（西伯利亚杏）",
+		"latin": "Prunus sibirica",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "sibirica西伯利亚的。"
+	},
+	{
+		"id": "75",
+		"chinese": "梅",
+		"latin": "Prunus mume",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "mume源于日本土名，意即梅。"
+	},
+	{
+		"id": "76",
+		"chinese": "桃",
+		"latin": "Prunus persica",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "persica即桃（源自persicus），意即波斯的（Persia），今伊朗。"
+	},
+	{
+		"id": "77",
+		"chinese": "山桃",
+		"latin": "Prunus davidiana",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "davidiana为人名。"
+	},
+	{
+		"id": "78",
+		"chinese": "榆叶梅",
+		"latin": "Prunus triloba",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "triloba，三浅裂的（源于Trilobatus，Trilobus）。其叶子先端常有三浅裂。tri-词头在拉丁学名中很常见，表示三。"
+	},
+	{
+		"id": "79",
+		"chinese": "毛樱桃",
+		"latin": "Prunus tomentosa",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "tomentosa，被绒毛的（源于tomentosus，），毛樱桃叶片上密被绒毛。"
+	},
+	{
+		"id": "80",
+		"chinese": "樱花",
+		"latin": "Prunus serrulata",
+		"family": "蔷薇科",
+		"category": "李属",
+		"definition": "Serrulata，具细锯齿的，指叶片具有芒刺状锯齿。"
+	},
+	{
+		"id": "81",
+		"chinese": "平枝栒子",
+		"latin": "Cotoneaster horizontalis",
+		"family": "蔷薇科",
+		"category": "栒子属",
+		"definition": "horizontalis水平的，指枝条水平开展。"
+	},
+	{
+		"id": "82",
+		"chinese": "火棘",
+		"latin": "Pyracantha fortuneana",
+		"family": "蔷薇科",
+		"category": "火棘属",
+		"definition": "Pyracantha指浆果红色和枝条（pyros火，akantha刺）"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "fortuneana人名，福琼。"
+	},
+	{
+		"id": "83",
+		"chinese": "山楂",
+		"latin": "Crataegus pinnatifida",
+		"family": "蔷薇科",
+		"category": "山楂属",
+		"definition": "pinnatifida羽状半裂的"
+	},
+	{
+		"id": "84",
+		"chinese": "百华花楸",
+		"latin": "Sorbus pohuashanensis",
+		"family": "蔷薇科",
+		"category": "花楸属",
+		"definition": "pohuashanensis百花山的。"
+	},
+	{
+		"id": "85",
+		"chinese": "石楠",
+		"latin": "Photinia serrulata",
+		"family": "蔷薇科",
+		"category": "石楠属",
+		"definition": "serrulata具锯齿的。"
+	},
+	{
+		"id": "86",
+		"chinese": "木瓜",
+		"latin": "Chaenomeles sinensis",
+		"family": "蔷薇科",
+		"category": "木瓜属",
+		"definition": "sinensis中国的。"
+	},
+	{
+		"id": "87",
+		"chinese": "贴梗海棠",
+		"latin": "Chaenomeles speciosa",
+		"family": "蔷薇科",
+		"category": "木瓜属",
+		"definition": "Chaenomeles (希)chaino裂开，melon苹果。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "speciosa美丽的。"
+	},
+	{
+		"id": "88",
+		"chinese": "海棠花",
+		"latin": "Malus spectabilis",
+		"family": "蔷薇科",
+		"category": "苹果属",
+		"definition": "spectabilis美丽的。"
+	},
+	{
+		"id": "89",
+		"chinese": "杜梨",
+		"latin": "Pyrus betulaefolia",
+		"family": "蔷薇科",
+		"category": "梨属",
+		"definition": "betulaefolia，Betula桦木属，指叶子像桦树（Birch-Leaved Pear Tree ）。 "
+	},
+	{
+		"id": "90",
+		"chinese": "合欢",
+		"latin": "Albizia julibrissin",
+		"family": "含羞草科",
+		"category": "合欢属",
+		"definition": "julibrissin丝树。"
+	},
+	{
+		"id": "91",
+		"chinese": "紫荆",
+		"latin": "Cercis chinensis",
+		"family": "云实科（苏木科）",
+		"category": "紫荆属",
+		"definition": "Cercis (希)kerkis梭子，指荚果似织布用的梭子。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "92",
+		"chinese": "皂荚",
+		"latin": "Gleditsia sinensis",
+		"family": "云实科（苏木科）",
+		"category": "皂荚属",
+		"definition": "sinensis中国的。"
+	},
+	{
+		"id": "93",
+		"chinese": "槐（国槐）",
+		"latin": "Sophora japonica",
+		"family": "蝶形花科",
+		"category": "槐属",
+		"definition": "Sophora (阿)sophera一种具蝶形花的植物俗名。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "japonica日本的。"
+	},
+	{
+		"id": "94",
+		"chinese": "刺槐",
+		"latin": "Robinia pseudoacacia",
+		"family": "蝶形花科",
+		"category": "刺槐属",
+		"definition": "pseudoacacia，Acacia金合欢属，Pseudo-假的，指像金合欢。 "
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": ""
+	},
+	{
+		"id": "95",
+		"chinese": "紫藤",
+		"latin": "Wisteria sinensis",
+		"family": "蝶形花科",
+		"category": "紫藤属",
+		"definition": "Wisteria人名，Wistar美国植物学家。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "sinensis中国的."
+	},
+	{
+		"id": "96",
+		"chinese": "沙枣（桂香柳）",
+		"latin": "Elaeagnus angustifolia",
+		"family": "胡颓子科",
+		"category": "胡颓子属",
+		"definition": "angustifolia窄叶的，狭叶的。"
+	},
+	{
+		"id": "97",
+		"chinese": "紫薇",
+		"latin": "Lagerstroemia indica",
+		"family": "千屈菜科",
+		"category": "紫薇属",
+		"definition": "Lagerstroemia人名Lagerstroem。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "indica印度的。"
+	},
+	{
+		"id": "98",
+		"chinese": "石榴",
+		"latin": "Punica granatum",
+		"family": "石榴科",
+		"category": "石榴属",
+		"definition": "Punica石榴的古名，来自(拉)puniceus，绯红色的，深红色的，指花的颜色。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "granatum多籽的。"
+	},
+	{
+		"id": "99",
+		"chinese": "红瑞木",
+		"latin": "Cornus alba",
+		"family": "山茱萸科",
+		"category": "梾木属",
+		"definition": "alba白色的。指该花和果均为白色。"
+	},
+	{
+		"id": "100",
+		"chinese": "四照花",
+		"latin": "Dendrobenthamia japonica var.chinensis",
+		"family": "山茱萸科",
+		"category": "四照花属",
+		"definition": "japonica日本的。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "101",
+		"chinese": "卫矛",
+		"latin": "Euonymus alatus",
+		"family": "卫矛科",
+		"category": "卫矛属",
+		"definition": "alatus具翅的。"
+	},
+	{
+		"id": "102",
+		"chinese": "丝棉木",
+		"latin": "Euonymus bungeanus(E. maackii)",
+		"family": "卫矛科",
+		"category": "卫矛属",
+		"definition": "bungeanus ，人名。 "
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": ""
+	},
+	{
+		"id": "103",
+		"chinese": "大叶黄杨",
+		"latin": "Euonymus japonicus",
+		"family": "卫矛科",
+		"category": "卫矛属",
+		"definition": "Euonymus希腊一神名，(希)eu良好的，onyma(onoma)名称、名声。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Japonicus，日本的。"
+	},
+	{
+		"id": "104",
+		"chinese": "冬青",
+		"latin": "Ilex chinensis",
+		"family": "冬青科",
+		"category": "冬青属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "105",
+		"chinese": "黄杨",
+		"latin": "Buxus sinica",
+		"family": "黄杨科",
+		"category": "黄杨属",
+		"definition": "Buxus (拉)锦熟黄杨的古名，来自(希)pyknos茂盛的，指该属植物分枝多而密集。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "sinica中国的。"
+	},
+	{
+		"id": "106",
+		"chinese": "乌桕",
+		"latin": "Sapium sebiferum",
+		"family": "大戟科",
+		"category": "乌桕属",
+		"definition": "Sebiferum，油的。是中国四大木本油料之一，种子含油量较高。"
+	},
+	{
+		"id": "107",
+		"chinese": "枣",
+		"latin": "Ziziphus jujuba",
+		"family": "鼠李科",
+		"category": "枣属",
+		"definition": "(Jujube"
+	},
+	{
+		"id": "108",
+		"chinese": "冻绿",
+		"latin": "Rhamnus utilis",
+		"family": "鼠李科",
+		"category": "鼠李属",
+		"definition": "utilis，有用的。 "
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": ""
+	},
+	{
+		"id": "109",
+		"chinese": "葡萄",
+		"latin": "Vitis vinifera",
+		"family": "葡萄科",
+		"category": "葡萄属",
+		"definition": "vinifera ，源自拉丁语vinifer，产酒的（wine-producing）"
+	},
+	{
+		"id": "110",
+		"chinese": "爬山虎",
+		"latin": "Parthenocissus tricuspidata",
+		"family": "葡萄科",
+		"category": "爬山虎属",
+		"definition": "Parthenocissus (希)北美洲五叶爬山虎的通称（parthenos处女，kissos常春藤）。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Tricuspidata三尖头的，指叶先端三裂（tri-三，cuspidata具尖头的）"
+	},
+	{
+		"id": "111",
+		"chinese": "栾树",
+		"latin": "Koelreuteria paniculata",
+		"family": "无患子科",
+		"category": "栾树属",
+		"definition": "Koelreuteria德国植物学家Koelreuter。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "paniculata圆锥状的，指圆锥花序。"
+	},
+	{
+		"id": "112",
+		"chinese": "七叶树",
+		"latin": "Aesculus chinensis",
+		"family": "七叶树科",
+		"category": "七叶树属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "113",
+		"chinese": "黄栌",
+		"latin": "Cotinus coggygria",
+		"family": "漆树科",
+		"category": "黄栌属",
+		"definition": ""
+	},
+	{
+		"id": "114",
+		"chinese": "火炬树",
+		"latin": "Rhus typhina",
+		"family": "漆树科",
+		"category": "盐肤木属",
+		"definition": ""
+	},
+	{
+		"id": "115",
+		"chinese": "黄连木",
+		"latin": "Pistacia chinensis",
+		"family": "漆树科",
+		"category": "黄连木属",
+		"definition": ""
+	},
+	{
+		"id": "116",
+		"chinese": "元宝枫",
+		"latin": "Acer truncatum",
+		"family": "槭树科",
+		"category": "槭树属",
+		"definition": "Acer槭树的古名，来自于凯尔特语，ac（尖端，尖状物），指其木材坚硬，古代用以制作长矛和矛状器具的尖头。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "truncatum截形的。"
+	},
+	{
+		"id": "117",
+		"chinese": "鸡爪槭",
+		"latin": "Acer palmatum",
+		"family": "槭树科",
+		"category": "槭树属",
+		"definition": "palmatum掌状的"
+	},
+	{
+		"id": "118",
+		"chinese": "臭椿",
+		"latin": "Ailanthus altissima",
+		"family": "苦木科",
+		"category": "臭椿属",
+		"definition": "altissima极高的。"
+	},
+	{
+		"id": "119",
+		"chinese": "香椿",
+		"latin": "Toona sinensis",
+		"family": "楝科",
+		"category": "香椿属",
+		"definition": "sinensis中国的。"
+	},
+	{
+		"id": "120",
+		"chinese": "楝树",
+		"latin": "Melia azedarach",
+		"family": "楝科",
+		"category": "楝属",
+		"definition": "French azédarach"
+	},
+	{
+		"id": "121",
+		"chinese": "柚",
+		"latin": "Citrus grandis",
+		"family": "芸香科",
+		"category": "柑橘属",
+		"definition": "grandis大的，指果实巨大。"
+	},
+	{
+		"id": "122",
+		"chinese": "夹竹桃",
+		"latin": "Nerium indicum",
+		"family": "夹竹桃科",
+		"category": "夹竹桃属",
+		"definition": "Nerium (希)nerion夹竹桃属植物的古名，源自(希)neros潮湿，指本属植物生长环境多喜湿润。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "indicum印度的。"
+	},
+	{
+		"id": "123",
+		"chinese": "枸杞",
+		"latin": "Lycium chinense",
+		"family": "茄科",
+		"category": "枸杞属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "124",
+		"chinese": "小紫珠",
+		"latin": "Callicarpa dichotoma",
+		"family": "马鞭草科",
+		"category": "紫珠属",
+		"definition": "In Greek"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "dichotoma拟二歧分枝的"
+	},
+	{
+		"id": "125",
+		"chinese": "桂花",
+		"latin": "Osmanthus fragrans",
+		"family": "木犀科",
+		"category": "木犀属",
+		"definition": "Osmanthus(希)指花芳香（osme香味"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "fragrans芳香的。"
+	},
+	{
+		"id": "126",
+		"chinese": "女贞",
+		"latin": "Ligustrum lucidum",
+		"family": "木犀科",
+		"category": "女贞属",
+		"definition": "ligustrum水蜡树的古名，源自(拉)ligo绑缚、捆绑，指枝条柔韧，可供编织材料。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "lucidum光亮的，指叶片有光泽。"
+	},
+	{
+		"id": "127",
+		"chinese": "金叶女贞",
+		"latin": "Ligustrum×vicaryi",
+		"family": "木犀科",
+		"category": "女贞属",
+		"definition": ""
+	},
+	{
+		"id": "128",
+		"chinese": "茉莉",
+		"latin": "Jasminum sambac",
+		"family": "木犀科",
+		"category": "茉莉属",
+		"definition": ""
+	},
+	{
+		"id": "129",
+		"chinese": "迎春",
+		"latin": "Jasminum nudiflorum",
+		"family": "木犀科",
+		"category": "茉莉属",
+		"definition": "nudiflorum裸花的，指花先叶开放。"
+	},
+	{
+		"id": "130",
+		"chinese": "紫丁香",
+		"latin": "Syringa oblata",
+		"family": "木犀科",
+		"category": "丁香属",
+		"definition": "Syringa (希) 管子（syrinx"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "oblata扁圆形的，指叶形。"
+	},
+	{
+		"id": "131",
+		"chinese": "连翘",
+		"latin": "Forsythia suspensa",
+		"family": "木犀科",
+		"category": "连翘属",
+		"definition": "suspensa下垂的，指茎秆蔓长。"
+	},
+	{
+		"id": "132",
+		"chinese": "白蜡树",
+		"latin": "Fraxinus chinensis",
+		"family": "木犀科",
+		"category": "白蜡树属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "133",
+		"chinese": "毛泡桐",
+		"latin": "Paulownia tomentosa",
+		"family": "玄参科",
+		"category": "泡桐属",
+		"definition": "tomentosa有毛的。"
+	},
+	{
+		"id": "134",
+		"chinese": "梓树",
+		"latin": "Catalpa ovata",
+		"family": "紫葳科",
+		"category": "梓树属",
+		"definition": "ovata卵形的，指叶形"
+	},
+	{
+		"id": "135",
+		"chinese": "楸树",
+		"latin": "Catalpa bungei",
+		"family": "紫葳科",
+		"category": "梓树属",
+		"definition": "Bungei人名"
+	},
+	{
+		"id": "136",
+		"chinese": "凌霄",
+		"latin": "Campsis grandiflora",
+		"family": "紫葳科",
+		"category": "凌霄属",
+		"definition": "Campsis（希）kampsis弯曲， 指茎弯曲。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "grandifloras大花的。"
+	},
+	{
+		"id": "137",
+		"chinese": "栀子花",
+		"latin": "Gardenia jasminoides",
+		"family": "茜草科",
+		"category": "栀子属",
+		"definition": "Gardenia人名Garden。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "jasminoides像茉莉花的（jasmin-茉莉花，-oides像）。"
+	},
+	{
+		"id": "138",
+		"chinese": "糯米条",
+		"latin": "Abelia chinensis",
+		"family": "忍冬科",
+		"category": "六道木属",
+		"definition": "chinensis中国的。"
+	},
+	{
+		"id": "139",
+		"chinese": "蝟实",
+		"latin": "Kolkwitzia amabilis",
+		"family": "忍冬科",
+		"category": "蝟实属",
+		"definition": "amabilis可爱的。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Latin Meaning: The name Amabilis is a Latin baby name. In Latin the meaning of the name Amabilis is: Beautiful or loving"
+	},
+	{
+		"id": "140",
+		"chinese": "锦带花",
+		"latin": "Weigela florida",
+		"family": "忍冬科",
+		"category": "锦带花属",
+		"definition": "florida多花的。"
+	},
+	{
+		"id": "141",
+		"chinese": "海仙花",
+		"latin": "Weigela coraeensis",
+		"family": "忍冬科",
+		"category": "锦带花属",
+		"definition": ""
+	},
+	{
+		"id": "142",
+		"chinese": "木本绣球",
+		"latin": "Viburnum macrocephalum",
+		"family": "忍冬科",
+		"category": "荚蒾属",
+		"definition": "Viburnum一种荚蒾的古名，(拉)vieo编、扎、绑，指枝条柔韧，可供编织绑扎之用。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "Macro--大的；cephalum--头部"
+	},
+	{
+		"id": "143",
+		"chinese": "天目琼花",
+		"latin": "Viburnum sargentii",
+		"family": "忍冬科",
+		"category": "荚蒾属",
+		"definition": "sargentii人名。"
+	},
+	{
+		"id": "144",
+		"chinese": "接骨木",
+		"latin": "Sambucus williamsii",
+		"family": "忍冬科",
+		"category": "接骨木属",
+		"definition": "williamsii人名。"
+	},
+	{
+		"id": "145",
+		"chinese": "金银花",
+		"latin": "Lonicera japonica",
+		"family": "忍冬科",
+		"category": "忍冬属",
+		"definition": "Lonicera（人）Adam Lonicer。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "japonica人名。"
+	},
+	{
+		"id": "146",
+		"chinese": "金银木",
+		"latin": "Lonicera maackii",
+		"family": "忍冬科",
+		"category": "忍冬属",
+		"definition": "Lonicera（人）Adam Lonicer。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "maackii人名。"
+	},
+	{
+		"id": "147",
+		"chinese": "棕榈",
+		"latin": "Trachycarpus fortunei",
+		"family": "棕榈科",
+		"category": "棕榈属",
+		"definition": "Trachycarpus指种子表面粗糙，(希)trachy粗的，粗糙的，karpos果。 "
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": " fortunei人名。"
+	},
+	{
+		"id": "148",
+		"chinese": "毛竹",
+		"latin": "Phyllostachys edulis ",
+		"family": "禾本科",
+		"category": "刚竹属",
+		"definition": "edulis 可食用的，指竹笋。"
+	},
+	{
+		"id": "149",
+		"chinese": "早园竹",
+		"latin": "Phyllostachys propinqua",
+		"family": "禾本科",
+		"category": "刚竹属",
+		"definition": "Propinqua-附近的邻居的near"
+	},
+	{
+		"id": "150",
+		"chinese": "孝顺竹",
+		"latin": "Bambusa multiplex",
+		"family": "禾本科",
+		"category": "孝顺竹属",
+		"definition": "Bambusa，竹燃烧时爆破声。"
+	},
+	{
+		"id": "",
+		"chinese": "",
+		"latin": "",
+		"family": "",
+		"category": "",
+		"definition": "multiplex多倍的"
+	},
+	{
+		"id": ""
+	}
+]}

@@ -8,7 +8,7 @@ export default function Card(props) {
   const [flip, setFlip] = React.useState(props.initflip)
   const some = {id:1, chinese:'加载中...', latin:'', family:'', category:''}
   const data = props.data
-  const keylist = Object.keys(data).slice(2, Object.keys(data).length)
+  // const keylist = Object.keys(data).slice(2, Object.keys(data).length)
 
   React.useEffect(() => {setFlip(true)}, [])
   
@@ -37,6 +37,7 @@ export default function Card(props) {
         <Text style={{fontStyle: 'italic'}}>{data.latin}</Text>
         <View style={{height: 3}}></View>
         <Text>{data.family} {data.category}</Text>
+        <Text>{data.definition}</Text>
       </View>
     )
   }

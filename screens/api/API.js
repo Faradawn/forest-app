@@ -1,16 +1,20 @@
-import * as React from 'react'
-import { Alert, Button, Text, View } from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { withSafeAreaInsets } from 'react-native-safe-area-context';
 import wordset1 from '../data/wordset1.json'
 import wordset2 from '../data/wordset2.json'
+import definition1 from '../data/definition1.json'
+import definition2 from '../data/definition2.json'
 import gold1 from '../data/gold1'
 
-const allsets = [wordset1, wordset2, gold1]
+const wordsets = [wordset1, wordset2, gold1]
+const definitionsets = [definition1, definition2]
 
 export const loadWordSet = async(id) => {
-  return allsets[id-1].Sheet1
+  if(id < 100){
+    return wordsets[id-1].Sheet1
+  } 
+  if (id > 100) {
+    return definitionsets[id%100 - 1].Sheet1
+  }
 }
 
 // input is an object

@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { Button, Text, View, StyleSheet } from 'react-native'
-import { TextInput, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import styles, { theme } from '../../assets/styles'
 import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
 import ProgressBar from './ProgressBar'
 import {loadWordSet, setProgress, getProgress, buildArray} from '../api/API'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+
 
 export default function Cards(props) {
   // loading data
@@ -50,7 +50,6 @@ export default function Cards(props) {
   async function get() {
     const value = await getProgress(STORAGE_KEY)
     const obj = JSON.parse(value)
-    console.log('get data')
     if (obj)
      { setCount(obj.progress)} 
     else
@@ -61,7 +60,6 @@ export default function Cards(props) {
     setCount(num)
     const obj = {progress: num, starred: arrayStar, totalLength: loaded.length}
     setProgress(STORAGE_KEY, obj)
-    console.log('set data')
   }
 
   // next and back button

@@ -17,6 +17,11 @@ export default StyleSheet.create({
     paddingBottom: 20,
     flex: 1,
   },
+  center: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
   search: {
     borderWidth: 1,
     borderRadius: 5,

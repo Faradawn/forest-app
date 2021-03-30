@@ -43,7 +43,7 @@ function HomePage({ navigation }) {
         <ProgressBar progress={fraction2}/>
 
         <View style={{height: 90}}></View>
-        <TouchableOpacity style={{alignItems:'center'}}onPress={() => get()}>
+        <TouchableOpacity style={{alignItems:'center'}}onPress={() => getFraction()}>
           <View style={{height: 230, width: 130, }}></View>
         </TouchableOpacity>
 
