@@ -27,7 +27,7 @@ export const HomeQuote = () => {
         source={require('../../assets/wallpaper/card-austere.png')}
         imageStyle={{borderRadius: theme.border}}
         style={style1.imageCard}>
-          <Text> {date.getMonth()} 月 {date.getDate()} 日</Text>
+          <Text> {date.getMonth()+1} 月 {date.getDate()} 日</Text>
           <Text>加油，奋斗的你</Text>
     </ImageBackground>  
     )
