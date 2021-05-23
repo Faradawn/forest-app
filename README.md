@@ -1,3 +1,3 @@
 # forest-app
 
-![](demo1.gif)
+![](./assets/demo1.gif)
