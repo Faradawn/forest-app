@@ -6,6 +6,8 @@ import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
 import ProgressBar from './ProgressBar'
 import {loadWordSet, setProgress, getProgress, buildArray} from '../api/API'
+import { Audio } from 'expo-av'
+import { Sound } from 'expo-av/build/Audio'
 
 
 export default function Cards(props) {
@@ -77,6 +79,15 @@ export default function Cards(props) {
     setOneStar(arrayStar[count-2])
   }
 
+  const [sound, setSound] = React.useState();
+
+  async function playSound(){
+    const {sound} = await Audio.Sound.createAsync(require('../../assets/raw_assets/4_voice/0001.mp3'));
+    setSound(sound);
+    await sound.playAsync(); 
+    console.log('played sound');
+  }
+
   return(
     <View style={styles.container}>
       <ProgressBar progress={count/loaded.length} />
@@ -99,6 +110,16 @@ export default function Cards(props) {
         <TouchableOpacity onPress={() => (count > 1) ? (set(count-1), back()) : {}}>
             <Ionicons name="caret-back" size={50} color="black" />
         </TouchableOpacity>
+        <View style={{width:100}}/>
+
+
+
+
+        <Button onPress={playSound} title='读音'> </Button>
+
+
+
+
         <View style={{width:100}}/>
         <TouchableOpacity onPress={() => (count < loaded.length) ? (set(count+1), next()) : {}}>
             <Ionicons name="caret-forward" size={50} color="black" />

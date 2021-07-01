@@ -9,6 +9,11 @@ import Settings from './screens/Settings';
 import Home from './screens/Home'
 import Cards from './screens/Cards'
 import API from './screens/api/API'
+// new LeanCloud
+import AV from 'leancloud-storage/core';
+import * as adapters from '@leancloud/platform-adapters-react-native';
+AV.setAdapters(adapters);
+
 const Tabs = createBottomTabNavigator()
 
 
