@@ -22,10 +22,14 @@ Version One: a hard-coded flashcard app
 - [x] store progress locally
 - [x] store starred locally
 - [x] Xcode build and submit to app store
-
+<br></br>
 Version Two: backend implementation
 - [ ] connect to a firebase db
 - [ ]
+<br></br>
+问题集：
+- [ ] IOS simulator expo audio? 点击静音和和不静音按钮
+
 
 
 ### Thanks for reading and wish you a great day!
