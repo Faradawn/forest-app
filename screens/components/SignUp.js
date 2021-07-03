@@ -16,11 +16,15 @@ function handleSignUp({username, password}) {
 }
 
 function test(){
-  const query = new AV.Query('Quotes');
-  query.equalTo('tags', ['chilren','sth']);
-  query.find().then().then((obj) => {
-    console.log(obj[0]);
+  const AssetDelivery = AV.Object.extend('AssetDelivery');
+  const asset = new AssetDelivery();
+  asset.set('type', 'about-main-text');
+  asset.set('number', 1);
+  asset.set('text', '这是一个拉丁名的app');
+  asset.save().then(obj=>{
+    console.log('上传', obj);
   })
+  .catch(error=>console.log(error));
 }
 
 
