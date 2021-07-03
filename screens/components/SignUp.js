@@ -1,42 +1,47 @@
 import React from 'react'
 import { View, TextInput, Text, StyleSheet, Button } from 'react-native'
 import { theme } from '../../assets/styles'
-// import LeanCloud from '../api/LeanCloudInit'
+
 import AV from 'leancloud-storage/core';
 
 
-
-function handleSignUp({username, password}) {
-  User.signUp({username, password})
-    .then((userObj) => {
-      setUser(userObj);
-      setErrMsg('');
-    })
-    .catch((error) => setErrMsg(error.message));
-}
-
-function test(){
-  const AssetDelivery = AV.Object.extend('AssetDelivery');
-  const asset = new AssetDelivery();
-  asset.set('type', 'about-main-text');
-  asset.set('number', 1);
-  asset.set('text', '这是一个拉丁名的app');
-  asset.save().then(obj=>{
-    console.log('上传', obj);
-  })
-  .catch(error=>console.log(error));
-}
-
-
-
 const SignUp = () => {
-  const [phone, setPhone] = React.useState(null);
+  const [username, SetUsername] = React.useState('');
+  const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
+  
 
-  function handleSubmit(){
-    console.log(phone, password);
+  function handleSignUp(){
+    if(username && phone && password){
+      const user = new AV.User();
+      user.setUsername(username);
+      user.setPassword(password);
+      user.setMobilePhoneNumber(`+86${phone}`);
+  
+      user.signUp().then((user) => {
+        console.log('注册成功',user);
+        setPhone(user.phone);
+        
+      })
+      .catch((error) => console.log(error));
 
+
+
+    } else {
+      alert('有没有漏填的项～')
+    }
+  
+  
   }
+
+  function checkCurrent(){
+    const current = AV.User.currentAsync();
+    if(current){
+
+      console.log(current);
+    }
+  }
+
 
   return(
     <View style={styles.container}>
@@ -49,6 +54,12 @@ const SignUp = () => {
         keyboardType='numeric'
       />
       <TextInput 
+        placeholder='用户名'
+        style={styles.input}
+        onChangeText={SetUsername}
+        value={username}
+      />
+      <TextInput 
         placeholder='密码'
         style={styles.input}
         onChangeText={SetPassword}
@@ -56,8 +67,13 @@ const SignUp = () => {
         autoCapitalize='none'
       />
 
-      <Button onPress={handleSubmit} title='注册'/>
-      <Button onPress={test} title='提交名言'/>
+      <Button onPress={handleSignUp} title='注册'/>
+
+      <Text>{username}</Text>
+      <Text>{phone}</Text>
+      <Text>{password}</Text>
+
+      <Button title='检查现在用户' onPress={checkCurrent} />
 
 
     </View>
