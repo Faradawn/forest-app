@@ -36,13 +36,13 @@ const AppTabsScreen = () => (
 
 
 export default function App() {
-  const load = false;
+  const loading = true;
 
   LeanCloudInit();
 
   return (
     <NavigationContainer>
-      <Auth/>
+       <Auth/> 
       
     </NavigationContainer>
 

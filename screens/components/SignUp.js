@@ -16,11 +16,14 @@ function handleSignUp({username, password}) {
 }
 
 function test(){
-  const query = new AV.Query('Quotes');
-  query.equalTo('tags', ['chilren','sth']);
-  query.find().then().then((obj) => {
-    console.log(obj[0]);
-  })
+  const About = AV.Object.extend('About');
+  const about = new About();
+  about.set('type', 'about-main-text');
+  about.set('number', '1');
+  about.set('text', '这个是一套/园林植物拉丁学名单词记忆卡/帮助风景园林、园林、观赏园艺专业的朋友；/北林考研得力助手,/唯愿帮你渡过 “拉丁之河”，/早日上岸，修成正果！/祝度过愉快的一天！');
+  about.save().then((obj) => {
+    console.log('保存的: ', obj);
+  }, error => console.log(error));
 }
 
 
