@@ -10,15 +10,6 @@ export default function LeanCloudInit(){
   AV.setAdapters(adapters);
   
   AV.init({appId, appKey, serverURL});
-
-  const TestObject = AV.Object.extend('TestObject');
-  const testObject = new TestObject();
-  testObject.set('word2', 'Hello world2!');
-  testObject.save().then((testObject) => {
-    console.log('保存成功2。', testObject)
-  });
-
-
 }
 
 
