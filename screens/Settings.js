@@ -5,12 +5,16 @@ import styles, {theme} from '../assets/styles'
 
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { AuthContext } from './api/context'
 
 
 const Stack = createStackNavigator();
 
 
 function SettingPage({ navigation }) {
+
+  const { signOut } = React.useContext(AuthContext);
+
   return (
     <ImageBackground style={style1.settingPage} source={require('../assets/wallpaper/bg-setting.png')}>
       <Button title='关于' onPress={() => navigation.navigate('关于我们')}></Button>
@@ -18,6 +22,11 @@ function SettingPage({ navigation }) {
       <Button 
         title='清除进度和收藏'
         onPress={() => AsyncStorage.clear()}/>
+      <View style={{height: 30}}/>
+
+      <Button 
+        title='退出登陆'
+        onPress={() => signOut()}/>
     </ImageBackground>
 
   )

@@ -3,6 +3,7 @@ import { View, TextInput, Text, StyleSheet, Button } from 'react-native'
 import { theme } from '../../assets/styles'
 
 import AV from 'leancloud-storage/core';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 const SignUp = () => {
@@ -45,7 +46,9 @@ const SignUp = () => {
 
   return(
     <View style={styles.container}>
-      <Text>注册这里</Text>
+
+      <Text style={styles.headerText}>在这里注册</Text>
+
       <TextInput 
         placeholder='手机号'
         style={styles.input}
@@ -66,14 +69,13 @@ const SignUp = () => {
         value={password}
         autoCapitalize='none'
       />
+      <TouchableOpacity onPress={handleSignUp}>
+        <Text> Let's Go! </Text>
+      </TouchableOpacity>
+      {/* 新建function username，传入参数 props to next page,  */}
 
-      <Button onPress={handleSignUp} title='注册'/>
+      <Text style={styles.smallText} >已有用户？点我登陆</Text>
 
-      <Text>{username}</Text>
-      <Text>{phone}</Text>
-      <Text>{password}</Text>
-
-      <Button title='检查现在用户' onPress={checkCurrent} />
 
 
     </View>
@@ -85,15 +87,27 @@ export default SignUp;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    marginTop: theme.marginTop + 30,
+    marginLeft: theme.padding,
   },
 
   input: {
     height: 40,
     width: theme.width-50,
-    margin: 20,
+    marginBottom: 20,
     paddingLeft: 15,
     borderWidth: 1,
     alignItems: 'center',
   },
+
+  headerText: {
+    fontSize: 30,
+    letterSpacing: 10,
+    marginBottom: 30,
+  },
+
+  smallText: {
+    color: 'black',
+  }
 });
