@@ -23,9 +23,8 @@ const RootStackScreen = ({ userToken }) => (
 
 export default function App() {
   const [userToken, SetUserToken] = React.useState(null);
-  const load = false;
 
-  const authContext = React.useMemo(() => {
+  const authMemo = React.useMemo(() => {
     return {
       signIn: () => {
         SetUserToken('abcd');
@@ -43,7 +42,7 @@ export default function App() {
   // LeanCloudInit();
 
   return (
-    <AuthContext.Provider value={authContext}>
+    <AuthContext.Provider value={authMemo}>
       <NavigationContainer>
       
         <RootStackScreen userToken={userToken}/>

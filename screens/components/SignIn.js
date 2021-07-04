@@ -19,7 +19,7 @@ const SignIn = () => {
 
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text> sign in </Text>
       <Button title='检查现在用户' onPress={checkCurrent} />
       <Button title='测试登陆' onPress={() => signIn()}/>
@@ -32,5 +32,6 @@ export default SignIn;
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    paddingTop: theme.marginTop,
   }
 })
