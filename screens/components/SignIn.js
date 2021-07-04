@@ -1,50 +1,62 @@
-import React from 'react'
-import { View, TextInput, Text, StyleSheet, Button, ImageBackground } from 'react-native'
+import React, { useContext } from 'react'
+import { View, TextInput, Text, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
-
-import AV from 'leancloud-storage/core';
 import { AuthContext } from '../api/context';
-import { ThemeProvider } from '@react-navigation/native';
-
+import AV from 'leancloud-storage/core';
 
 // 第一页面：Welcome
-export const Welcome = ({navigation}) => (
-  <View style={styles.container} >
-    <TouchableOpacity>
-      <ImageBackground
-        source={require('../../assets/images/welcome-flower.jpg')}
-        imageStyle={{borderRadius: theme.border}}
-        style={styles.imageCard}/>
-    </TouchableOpacity>
+export const Welcome = ({navigation}) => {
 
-    <TouchableOpacity 
-      style={styles.signupButton}
-      onPress={() => navigation.navigate('注册')}>
-      <Text style={styles.signUpText} > 注册</Text>
-    </TouchableOpacity>
+  const { signIn } = useContext(AuthContext);
+  const token = 'aaaa';
 
-    <TouchableOpacity 
-      style={styles.loginButton}
-      onPress={() => navigation.navigate('登陆')}>
-      <Text style={styles.loginText} > 登陆</Text>
-    </TouchableOpacity>
+  return (
+    <View style={styles.container} >
+      <TouchableOpacity>
+        <ImageBackground
+          source={require('../../assets/images/welcome-flower.jpg')}
+          imageStyle={{borderRadius: theme.border}}
+          style={styles.imageCard}/>
+      </TouchableOpacity>
 
-    <TouchableOpacity>
-      <Text style={styles.bottomText}>等不及了？直接进入</Text>
-    </TouchableOpacity>
-  </View>
-)
+      <TouchableOpacity 
+        style={styles.signupButton}
+        onPress={() => navigation.navigate('注册')}>
+        <Text style={styles.signUpText} > 注册</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        style={styles.loginButton}
+        onPress={() => navigation.navigate('登陆')}>
+        <Text style={styles.loginText} > 登陆</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity 
+        onPress={() => signIn(token)}>
+        <Text style={styles.bottomText}>等不及了？直接进入</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 // 第二页面：注册新用户
-export const SignUp = () => {
+export const SignUp = ({navigation}) => {
   const [username, SetUsername] = React.useState('');
   const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
+  const [isLoading, setLoading] = React.useState(false);
+  const token = 'signNewToken';
+
+  // const { signMe } = React.useContext(AuthContext);
   
   function handleSignUp(){
+    if(isLoading){
+      return;
+    }
     if(username && phone && password){
+      setLoading(true);
       const user = new AV.User();
       user.setUsername(username);
       user.setPassword(password);
@@ -53,11 +65,25 @@ export const SignUp = () => {
       user.signUp().then((user) => {
         console.log('注册成功',user);
         setPhone(user.phone);
+        setLoading(false);
+        
         
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setLoading(false)
+        console.log('错误是', error);
+        if(error.code === 127){
+          alert('手机号不太合规？');
+        } else if(error.code === 214){
+          alert('手机好像注册过了？');
+        } else {
+          alert(error.message);
+        }
+      });
+
     } else {
       alert('有没有漏填的项～')
+      setLoading(false);
     }
 
   }
@@ -72,6 +98,11 @@ export const SignUp = () => {
 
   return(
     <View style={styles.signupContainer}>
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={()=>navigation.navigate('欢迎')}>
+        <Ionicons name='arrow-back' size={20} color='grey'/>
+      </TouchableOpacity>
 
       <Text style={styles.headerText}>快来，{'\n'}在这里被欢迎！</Text>
       <View style={{height: 30}}></View>
@@ -106,30 +137,27 @@ export const SignUp = () => {
       {/* one line flex */}
       <View style={styles.secondLine}>
         <Text style={styles.headerText}>注册</Text>
-        <TouchableOpacity onPress={handleSignUp}>
+        <TouchableOpacity onPress={() => handleSignUp()}>
           <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
+          <ActivityIndicator animating={isLoading} hidesWhenStopped/>
         </TouchableOpacity>
-
       </View>
-      {/* 新建function username，传入参数 props to next page,  */}
       <View style={{height: 40}}></View>
-      <TouchableOpacity>
-
+      <TouchableOpacity onPress={()=>navigation.navigate('登陆')}>
         <Text style={styles.smallText} >已有用户？点我登陆</Text>
       </TouchableOpacity>
-
-
     </View>
   )
 } 
 
 // 第三页面：登陆老用户
-export const SignIn = () => {
+export const SignIn = ({navigation}) => {
 
   const { signIn } = React.useContext(AuthContext);
 
   const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
+  const token = 'aaaa';
 
   function checkCurrent(){
     const current = AV.User.currentAsync();
@@ -140,6 +168,11 @@ export const SignIn = () => {
 
   return (
     <View style={styles.signupContainer}>
+      <TouchableOpacity 
+        style={styles.backButton}
+        onPress={() => navigation.navigate('欢迎')}>
+        <Ionicons name='arrow-back' size={20} color='grey'/>
+      </TouchableOpacity>
       <Text style={styles.headerText}>又见面，{'\n'}回到温暖的家！</Text>
       <View style={{height: 30}}></View>
 
@@ -164,14 +197,13 @@ export const SignIn = () => {
       {/* one line flex */}
       <View style={styles.secondLine}>
         <Text style={styles.headerText}>登入</Text>
-        <TouchableOpacity onPress={()=>{console.log('login')}}>
+        <TouchableOpacity onPress={()=>{signIn(token)}}>
           <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
         </TouchableOpacity>
-
       </View>
 
       <View style={{height: 40}}></View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('注册')}>
         <Text style={styles.smallText} >新来的？点我注册</Text>
       </TouchableOpacity>
       
@@ -191,6 +223,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingLeft: 50,
     paddingTop: theme.marginTop+20,
+  },
+
+  backButton:{
+    top: -10,
+
   },
 
   // 第一页：欢迎

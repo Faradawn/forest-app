@@ -22,18 +22,16 @@ const RootStackScreen = ({ userToken }) => (
 
 
 export default function App() {
-  const [userToken, SetUserToken] = React.useState(null);
+  const [sessionToken, setSessionToken] = React.useState(null);
 
   const authMemo = React.useMemo(() => {
     return {
-      signIn: () => {
-        SetUserToken('abcd');
-      },
-      signUp: () => {
-        SetUserToken('efgh');
+      signIn: (token) => {
+        setSessionToken(token);
+        console.log('signed up token is: ', token);
       },
       signOut: () => {
-        SetUserToken(null);
+        setSessionToken(null);
       }
 
     }
@@ -45,7 +43,7 @@ export default function App() {
     <AuthContext.Provider value={authMemo}>
       <NavigationContainer>
       
-        <RootStackScreen userToken={userToken}/>
+        <RootStackScreen userToken={sessionToken}/>
         
       </NavigationContainer>
     </AuthContext.Provider>
