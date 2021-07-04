@@ -12,7 +12,6 @@ import { ThemeProvider } from '@react-navigation/native';
 // 第一页面：Welcome
 export const Welcome = ({navigation}) => (
   <View style={styles.container} >
-
     <TouchableOpacity>
       <ImageBackground
         source={require('../../assets/images/welcome-flower.jpg')}
@@ -20,24 +19,21 @@ export const Welcome = ({navigation}) => (
         style={styles.imageCard}/>
     </TouchableOpacity>
 
-    <Text>欢迎来到拉丁园</Text>
-
     <TouchableOpacity 
       style={styles.signupButton}
       onPress={() => navigation.navigate('注册')}>
-      <Text style={styles.signUpText} 
-      > 注册</Text>
+      <Text style={styles.signUpText} > 注册</Text>
     </TouchableOpacity>
 
     <TouchableOpacity 
       style={styles.loginButton}
       onPress={() => navigation.navigate('登陆')}>
-      <Text style={styles.loginText} 
-      > 登陆</Text>
+      <Text style={styles.loginText} > 登陆</Text>
     </TouchableOpacity>
 
-    <Text style={styles.bottomText} 
-    >等不及了，让我进去</Text>
+    <TouchableOpacity>
+      <Text style={styles.bottomText}>等不及了？直接进入</Text>
+    </TouchableOpacity>
   </View>
 )
 
@@ -132,34 +128,56 @@ export const SignIn = () => {
 
   const { signIn } = React.useContext(AuthContext);
 
+  const [phone, setPhone] = React.useState('');
+  const [password, SetPassword] = React.useState('');
+
   function checkCurrent(){
     const current = AV.User.currentAsync();
     if(current){
-
       console.log(current);
     }
   }
 
-
   return (
-    <View style={styles.container}>
-      <Text> sign in </Text>
-      <Button title='检查现在用户' onPress={checkCurrent} />
-      <Button title='测试登陆' onPress={() => signIn()}/>
+    <View style={styles.signupContainer}>
+      <Text style={styles.headerText}>又见面，{'\n'}回到温暖的家！</Text>
+      <View style={{height: 30}}></View>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder='手机号'
+          style={styles.input}
+          onChangeText={setPhone}
+          value={phone}
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <TextInput 
+          placeholder='密码'
+          style={styles.input}
+          onChangeText={SetPassword}
+          value={password}
+          autoCapitalize='none'
+        />
+      </View>
+
+      {/* one line flex */}
+      <View style={styles.secondLine}>
+        <Text style={styles.headerText}>登入</Text>
+        <TouchableOpacity onPress={()=>{console.log('login')}}>
+          <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
+        </TouchableOpacity>
+
+      </View>
+
+      <View style={{height: 40}}></View>
+      <TouchableOpacity>
+        <Text style={styles.smallText} >新来的？点我注册</Text>
+      </TouchableOpacity>
+      
     </View>
   )
 }
-
-// 第四页面：创建用户名
-export const CreateName = () => {
-
-  return (
-    <View>
-      <Text>输入用户名</Text>
-    </View>
-  )
-}
-
 
 
 const styles = StyleSheet.create({
