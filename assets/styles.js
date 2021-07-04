@@ -7,6 +7,7 @@ import { StyleSheet, Dimensions } from 'react-native'
 export const theme = {
   border: 20,
   width: Dimensions.get('window').width - 50,
+  authWidth: Dimensions.get('window').width - 90,
   height: Dimensions.get('window').height - 400,
   padding: 30,
   marginTop: 60,
