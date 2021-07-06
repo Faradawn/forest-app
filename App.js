@@ -1,47 +1,86 @@
 
 import * as React from 'react';
+import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-
+import { createStackNavigator } from '@react-navigation/stack';
+import { Provider, useDispatch } from 'react-redux';
+import store, { setUser, setLoading } from './screens/store/store';
+import { useSelector } from 'react-redux';
+import AV from 'leancloud-storage/core';
 import LeanCloudInit from './screens/api/LeanCloudInit'
+
 import AuthRoot from './screens/AuthRoot'
 import AppRoot from './screens/AppRoot';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Provider } from 'react-redux';
-import store from './screens/store/store';
-import { useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-community/async-storage';
+
+// LeanCloudInit();
 
 const RootStack = createStackNavigator();
-
-const RootStackScreen = () => {
-  const sessionToken = useSelector(state => state.user.token);
-  
-  return (
-    <RootStack.Navigator headerMode='none'>
-      {sessionToken ? (
-        <RootStack.Screen name='主页' component={AppRoot}/>
-      ) : (
-        <RootStack.Screen name='验证' component={AuthRoot}/>
-      )}
-    </RootStack.Navigator>
-  )
-}
 
 
 export default function App() {
 
-  const sessionToken = '';
+  const RootStackScreen = () => {
+    var token = useSelector(state => state.user.token);
+    const dispatch = useDispatch();
 
+    React.useEffect(() => {
+      setTimeout(async() => {
+        dispatch(setLoading(true));
+        let user = null;
+        try {
+          user = await AV.User.currentAsync();
+          if(user){
+            dispatch(setUser(user.getSessionToken(), user.getUsername()))
+            dispatch(setLoading(false));
+          }else{
+            try{
+              let localToken = await AsyncStorage.getItem('localToken');
+              dispatch(setLoading(false));
+              if(localToken){
+                dispatch(setUser(localToken, 'guest'));
+              }
+            } catch (e) {
+              console.log(e);
+            }
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      }, 1000)
 
-  // LeanCloudInit();
+    });
+  
+    return (
+      <RootStack.Navigator headerMode='none'>
+        {token ? (
+          <RootStack.Screen name='主页' component={AppRoot}/>
+        ) : (
+          <RootStack.Screen name='验证' component={AuthRoot}/>
+        )}
+      </RootStack.Navigator>
+    )
+  }
+  
+  const LoadingScreen = () => (
+    <View style={{justifyContent: 'center', alignItem: 'center'}}>
+      <Text> 加载中 </Text>
+    </View>
+  )
+
+  
+
 
   return (
+
     <Provider store={store}>
       <NavigationContainer>
-      
-        <RootStackScreen />
-        
+        <RootStackScreen/>
       </NavigationContainer>
     </Provider>
+
+  
+
 
 
   );

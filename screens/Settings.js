@@ -4,10 +4,10 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import styles, {theme} from '../assets/styles'
 
 import { createStackNavigator } from '@react-navigation/stack'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
-import { setUser } from './store/store'
-
+import { setUser } from './store/store';
+import AV from 'leancloud-storage/core';
 
 
 
@@ -17,7 +17,15 @@ const Stack = createStackNavigator();
 function SettingPage({ navigation }) {
   const dispatch = useDispatch();
 
-  
+  async function logOut(){
+    try{
+      await AsyncStorage.setItem('localToken', '');
+      dispatch(setUser('',''));
+      AV.User.logOut();
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   return (
     <ImageBackground style={style1.settingPage} source={require('../assets/wallpaper/bg-setting.png')}>
@@ -30,7 +38,7 @@ function SettingPage({ navigation }) {
 
       <Button 
         title='退出登陆'
-        onPress={() => dispatch(setUser('',''))}/>
+        onPress={logOut}/>
     </ImageBackground>
 
   )

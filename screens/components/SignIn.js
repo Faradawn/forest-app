@@ -6,14 +6,25 @@ import { Ionicons } from '@expo/vector-icons';
 import AV from 'leancloud-storage/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from '../store/store';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // 第一页面：Welcome
 export const Welcome = ({navigation}) => {
 
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.loading);
 
-  const token = 'dont-want-sign-token';
+  const token = 'guest';
   const name = 'guest';
+
+  async function guestLogin(){
+    try{
+      await AsyncStorage.setItem('localToken', 'guest');
+      dispatch(setUser(token, name));
+    } catch(e) {
+      console.log(e);
+    }
+  }
 
   return (
     <View style={styles.container} >
@@ -37,12 +48,10 @@ export const Welcome = ({navigation}) => {
       </TouchableOpacity>
 
       <TouchableOpacity 
-        onPress={() => {
-          dispatch(setUser(token, name));
-          console.log('dispatched');
-        }}>
-        <Text style={styles.bottomText}>不想注册？直接进入</Text>
+        onPress={guestLogin}>
+        <Text style={styles.bottomText}>等不及了？直接进入</Text>
       </TouchableOpacity>
+      <ActivityIndicator animating={loading} hidesWhenStopped/>
 
     </View>
   )
@@ -54,8 +63,8 @@ export const SignUp = ({navigation}) => {
   const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
   const [isLoading, setLoading] = React.useState(false);
-  const token = 'signNewToken';
 
+  const dispatch = useDispatch();
   
   function handleSignUp(){
     if(isLoading){
@@ -70,10 +79,8 @@ export const SignUp = ({navigation}) => {
   
       user.signUp().then((user) => {
         console.log('注册成功',user);
-        setPhone(user.phone);
         setLoading(false);
-        
-        
+        dispatch(setUser(user.getSessionToken(), username));
       })
       .catch((error) => {
         setLoading(false)
@@ -92,14 +99,6 @@ export const SignUp = ({navigation}) => {
       setLoading(false);
     }
 
-  }
-
-  function checkCurrent(){
-    const current = AV.User.currentAsync();
-    if(current){
-
-      console.log(current);
-    }
   }
 
   return(
@@ -137,13 +136,14 @@ export const SignUp = ({navigation}) => {
           onChangeText={SetPassword}
           value={password}
           autoCapitalize='none'
+          onEndEditing={handleSignUp}
         />
       </View>
 
       {/* one line flex */}
       <View style={styles.secondLine}>
         <Text style={styles.headerText}>注册</Text>
-        <TouchableOpacity onPress={() => handleSignUp()}>
+        <TouchableOpacity onPress={handleSignUp}>
           <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
           <ActivityIndicator animating={isLoading} hidesWhenStopped/>
         </TouchableOpacity>
@@ -161,13 +161,32 @@ export const SignIn = ({navigation}) => {
 
   const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
-  const token = 'aaaa';
+  const [isLoading, setLoading] = React.useState(false);
+  const dispatch = useDispatch();
 
   function checkCurrent(){
     const current = AV.User.currentAsync();
     if(current){
       console.log(current);
     }
+  }
+
+  function handleLogIn(){
+    if(isLoading){
+      return;
+    }
+    setLoading(true);
+
+    AV.User.logInWithMobilePhone(`+86${phone}`, password).then(user => {
+      console.log('手机登陆成功！', user);
+      dispatch(setUser(user.getSessionToken(), user.getUsername()));
+      setLoading(false);
+    })
+    .catch(error => {
+      console.log('登陆error', error);
+      setLoading(false);
+      alert('用户名和密码好像不太匹配？');
+    });
   }
 
   return (
@@ -195,14 +214,16 @@ export const SignIn = ({navigation}) => {
           onChangeText={SetPassword}
           value={password}
           autoCapitalize='none'
+          onEndEditing={handleLogIn}
         />
       </View>
 
       {/* one line flex */}
       <View style={styles.secondLine}>
         <Text style={styles.headerText}>登入</Text>
-        <TouchableOpacity onPress={()=>{console.log('todo')}}>
+        <TouchableOpacity onPress={handleLogIn}>
           <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
+          <ActivityIndicator animating={isLoading} hidesWhenStopped/>
         </TouchableOpacity>
       </View>
 
@@ -214,6 +235,8 @@ export const SignIn = ({navigation}) => {
     </View>
   )
 }
+
+
 
 
 const styles = StyleSheet.create({
