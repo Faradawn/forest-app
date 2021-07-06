@@ -1,16 +1,19 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, TextInput, Text, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
-import { AuthContext } from '../api/context';
 import AV from 'leancloud-storage/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../store/store';
 
 // 第一页面：Welcome
 export const Welcome = ({navigation}) => {
 
-  const { signIn } = useContext(AuthContext);
-  const token = 'aaaa';
+  const dispatch = useDispatch();
+
+  const token = 'dont-want-sign-token';
+  const name = 'guest';
 
   return (
     <View style={styles.container} >
@@ -34,9 +37,13 @@ export const Welcome = ({navigation}) => {
       </TouchableOpacity>
 
       <TouchableOpacity 
-        onPress={() => signIn(token)}>
-        <Text style={styles.bottomText}>等不及了？直接进入</Text>
+        onPress={() => {
+          dispatch(setUser(token, name));
+          console.log('dispatched');
+        }}>
+        <Text style={styles.bottomText}>不想注册？直接进入</Text>
       </TouchableOpacity>
+
     </View>
   )
 }
@@ -49,7 +56,6 @@ export const SignUp = ({navigation}) => {
   const [isLoading, setLoading] = React.useState(false);
   const token = 'signNewToken';
 
-  // const { signMe } = React.useContext(AuthContext);
   
   function handleSignUp(){
     if(isLoading){
@@ -153,8 +159,6 @@ export const SignUp = ({navigation}) => {
 // 第三页面：登陆老用户
 export const SignIn = ({navigation}) => {
 
-  const { signIn } = React.useContext(AuthContext);
-
   const [phone, setPhone] = React.useState('');
   const [password, SetPassword] = React.useState('');
   const token = 'aaaa';
@@ -197,7 +201,7 @@ export const SignIn = ({navigation}) => {
       {/* one line flex */}
       <View style={styles.secondLine}>
         <Text style={styles.headerText}>登入</Text>
-        <TouchableOpacity onPress={()=>{signIn(token)}}>
+        <TouchableOpacity onPress={()=>{console.log('todo')}}>
           <Ionicons name= 'arrow-forward-circle' size={60} color="tomato" />
         </TouchableOpacity>
       </View>

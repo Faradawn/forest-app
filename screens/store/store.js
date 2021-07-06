@@ -1,39 +1,33 @@
 import { createStore } from 'redux';
 
-// actions
-export const ADD_Task = 'ADD_Task';
 
-// types
-export const addTask = (task) => ({
-  type: ADD_Task,
-  payload: task,
+// actions
+export const setUser = (token, name) => ({
+  type: 'SET_USER',
+  payload: {token, name},
 })
 
 
-
-
 const initialState = {
-  tasks: [
-    {id: '1', text: 'task 1'},
-    {id: '2', text: 'task 2'},
-  ]
+  user: {
+    token: '',
+    name: '',
+  }
+
 }
 
-const taskReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_Task:
+    case 'SET_USER':
       return {
         ...state,
-        tasks: [...state.tasks, {
-          id: Math.floor(Math.random()*10).toString,
-          task: action.payload,
-        }]
+        user: {token: action.payload.token, name: action.payload.name}
       }
     default:
       return state;
   }
 }
 
-const store = createStore(taskReducer);
+const store = createStore(userReducer);
 
 export default store;

@@ -5,15 +5,19 @@ import styles, {theme} from '../assets/styles'
 
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { AuthContext } from './api/context'
+import { useDispatch } from 'react-redux';
+import { setUser } from './store/store'
+
+
 
 
 const Stack = createStackNavigator();
 
 
 function SettingPage({ navigation }) {
+  const dispatch = useDispatch();
 
-  const { signOut } = React.useContext(AuthContext);
+  
 
   return (
     <ImageBackground style={style1.settingPage} source={require('../assets/wallpaper/bg-setting.png')}>
@@ -26,7 +30,7 @@ function SettingPage({ navigation }) {
 
       <Button 
         title='退出登陆'
-        onPress={() => signOut()}/>
+        onPress={() => dispatch(setUser('',''))}/>
     </ImageBackground>
 
   )
