@@ -5,7 +5,7 @@ import styles, {theme} from '../assets/styles'
 
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './store/store';
 import AV from 'leancloud-storage/core';
 
@@ -16,14 +16,17 @@ const Stack = createStackNavigator();
 
 function SettingPage({ navigation }) {
   const dispatch = useDispatch();
+  const token = useSelector(state => state.user.token);
 
   async function logOut(){
     try{
       await AsyncStorage.setItem('localToken', '');
       dispatch(setUser('',''));
-      AV.User.logOut();
     } catch (e) {
       console.log(e);
+    }
+    if(token !== 'guest'){
+      AV.User.logOut();
     }
   }
 

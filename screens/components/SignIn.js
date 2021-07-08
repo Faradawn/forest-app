@@ -5,7 +5,7 @@ import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
 import AV from 'leancloud-storage/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser } from '../store/store';
+import { setCounter, setUser } from '../store/store';
 import AsyncStorage from '@react-native-community/async-storage';
 
 // 第一页面：Welcome
@@ -65,12 +65,19 @@ export const SignUp = ({navigation}) => {
   const [isLoading, setLoading] = React.useState(false);
 
   const dispatch = useDispatch();
+  const cloudErr = useSelector(state => state.cloudErr);
   
   function handleSignUp(){
     if(isLoading){
       return;
     }
-    if(username && phone && password){
+    if(cloudErr){
+      alert('后端云开小差了，直接进入试试？');
+      dispatch(setCounter(1));
+      navigation.navigate('欢迎');
+      return;
+    }
+    if(username && phone && passwoard){
       setLoading(true);
       const user = new AV.User();
       user.setUsername(username);
@@ -163,20 +170,19 @@ export const SignIn = ({navigation}) => {
   const [password, SetPassword] = React.useState('');
   const [isLoading, setLoading] = React.useState(false);
   const dispatch = useDispatch();
-
-  function checkCurrent(){
-    const current = AV.User.currentAsync();
-    if(current){
-      console.log(current);
-    }
-  }
+  const cloudErr = useSelector(state => state.cloudErr);
 
   function handleLogIn(){
     if(isLoading){
       return;
     }
+    if(cloudErr){
+      alert('后端云开小差了，直接进入试试？');
+      dispatch(setCounter(1));
+      navigation.navigate('欢迎');
+      return;
+    }
     setLoading(true);
-
     AV.User.logInWithMobilePhone(`+86${phone}`, password).then(user => {
       console.log('手机登陆成功！', user);
       dispatch(setUser(user.getSessionToken(), user.getUsername()));

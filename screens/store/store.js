@@ -1,17 +1,16 @@
 import { createStore } from 'redux';
 
 export const setUser = (token, name) => {
-  return ({
-    type: 'SET_USER',
-    payload: {token, name}
-  })
+  return ({type: 'SET_USER', payload: {token, name}})
 }
-
 export const setLoading = (val) => {
-  return ({
-    type: 'SET_LOADING',
-    payload: val
-  })
+  return ({type: 'SET_LOADING', payload: val})
+}
+export const setCloudErr = (bool) => {
+  return ({type: 'SET_CLOUD_ERR', payload: bool})
+}
+export const setCounter = (val) => {
+  return ({type: 'SET_COUNTER', payload: val})
 }
 
 
@@ -21,6 +20,8 @@ const initialState = {
     name: '',
   },
   loading: false,
+  cloudErr: false,
+  counter: 0,
 
 }
 
@@ -36,6 +37,10 @@ const userReducer = (state = initialState, action) => {
         ...state,
         loading: action.payload
       }
+    case 'SET_CLOUD_ERR':
+      return {...state, cloudErr: action.payload}
+    case 'SET_COUNTER':
+      return {...state, counter: state.counter+action.payload}
 
     default:
       return state;
