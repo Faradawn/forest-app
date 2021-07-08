@@ -3,6 +3,25 @@ A flashcard app for Beijing Forestry University students to memorize gardener ep
 Built with React Native and utlizes async storage.
 From March.20,2021 - March.31.2021. 
 
+## 数据结构
+```
+collection: [
+  {
+    'id': '1',
+    'star': 'true',
+    'date': '',
+    'notes': '',
+  }
+]
+
+
+
+
+  
+```
+
+
+```
 ## Home Page
 ![home page demo](./assets/demo1.GIF)
 
@@ -14,6 +33,8 @@ From March.20,2021 - March.31.2021.
 
 ## Clear async storage data
 ![clear storage](./assets/demo4.GIF)
+```
+
 
 ## Production Log 
 Version One: a hard-coded flashcard app
