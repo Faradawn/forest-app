@@ -12,7 +12,7 @@ import LeanCloudInit from './screens/api/LeanCloudInit'
 import AuthRoot from './screens/AuthRoot'
 import AppRoot from './screens/AppRoot';
 import AsyncStorage from '@react-native-community/async-storage';
-
+// 登陆最后7.03，别忘记leancloud init
 // LeanCloudInit();
 
 const RootStack = createStackNavigator();
