@@ -21,8 +21,9 @@ const HomeTabs = () => (
         return <Ionicons name={icon} size={size} color={color} />
       }
     })}
+    
     tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
-    <Tabs.Screen name='卡片' component={Cards}/>
+    <Tabs.Screen name='卡片' component={Cards} options={{}}/>
     <Tabs.Screen name='首页' component={Home}/>
     <Tabs.Screen name='设置' component={Settings}/>
     
@@ -35,10 +36,9 @@ const Set2 = () => (<CardSet id={2}/>);
 const Stack = createStackNavigator();
 const AppRoot = () => (
   <Stack.Navigator>
-    <Stack.Screen name='HomeTabs' component={HomeTabs}></Stack.Screen>
-    <Stack.Screen name='CardSet1' component={Set1}></Stack.Screen>
-
-    <Stack.Screen name='CardSet2' component={Set2}></Stack.Screen>
+    <Stack.Screen name='HomeTabs' component={HomeTabs} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='CardSet1' component={Set1} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='CardSet2' component={Set2} options={{headerShown:false}}></Stack.Screen>
     
   </Stack.Navigator>
 )

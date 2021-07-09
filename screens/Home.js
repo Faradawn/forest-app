@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { Button, Text, View, Image, StyleSheet, Dimensions, ImageBackground} from 'react-native'
 import { TextInput, TouchableHighlight, TouchableOpacity } from 'react-native-gesture-handler'
-import styles, { theme } from '../assets/styles'
+import { theme } from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import ProgressBar from './components/ProgressBar'
 import { buildArray, getProgress } from './api/API'
 import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
+import { Ionicons } from '@expo/vector-icons'
 
 const Stack = createStackNavigator();
 
@@ -31,9 +32,19 @@ function HomePage({ navigation }) {
 
 
   return (
-    <ImageBackground style={styles.homePage} source={require('../assets/wallpaper/bg-1.png')}>
-      <Text>你好，{username}</Text>
+    <ImageBackground 
+      style={styles.container}
+      source={require('../assets/wallpaper/bg-1.png')}
+    >
+      <View style={styles.oneLine}>
+        <Text style={styles.oneText}>嘿，{username}</Text>
+        <TouchableOpacity>
+        <Ionicons name="ios-sunny-sharp" size={24} color="black" />
+        </TouchableOpacity>
+      </View>
+
       <HomeQuote/>
+
       <View style={{height: 50}}></View>
       <View>
         <Text>园林树木拉丁名150个</Text>
@@ -66,3 +77,24 @@ export default function Home() {
   )
 }
 
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    paddingTop: theme.marginTop+20, 
+    backgroundColor: 'white',
+    flex: 1,
+  },
+
+  oneLine:{
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    justifyContent: 'space-between',
+    width: theme.authWidth,
+  },
+  oneText:{
+    fontSize: 25,
+    letterSpacing: 2,
+    marginBottom: 30,
+  },
+})
