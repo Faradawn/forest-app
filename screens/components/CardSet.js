@@ -14,25 +14,43 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function Cards(props) {
   // todo
   var wordset;
-  if(props.id === 1){
-    wordset = wordset2;
-  }
+  wordset = wordset2;
 
   const [arr, setArr] = React.useState([]);
-  console.log('arr is', arr);
+
+  React.useEffect(() => {
+    setTimeout(async () => {
+      try{
+        if(arr.length === 0){
+          let retrieved = await AsyncStorage.getItem('collection');
+          setArr(JSON.parse(retrieved));
+        }
+      } catch(e){
+        console.log(e)
+      }
+      console.log('loaded');
+    }, 500)
+  },[])
+
 
   const renderItem = ({ item }) => {
-    let foundItem = arr.find(val => val.id === item.id);
+    let foundItem = arr.find(val => val.id%(props.id*10000) === parseInt(item.id));
+    
     const addMark = async () => {
       let newId = parseInt(item.id) + props.id*10000;
-      console.log(newId);
       if(!foundItem){
-        setArr([...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id}])
+        setArr([...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id}]);
+        await AsyncStorage.setItem('collection', JSON.stringify(
+          [...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id}]
+        ))
       }
-      else
-        setArr(arr.filter(val => val.id !== item.id));
+      else{
+        setArr(arr.filter(val => val.id%(props.id*10000) !== parseInt(item.id)));
+        await AsyncStorage.setItem('collection', JSON.stringify(
+          arr.filter(val => val.id%(props.id*10000) !== parseInt(item.id))
+        ))
+      }
     }
-
 
     return (
       <View style={styles.lineContainer}>
@@ -56,11 +74,13 @@ export default function Cards(props) {
   return(
     <View style={styles.container}>
       <Text> 单词一</Text>
-      <FlatList
-        data={wordset.Sheet1}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
+      <View style={styles.flatlist}>
+        <FlatList
+          data={wordset.Sheet1}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      </View>
       
     </View>
   )
@@ -74,10 +94,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
   },
+  flatlist: {
+    width: theme.authWidth+10,
+    height: theme.height+200,
+  },
   lineContainer:{
     width: theme.authWidth,
-    backgroundColor: 'pink',
-    marginTop: 10,
+    shadowOffset: {width: 6, height: 6},
+    shadowOpacity: 0.3,
+    marginTop: 40,
   },
   oneLine:{
     display: 'flex',
@@ -97,5 +122,8 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     justifyContent: 'flex-start',
     width: theme.authWidth,
-  }
+  },
+
+  // flatlist
+
 })
