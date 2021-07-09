@@ -57,20 +57,11 @@ function HomePage({ navigation }) {
     </ImageBackground>
   )
 }
-function Quote() {
-  return(
-    <View>
-      <Text> 一曲未终，已被弃于四季</Text>
-    </View>
-  )
-}
+
 
 export default function Home() {  
   return(
-    <Stack.Navigator initialRouteName='首页'>
-      <Stack.Screen name='首页' component={HomePage}/>
-      <Stack.Screen name='Quote' component={Quote}/>
-    </Stack.Navigator>
+    <HomePage/>
 
   )
 }

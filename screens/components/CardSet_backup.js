@@ -92,8 +92,41 @@ export default function Cards(props) {
 
   return(
     <View style={styles.container}>
-      <Text> flat list time </Text>
-      
+      <ProgressBar progress={count/loaded.length} />
+      <View style={{height: 20}}></View>
+
+      <TouchableOpacity onPress={() => setOneStar(!onestar)}>
+        <Ionicons name= {onestar ? 'star' : 'star-outline'} size={24} color="orange" />
+      </TouchableOpacity>
+
+      <View style={{height: 20}}></View>
+
+      <Card data={(loaded) ? loaded[count - 1] : loading} initflip={true}/>
+
+      <View style={{height: 20}}></View>
+      <Text> 第 {count} / {loaded ? loaded.length : '?'} 个</Text>
+
+      <View style={{height: 20}}></View>
+
+      <View style={styles.touchContainer}>
+        <TouchableOpacity onPress={() => (count > 1) ? (set(count-1), back()) : {}}>
+            <Ionicons name="caret-back" size={50} color="black" />
+        </TouchableOpacity>
+        <View style={{width:100}}/>
+
+
+
+
+        <Button onPress={playSound} title='读音'> </Button>
+
+
+
+
+        <View style={{width:100}}/>
+        <TouchableOpacity onPress={() => (count < loaded.length) ? (set(count+1), next()) : {}}>
+            <Ionicons name="caret-forward" size={50} color="black" />
+          </TouchableOpacity>
+      </View>
 
       
       

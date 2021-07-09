@@ -4,10 +4,11 @@ import { Ionicons } from '@expo/vector-icons';
 import Settings from './Settings';
 import Home from './Home'
 import Cards from './Cards'
+import CardSet from './components/CardSet';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Tabs = createBottomTabNavigator()
-
-const AppRoot = () => (
+const Tabs = createBottomTabNavigator();
+const HomeTabs = () => (
   <Tabs.Navigator initialRouteName='首页'
     screenOptions={({route}) => ({
       tabBarIcon: ({focused, color, size}) => {
@@ -21,12 +22,25 @@ const AppRoot = () => (
       }
     })}
     tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
-
     <Tabs.Screen name='卡片' component={Cards}/>
     <Tabs.Screen name='首页' component={Home}/>
     <Tabs.Screen name='设置' component={Settings}/>
     
   </Tabs.Navigator>
+)
+
+const Set1 = () => (<CardSet id={1}/>);
+const Set2 = () => (<CardSet id={2}/>);
+
+const Stack = createStackNavigator();
+const AppRoot = () => (
+  <Stack.Navigator>
+    <Stack.Screen name='HomeTabs' component={HomeTabs}></Stack.Screen>
+    <Stack.Screen name='CardSet1' component={Set1}></Stack.Screen>
+
+    <Stack.Screen name='CardSet2' component={Set2}></Stack.Screen>
+    
+  </Stack.Navigator>
 )
 
 export default AppRoot;
