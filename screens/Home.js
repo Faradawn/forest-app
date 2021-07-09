@@ -6,13 +6,14 @@ import { createStackNavigator } from '@react-navigation/stack'
 import ProgressBar from './components/ProgressBar'
 import { buildArray, getProgress } from './api/API'
 import { HomeQuote } from './components/HomeQuote'
-import { get } from 'react-native/Libraries/Utilities/PixelRatio'
+import { useSelector } from 'react-redux';
 
 const Stack = createStackNavigator();
 
 function HomePage({ navigation }) {
   const [fraction1, setFraction1] = React.useState(0)
   const [fraction2, setFraction2] = React.useState(0)
+  var username = useSelector(state => state.user.name);
 
   async function getFraction() {
     // can change to multiget()
@@ -28,8 +29,10 @@ function HomePage({ navigation }) {
 
   React.useEffect(() => {getFraction()})
 
+
   return (
     <ImageBackground style={styles.homePage} source={require('../assets/wallpaper/bg-1.png')}>
+      <Text>你好，{username}</Text>
       <HomeQuote/>
       <View style={{height: 50}}></View>
       <View>

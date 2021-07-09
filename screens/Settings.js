@@ -20,13 +20,10 @@ function SettingPage({ navigation }) {
 
   async function logOut(){
     try{
-      await AsyncStorage.setItem('localToken', '');
+      await AsyncStorage.setItem('guest-token', '');
       dispatch(setUser('',''));
     } catch (e) {
       console.log(e);
-    }
-    if(token !== 'guest'){
-      AV.User.logOut();
     }
   }
 

@@ -1,68 +1,42 @@
-
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider, useDispatch } from 'react-redux';
-import store, { setUser, setLoading, setCloudErr } from './screens/store/store';
+import store, { setUser, setLoading } from './screens/store/store';
 import { useSelector } from 'react-redux';
-import AV from 'leancloud-storage/core';
-import LeanCloudInit from './screens/api/LeanCloudInit'
 
 import AuthRoot from './screens/AuthRoot'
 import AppRoot from './screens/AppRoot';
 import AsyncStorage from '@react-native-community/async-storage';
-// 登陆最后7.03，别忘记leancloud init
-// LeanCloudInit();
 
 const RootStack = createStackNavigator();
 
+console.log('outer code tiggerered');
 
 export default function App() {
 
   const RootStackScreen = () => {
     var token = useSelector(state => state.user.token);
-    var counter = useSelector(state => state.counter);
     const dispatch = useDispatch();
+    console.log('app function tirggered');
 
     React.useEffect(() => {
+      console.log('use effect triggered');
       setTimeout(async() => {
         dispatch(setLoading(true));
-        let user = null;
-        try {
-          user = await AV.User.currentAsync();
-          dispatch(setCloudErr(false));
-          if(user){
-            dispatch(setUser(user.getSessionToken(), user.getUsername()))
-            dispatch(setLoading(false));
-          }else{
-            try{
-              let localToken = await AsyncStorage.getItem('localToken');
-            
-              if(localToken){
-                dispatch(setUser(localToken, 'guest'));
-              }
-            } catch (e) {
-              console.log(e);
-            }
-            dispatch(setLoading(false));
+        try{
+          let username = await AsyncStorage.getItem('guest-token');
+          if(username){
+            dispatch(setUser('guest-token', username));
           }
         } catch (e) {
-          console.log('leancloud 问题', e);
-          dispatch(setCloudErr(true));
-
-          try{
-            let localToken = await AsyncStorage.getItem('localToken');
-            if(localToken){
-              dispatch(setUser(localToken, 'guest'));
-            }
-          } catch (e) {
-            console.log(e);
-          }
+          console.log(e);
+        } finally {
           dispatch(setLoading(false));
         }
-      }, 5000)
-    }, [counter]);
+      }, 500)
+    }, []);
   
     return (
       <RootStack.Navigator headerMode='none'>
@@ -75,7 +49,6 @@ export default function App() {
     )
   }
   
-
   return (
 
     <Provider store={store}>
