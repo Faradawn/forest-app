@@ -7,9 +7,8 @@ import ProgressBar from './components/ProgressBar'
 import { buildArray, getProgress } from './api/API'
 import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
-import { Ionicons } from '@expo/vector-icons'
-
-const Stack = createStackNavigator();
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 
 function HomePage({ navigation }) {
   const [fraction1, setFraction1] = React.useState(0)
@@ -30,7 +29,6 @@ function HomePage({ navigation }) {
 
   React.useEffect(() => {getFraction()})
 
-
   return (
     <ImageBackground 
       style={styles.container}
@@ -38,8 +36,8 @@ function HomePage({ navigation }) {
     >
       <View style={styles.oneLine}>
         <Text style={styles.oneText}>嘿，{username}</Text>
-        <TouchableOpacity>
-        <Ionicons name="ios-sunny-sharp" size={24} color="black" />
+        <TouchableOpacity onPress={()=>navigation.navigate('MyCollections')}>
+        <MaterialCommunityIcons name="notebook" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -63,17 +61,16 @@ function HomePage({ navigation }) {
 
         
       </View>
-      
-      
     </ImageBackground>
   )
 }
 
-
+const Stack = createStackNavigator();
 export default function Home() {  
   return(
-    <HomePage/>
-
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={HomePage} options={{headerShown: false}}/>
+    </Stack.Navigator>
   )
 }
 

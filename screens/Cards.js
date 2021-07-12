@@ -4,55 +4,87 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import CardSet from './components/CardSet'
-import { Ionicons } from '@expo/vector-icons'
+import { VocabCollection } from './components/CardSet';
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 
-function CardsList({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <View style={styles.oneLine}>
-        <Text style={styles.oneText}>我的单词们</Text>
-        <TouchableOpacity>
-          <Ionicons name="filter" size={24} color="black" />
+
+
+export const MyCollections = ({ navigation }) => {
+  const CollectionsRoot = () => {
+    return(
+      <View style={styles.container}>
+        <View style={styles.oneLine}>
+          <Text style={styles.oneText}>我的收藏</Text>
+          <TouchableOpacity>
+            <Ionicons name="filter" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 我的单词本 </Text>
+          </ImageBackground> 
         </TouchableOpacity>
       </View>
+    )
+  }
 
-
-      <TouchableOpacity onPress={() => navigation.navigate('CardSet1')} >
-        <ImageBackground
-          source={require('../assets/wallpaper/card-slim.png')}
-          imageStyle={{borderRadius: theme.border}}
-          style={styles.imageCard}>
-            <Text> 园林树木拉丁名150个 </Text>
-        </ImageBackground> 
-      </TouchableOpacity>
-
-      <View style={{height:30}}/>
-
-      <TouchableOpacity onPress={() => navigation.navigate('CardSet2')} >
-        <ImageBackground
-          source={require('../assets/wallpaper/card-slim.png')}
-          imageStyle={{borderRadius: theme.border}}
-          style={styles.imageCard}>
-            <Text> 园林花卉拉丁名200个 </Text>
-        </ImageBackground> 
-      </TouchableOpacity>
-
-    </View>
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name='CollectionsRoot' component={CollectionsRoot} options={{headerShown: false}}/>
+      <Stack.Screen name='VocabCollection' component={VocabCollection} options={{headerShown: false}}/>
+    </Stack.Navigator>
   )
-}
 
+}
  
-export default function Cards() {  
+export const Cards = () => {  
+  const  CardsList = ({ navigation }) => {
+    return (
+      <View style={styles.container}>
+        <View style={styles.oneLine}>
+          <Text style={styles.oneText}>我的单词们</Text>
+          <TouchableOpacity>
+            <Ionicons name="filter" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+  
+  
+        <TouchableOpacity onPress={() => navigation.navigate('CardSet1')} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 园林树木拉丁名150个 </Text>
+          </ImageBackground> 
+        </TouchableOpacity>
+  
+        <View style={{height:30}}/>
+  
+        <TouchableOpacity onPress={() => navigation.navigate('CardSet2')} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 园林花卉拉丁名200个 </Text>
+          </ImageBackground> 
+        </TouchableOpacity>
+  
+      </View>
+    )
+  }
+
   return(
     <Stack.Navigator>
       <Stack.Screen name='CardsList' component={CardsList} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
       
-   
 }
 
 const styles = StyleSheet.create({

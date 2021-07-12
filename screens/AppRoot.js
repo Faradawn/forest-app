@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import Settings from './Settings';
 import Home from './Home'
-import Cards from './Cards'
-import CardSet from './components/CardSet';
+import { Cards, MyCollections } from './Cards'
+import {CardSet} from './components/CardSet';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tabs = createBottomTabNavigator();
@@ -39,6 +39,7 @@ const AppRoot = () => (
     <Stack.Screen name='HomeTabs' component={HomeTabs} options={{headerShown:false}}></Stack.Screen>
     <Stack.Screen name='CardSet1' component={Set1} options={{headerShown:false}}></Stack.Screen>
     <Stack.Screen name='CardSet2' component={Set2} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='MyCollections' component={MyCollections} options={{headerShown: false}}/>
     
   </Stack.Navigator>
 )

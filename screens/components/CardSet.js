@@ -11,7 +11,7 @@ import { Sound } from 'expo-av/build/Audio'
 import wordset2 from '../data/wordset2.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Cards(props) {
+export const CardSet = (props) => {
   // todo
   var wordset;
   wordset = wordset2;
@@ -23,7 +23,10 @@ export default function Cards(props) {
       try{
         if(arr.length === 0){
           let retrieved = await AsyncStorage.getItem('collection');
-          setArr(JSON.parse(retrieved));
+          if(retrieved){
+            setArr(JSON.parse(retrieved));
+            console.log('获取：',retrieved);
+          }
         }
       } catch(e){
         console.log(e)
@@ -39,9 +42,9 @@ export default function Cards(props) {
     const addMark = async () => {
       let newId = parseInt(item.id) + props.id*10000;
       if(!foundItem){
-        setArr([...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id}]);
+        setArr([...arr, {id: newId.toString(), date: (new Date()).getTime(), wordset: props.id, info: item}]);
         await AsyncStorage.setItem('collection', JSON.stringify(
-          [...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id}]
+          [...arr, {id: newId, date: (new Date()).getTime(), wordset: props.id, info: item}]
         ))
       }
       else{
@@ -87,10 +90,65 @@ export default function Cards(props) {
 }
 
 
+
+export const VocabCollection = () => {
+
+  const [arr, setArr] = React.useState([]);
+  console.log(arr);
+
+  React.useEffect(() => {
+    setTimeout(async () => {
+      try{
+        if(arr.length === 0){
+          let retrieved = await AsyncStorage.getItem('collection');
+          setArr(JSON.parse(retrieved));
+        }
+      } catch(e){
+        console.log(e)
+      }
+      console.log('collection loaded');
+    }, 500)
+  },[])
+
+
+  const renderItem = ({ item }) => {
+    console.log('time:', (new Date(item.date)).getDay())
+    
+    
+    return (
+      <View style={styles.lineContainer}>
+        <Text>{item.date}</Text>
+        <Text>{item.info.chinese}</Text>
+      </View>
+    );
+  };
+
+
+  return(
+    <View style={styles.container}>
+      <Text> 我的单词收藏</Text>
+      <View style={styles.flatlist}>
+        <FlatList
+          data={arr}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+        />
+        <Button title='clear collection' onPress={() =>
+           AsyncStorage.removeItem('collection').then((val)=>console.log('cleared:', val))}>
+
+        </Button>
+       
+      </View>
+
+    </View>
+  )
+}
+
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingTop: theme.marginTop+20, 
+    paddingTop: theme.marginTop, 
     backgroundColor: 'white',
     flex: 1,
   },

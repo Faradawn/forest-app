@@ -12,14 +12,11 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 const RootStack = createStackNavigator();
 
-console.log('outer code tiggerered');
-
 export default function App() {
 
   const RootStackScreen = () => {
     var token = useSelector(state => state.user.token);
     const dispatch = useDispatch();
-    console.log('app function tirggered');
 
     React.useEffect(() => {
       console.log('use effect triggered');
