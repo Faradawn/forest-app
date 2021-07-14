@@ -297,7 +297,7 @@
         {
             "id": "43",
             "chinese": "蜀葵",
-            "latin": "Althaea rosea",
+            "latin": "Althaea rosea（=Alcea rosea）",
             "family": "锦葵科",
             "category": "蜀葵属"
         },
@@ -840,7 +840,7 @@
         {
             "id": "121",
             "chinese": "萍蓬莲",
-            "latin": "Nupahar pumilum",
+            "latin": "Nuphar pumilum",
             "family": "睡莲科",
             "category": "萍蓬草属"
         },
@@ -888,7 +888,7 @@
         },
         {
             "id": "128",
-            "chinese": "王连",
+            "chinese": "王莲",
             "latin": "Victoria amazonica",
             "family": "睡莲科",
             "category": "王连属"

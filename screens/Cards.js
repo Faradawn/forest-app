@@ -40,22 +40,26 @@ export const MyCollections = ({ navigation }) => {
       <Stack.Screen name='VocabCollection' component={VocabCollection} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
-
 }
+// end of 收藏
  
 export const Cards = () => {  
+  const [order, setOrder] = React.useState(true);
+
   const  CardsList = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的单词们</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>setOrder(!order)}>
             <Ionicons name="filter" size={24} color="black" />
           </TouchableOpacity>
         </View>
-  
-  
-        <TouchableOpacity onPress={() => navigation.navigate('CardSet1')} >
+
+
+        {order ? 
+        <View>
+          <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -66,7 +70,7 @@ export const Cards = () => {
   
         <View style={{height:30}}/>
   
-        <TouchableOpacity onPress={() => navigation.navigate('CardSet2')} >
+        <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -74,7 +78,27 @@ export const Cards = () => {
               <Text> 园林花卉拉丁名200个 </Text>
           </ImageBackground> 
         </TouchableOpacity>
-  
+        </View>
+        : 
+        <View>
+      <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
+        <ImageBackground
+          source={require('../assets/wallpaper/card-slim.png')}
+          imageStyle={{borderRadius: theme.border}}
+          style={styles.imageCard}>
+            <Text> 园林花卉拉丁名200个 </Text>
+        </ImageBackground> 
+      </TouchableOpacity>
+      <View style={{height:30}}/>
+      <TouchableOpacity onPress={() => navigation.navigate('CardSet1'), {id: 1}} >
+        <ImageBackground
+          source={require('../assets/wallpaper/card-slim.png')}
+          imageStyle={{borderRadius: theme.border}}
+          style={styles.imageCard}>
+            <Text> 园林树木拉丁名150个 </Text>
+        </ImageBackground> 
+      </TouchableOpacity>
+      </View> }
       </View>
     )
   }
