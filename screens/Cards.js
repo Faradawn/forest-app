@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 import { VocabCollection } from './components/CardSet';
 import { Ionicons } from '@expo/vector-icons';
-
+import { CardSetVar } from './components/CardSet'
 const Stack = createStackNavigator();
 
 
@@ -59,7 +59,7 @@ export const Cards = () => {
 
         {order ? 
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
+          <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -70,7 +70,7 @@ export const Cards = () => {
   
         <View style={{height:30}}/>
   
-        <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
+        <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -103,9 +103,11 @@ export const Cards = () => {
     )
   }
 
+
   return(
     <Stack.Navigator>
       <Stack.Screen name='CardsList' component={CardsList} options={{headerShown: false}}/>
+      <Stack.Screen name='CardSetVar' component={CardSetVar} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
       

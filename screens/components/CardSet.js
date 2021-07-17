@@ -13,9 +13,7 @@ import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createStackNavigator } from '@react-navigation/stack'
 
-const CardSetMain = ({route, navigation}) => {
-  console.log(route);
-  // todo
+export const CardSetVar = ({route, navigation}) => {
   var wordset;
   switch (route.params.id) {
     case 2:
@@ -27,6 +25,7 @@ const CardSetMain = ({route, navigation}) => {
   }
 
   const [arr, setArr] = React.useState([]);
+  const [sound, setSound] = React.useState();
 
   React.useEffect(() => {
     setTimeout(async () => {
@@ -47,6 +46,9 @@ const CardSetMain = ({route, navigation}) => {
 
   const renderItem = ({ item }) => {
     let foundItem = arr.find(val => val.id%(route.params.id*10000) === parseInt(item.id));
+    // trucation
+    let str = item.latin.concat(" ", item.family, " ", item.category);
+  
     
     const addMark = async () => {
       let newId = parseInt(item.id) + route.params.id*10000;
@@ -64,27 +66,40 @@ const CardSetMain = ({route, navigation}) => {
       }
     }
 
+    
+    const playSound = async () => {
+      console.log('played sound');
+      const {sound} = await Audio.Sound.createAsync(require('../../assets/raw_assets/4_voice/0001.mp3'));
+      await sound.playAsync(); 
+    }
+
     return (
       <View style={styles.lineContainer}>
         <View style={styles.lineCard}>
-
           <View style={styles.oneLine}>
-            <Text style={{fontSize: 20}}>{item.chinese}</Text>
+            <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+              <TouchableOpacity
+                onPress={playSound}>
+                <Ionicons name="volume-medium-outline" size={24} color ="black" />
+              </TouchableOpacity>
+              <Text style={{fontSize: 20, marginLeft: 10}}>{item.chinese}</Text>
+            </View>
+
             <TouchableOpacity
               onPress={addMark}>
               {foundItem ? <Ionicons name="bookmark" size={24} color="black" />
               : <Ionicons name="bookmark-outline" size={24} color="black" />}
             </TouchableOpacity>
           </View>
+
           <View style={styles.secondLine}>
-            <Text>{item.latin}</Text>
-            <Text>{item.category}</Text>
-            <Text>{item.family}</Text>
+            <Text>{str}</Text>
           </View>
         </View>
       </View>
     );
   };
+  // end of renderItem
 
   return(
     <View style={{backgroundColor: 'white', flex: 1}}>
@@ -100,7 +115,7 @@ const CardSetMain = ({route, navigation}) => {
           {route.params.id === 1 ? '园林树木拉丁名150个' : '园林花卉拉丁名200个'}</Text>
         <Image 
           source={require('../../assets/images/divider-line.png')}
-          style={{height: 10, width: 150, marginTop: 20}}
+          style={{height: 10, width: 150, marginTop: 15, marginBottom: 20}}
         />
         <View style={styles.flatlist}>
           <FlatList
@@ -115,21 +130,10 @@ const CardSetMain = ({route, navigation}) => {
   )
 }
 
-export const CardSet = () => {
-  const Stack = createStackNavigator();
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name='CardSetNew' component={CardSetMain} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  )
-}
-
-
 
 export const VocabCollection = () => {
 
   const [arr, setArr] = React.useState([]);
-  console.log(arr);
 
   React.useEffect(() => {
     setTimeout(async () => {
@@ -147,13 +151,28 @@ export const VocabCollection = () => {
 
 
   const renderItem = ({ item }) => {
-    console.log('time:', (new Date(item.date)).getDay())
-    
-    
+  
+    let str = item.info.latin.concat(" ", item.info.family, " ", item.info.category);
+  
+    const addMark = async () => {
+      console.log('todo remove');
+    }
+
     return (
       <View style={styles.lineContainer}>
-        <Text>{item.date}</Text>
-        <Text>{item.info.chinese}</Text>
+        <View style={styles.lineCard}>
+
+          <View style={styles.oneLine}>
+            <Text style={{fontSize: 20}}>{item.info.chinese}</Text>
+            <TouchableOpacity
+              onPress={addMark}>
+              <Ionicons name="remove-circle-outline" size={20} color="black" />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.secondLine}>
+            <Text>{str}</Text>
+          </View>
+        </View>
       </View>
     );
   };
@@ -221,6 +240,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginBottom: 10,
     opacity: 0.8,
+    maxWidth: theme.authWidth,
   },
 
   // flatlist
