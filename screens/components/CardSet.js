@@ -11,7 +11,9 @@ import { Sound } from 'expo-av/build/Audio'
 import wordset2 from '../data/wordset2.json';
 import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createStackNavigator } from '@react-navigation/stack'
+import { createStackNavigator } from '@react-navigation/stack';
+import { switchSound } from '../api/switchSound';
+
 
 export const CardSetVar = ({route, navigation}) => {
   var wordset;
@@ -25,7 +27,8 @@ export const CardSetVar = ({route, navigation}) => {
   }
 
   const [arr, setArr] = React.useState([]);
-  const [sound, setSound] = React.useState();
+
+
 
   React.useEffect(() => {
     setTimeout(async () => {
@@ -66,12 +69,13 @@ export const CardSetVar = ({route, navigation}) => {
       }
     }
 
-    
+    // playSound for 150个拉丁名
     const playSound = async () => {
-      console.log('played sound');
-      const {sound} = await Audio.Sound.createAsync(require('../../assets/raw_assets/4_voice/0001.mp3'));
+      const {sound} = await Audio.Sound.createAsync(switchSound(route.params.id, item.id));
       await sound.playAsync(); 
     }
+
+  
 
     return (
       <View style={styles.lineContainer}>
@@ -80,15 +84,15 @@ export const CardSetVar = ({route, navigation}) => {
             <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
               <TouchableOpacity
                 onPress={playSound}>
-                <Ionicons name="volume-medium-outline" size={24} color ="black" />
+                <Ionicons name="volume-medium-outline" size={24} color ="tomato" />
               </TouchableOpacity>
               <Text style={{fontSize: 20, marginLeft: 10}}>{item.chinese}</Text>
             </View>
 
             <TouchableOpacity
               onPress={addMark}>
-              {foundItem ? <Ionicons name="bookmark" size={24} color="black" />
-              : <Ionicons name="bookmark-outline" size={24} color="black" />}
+              {foundItem ? <Ionicons name="bookmark" size={24} color="gold" />
+              : <Ionicons name="bookmark-outline" size={24} color="grey" />}
             </TouchableOpacity>
           </View>
 
@@ -96,6 +100,7 @@ export const CardSetVar = ({route, navigation}) => {
             <Text>{str}</Text>
           </View>
         </View>
+
       </View>
     );
   };
