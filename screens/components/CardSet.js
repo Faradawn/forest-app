@@ -28,8 +28,6 @@ export const CardSetVar = ({route, navigation}) => {
 
   const [arr, setArr] = React.useState([]);
 
-
-
   React.useEffect(() => {
     setTimeout(async () => {
       try{
@@ -37,7 +35,7 @@ export const CardSetVar = ({route, navigation}) => {
           let retrieved = await AsyncStorage.getItem('collection');
           if(retrieved){
             setArr(JSON.parse(retrieved));
-            console.log('loaded wordset',route.params.id, retrieved);
+            console.log('loaded wordset',route.params.id);
           }
         }
       } catch(e){
@@ -68,8 +66,6 @@ export const CardSetVar = ({route, navigation}) => {
         ))
       }
     }
-
-    // playSound for 150个拉丁名
     const playSound = async () => {
       const {sound} = await Audio.Sound.createAsync(switchSound(route.params.id, item.id));
       await sound.playAsync(); 
@@ -135,7 +131,7 @@ export const CardSetVar = ({route, navigation}) => {
   )
 }
 
-
+// TODO: 单词本
 export const VocabCollection = () => {
 
   const [arr, setArr] = React.useState([]);
@@ -150,7 +146,7 @@ export const VocabCollection = () => {
       } catch(e){
         console.log(e)
       }
-      console.log('collection loaded');
+      console.log('loaded 单词本');
     }, 500)
   },[])
 

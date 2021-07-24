@@ -45,13 +45,16 @@ export const MyCollections = ({ navigation }) => {
  
 export const Cards = () => {  
   const [order, setOrder] = React.useState(true);
+  const changeOrder = () => {
+    setOrder(!order);
+  }
 
   const  CardsList = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的单词们</Text>
-          <TouchableOpacity onPress={()=>setOrder(!order)}>
+          <TouchableOpacity onPress={changeOrder}>
             <Ionicons name="filter" size={24} color="black" />
           </TouchableOpacity>
         </View>
@@ -81,7 +84,7 @@ export const Cards = () => {
         </View>
         : 
         <View>
-      <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
+      <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 2})} >
         <ImageBackground
           source={require('../assets/wallpaper/card-slim.png')}
           imageStyle={{borderRadius: theme.border}}
@@ -90,7 +93,7 @@ export const Cards = () => {
         </ImageBackground> 
       </TouchableOpacity>
       <View style={{height:30}}/>
-      <TouchableOpacity onPress={() => navigation.navigate('CardSet1'), {id: 1}} >
+      <TouchableOpacity onPress={() => navigation.navigate('CardSetVar'), {id: 1}} >
         <ImageBackground
           source={require('../assets/wallpaper/card-slim.png')}
           imageStyle={{borderRadius: theme.border}}
