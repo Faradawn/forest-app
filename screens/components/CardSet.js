@@ -49,12 +49,11 @@ export const CardSetVar = ({route, navigation}) => {
     let foundItem = arr.find(val => val.id%(route.params.id*10000) === parseInt(item.id));
     // trucation
     let str = item.latin.concat(" ", item.family, " ", item.category);
-  
     
     const addMark = async () => {
-      let newId = parseInt(item.id) + route.params.id*10000;
+      let newId = (parseInt(item.id) + route.params.id*10000).toString();
       if(!foundItem){
-        setArr([...arr, {id: newId.toString(), date: (new Date()).getTime(), wordset: route.params.id, info: item}]);
+        setArr([...arr, {id: newId, date: (new Date()).getTime(), wordset: route.params.id, info: item}]);
         await AsyncStorage.setItem('collection', JSON.stringify(
           [...arr, {id: newId, date: (new Date()).getTime(), wordset: route.params.id, info: item}]
         ))
@@ -71,8 +70,7 @@ export const CardSetVar = ({route, navigation}) => {
       await sound.playAsync(); 
     }
 
-  
-
+    // 每一个小单词
     return (
       <View style={styles.lineContainer}>
         <View style={styles.lineCard}>
@@ -132,7 +130,7 @@ export const CardSetVar = ({route, navigation}) => {
 }
 
 // TODO: 单词本
-export const VocabCollection = () => {
+export const VocabCollection = ({navigation}) => {
 
   const [arr, setArr] = React.useState([]);
 
@@ -155,47 +153,69 @@ export const VocabCollection = () => {
   
     let str = item.info.latin.concat(" ", item.info.family, " ", item.info.category);
   
-    const addMark = async () => {
-      console.log('todo remove');
+    const removeMark = async () => {
+      setArr(arr.filter(val => val.id !== item.id));
+      await AsyncStorage.setItem('collection', JSON.stringify(
+        arr.filter(val => val.id !== item.id)
+      ))
+    }
+    const playSound = async () => {
+      const {sound} = await Audio.Sound.createAsync(switchSound(item.wordset, item.info.id));
+      await sound.playAsync(); 
     }
 
     return (
       <View style={styles.lineContainer}>
-        <View style={styles.lineCard}>
-
-          <View style={styles.oneLine}>
-            <Text style={{fontSize: 20}}>{item.info.chinese}</Text>
+      <View style={styles.lineCard}>
+        <View style={styles.oneLine}>
+          <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
             <TouchableOpacity
-              onPress={addMark}>
+              onPress={playSound}>
+              <Ionicons name="volume-medium-outline" size={24} color ="tomato" />
+            </TouchableOpacity>
+            <Text style={{fontSize: 20, marginLeft: 10}}>{item.info.chinese}</Text>
+          </View>
+
+          <TouchableOpacity
+              onPress={removeMark}>
               <Ionicons name="remove-circle-outline" size={20} color="black" />
             </TouchableOpacity>
-          </View>
-          <View style={styles.secondLine}>
-            <Text>{str}</Text>
-          </View>
+        </View>
+
+        <View style={styles.secondLine}>
+          <Text>{str}</Text>
         </View>
       </View>
+
+    </View>
+
     );
   };
 
   // here  
   return(
-    <View style={styles.container}>
-      <Text> 我的单词收藏</Text>
-      <View style={styles.flatlist}>
-        <FlatList
-          data={arr}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
-        <Button title='clear collection' onPress={() =>
-           AsyncStorage.removeItem('collection').then((val)=>console.log('cleared:', val))}>
-
-        </Button>
-       
+    <View style={{backgroundColor: 'white', flex: 1}}>
+      <View style={{paddingTop: theme.marginTop, left: 30, top: -10}}>
+        <TouchableOpacity 
+          onPress={()=>navigation.goBack()}>
+            <Ionicons name='arrow-back' size={20} color='grey'/>
+        </TouchableOpacity>
       </View>
 
+      <View style={{alignItems: 'center'}}>
+        <Text style={{fontSize: 20, marginBottom: 30}}> 我的单词本</Text>
+        <View style={styles.flatlist}>
+          <FlatList
+            data={arr}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
+        
+        </View>
+
+      </View>
     </View>
+    
   )
 }
 
