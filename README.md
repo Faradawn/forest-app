@@ -1,18 +1,40 @@
 # Latin Garden
-A flashcard app for Beijing Forestry University students to memorize gardener epistemology.
-Built with React Native and utlizes async storage.
-From March.20,2021 - March.31.2021. 
+A flashcard app for Beijing Forestry University students to memorize gardener epistemology.  
+Built with React Native and utlizes async storage.  
+From March.20,2021 - March.31.2021.   
 
 ## 数据结构
 ```
+// 注册token和username
+'guest-token', '朋友'
+
+// 单词本
 collection: [
   {
-    'id': '1',
-    'star': 'true',
-    'date': '',
-    'notes': '',
+    id: "10150",
+    date: 12309230590,
+    wordset: 1,
+    info: {
+      "category": "藿香蓟属",
+      "chinese": "藿香蓟",
+      "family": "菊科",
+      "id": "1",
+      "latin": "Ageratum conyzoides",
+    }
   }
 ]
+
+// store
+const initialState = {
+  user: {
+    token: '',
+    name: '',
+  },
+  loading: false,
+  cloudErr: false,
+  counter: 0,
+
+}
 
 
 
@@ -50,6 +72,7 @@ Version Two: backend implementation
 <br></br>
 问题集：
 - [ ] IOS simulator expo audio? 点击静音和和不静音按钮
+- [ ] useEffect 没反应？把async放在setTime out里
 
 
 
