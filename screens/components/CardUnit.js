@@ -70,16 +70,16 @@ export default function Card(props) {
             imageStyle={{borderRadius: theme.border}}
             style={style1.imageCard}>
               {flip ? 
-                <View>
+                <View style={{alignItems: 'center'}}>
                   <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
                     <TouchableOpacity
                       style={{padding: 10}}
                       onPress={playSound}>
                       <Ionicons name="volume-medium-outline" size={26} color ="tomato" />
                     </TouchableOpacity>
-                    <Text style={{fontSize: 20, marginRight: 10}}>{item.chinese}</Text>
-
+                    <Text style={{fontSize: 20, marginRight: 10}}> {item.chinese}</Text>
                   </View>
+                  <Text style={{color: 'grey', letterSpacing: 3}}>第{item.id}个</Text>
 
                   <TouchableOpacity
                     style={{alignItems: 'center', padding: 10}}

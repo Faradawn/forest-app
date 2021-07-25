@@ -79,7 +79,7 @@ export const CardSetVar = ({route, navigation}) => {
                 onPress={playSound}>
                 <Ionicons name="volume-medium-outline" size={24} color ="tomato" />
               </TouchableOpacity>
-              <Text style={{fontSize: 20, marginLeft: 10}}>{item.chinese}</Text>
+              <Text style={{fontSize: 20, marginLeft: 10}}>{item.id}. {item.chinese}</Text>
             </View>
 
             <TouchableOpacity
