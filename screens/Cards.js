@@ -6,7 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 import { VocabCollection } from './components/CardSet';
 import { Ionicons } from '@expo/vector-icons';
-import { CardSetVar } from './components/CardSet'
+import { CardSetVar } from './components/CardSet';
+import { QuizVar } from './components/QuizVar';
 const Stack = createStackNavigator();
 
 export const MyCollections = () => {
@@ -42,23 +43,17 @@ export const MyCollections = () => {
 
 // TODO: 我的单词们页面
 export const Cards = () => {  
-  const [order, setOrder] = React.useState(true);
-  const changeOrder = () => {
-    setOrder(!order);
-  }
 
   const  CardsList = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的单词们</Text>
-          <TouchableOpacity onPress={changeOrder}>
+          <TouchableOpacity>
             <Ionicons name="filter" size={24} color="black" />
           </TouchableOpacity>
         </View>
 
-
-        {order ? 
         <View>
           <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 1})} >
           <ImageBackground
@@ -69,8 +64,6 @@ export const Cards = () => {
           </ImageBackground> 
         </TouchableOpacity>
   
-        <View style={{height:30}}/>
-  
         <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
@@ -79,27 +72,18 @@ export const Cards = () => {
               <Text> 园林花卉拉丁名200个 </Text>
           </ImageBackground> 
         </TouchableOpacity>
+        
+        <TouchableOpacity onPress={() => navigation.navigate('QuizVar', {id: 1})} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 考试1 </Text>
+          </ImageBackground> 
+        </TouchableOpacity>
+
         </View>
-        : 
-        <View>
-      <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 2})} >
-        <ImageBackground
-          source={require('../assets/wallpaper/card-slim.png')}
-          imageStyle={{borderRadius: theme.border}}
-          style={styles.imageCard}>
-            <Text> 园林花卉拉丁名200个 </Text>
-        </ImageBackground> 
-      </TouchableOpacity>
-      <View style={{height:30}}/>
-      <TouchableOpacity onPress={() => navigation.navigate('CardSetVar'), {id: 1}} >
-        <ImageBackground
-          source={require('../assets/wallpaper/card-slim.png')}
-          imageStyle={{borderRadius: theme.border}}
-          style={styles.imageCard}>
-            <Text> 园林树木拉丁名150个 </Text>
-        </ImageBackground> 
-      </TouchableOpacity>
-      </View> }
+        
       </View>
     )
   }
@@ -109,6 +93,7 @@ export const Cards = () => {
     <Stack.Navigator>
       <Stack.Screen name='CardsList' component={CardsList} options={{headerShown: false}}/>
       <Stack.Screen name='CardSetVar' component={CardSetVar} options={{headerShown: false}}/>
+      <Stack.Screen name='QuizVar' component={QuizVar} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
       

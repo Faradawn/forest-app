@@ -56,7 +56,6 @@ export default function Card(props) {
         ))
       }
     }
-
     const playSound = async () => {
       const {sound} = await Audio.Sound.createAsync(switchSound(props.wordset_id, item.id));
       await sound.playAsync(); 
