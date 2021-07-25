@@ -13,9 +13,12 @@ import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createStackNavigator } from '@react-navigation/stack';
 import { switchSound } from '../api/switchSound';
+import { Entypo } from '@expo/vector-icons';
 
 
 export const CardSetVar = ({route, navigation}) => {
+  const [arr, setArr] = React.useState([]);
+  const [cardMode, setCardMode] = React.useState(true);
   var wordset;
   switch (route.params.id) {
     case 2:
@@ -25,23 +28,19 @@ export const CardSetVar = ({route, navigation}) => {
       wordset = wordset1;
       break;
   }
-
-  const [arr, setArr] = React.useState([]);
-
-  React.useEffect(() => {
-    setTimeout(async () => {
-      try{
-        if(arr.length === 0){
-          let retrieved = await AsyncStorage.getItem('collection');
-          if(retrieved){
-            setArr(JSON.parse(retrieved));
-            console.log('loaded wordset',route.params.id);
-          }
-        }
-      } catch(e){
-        console.log(e)
+  const loadAsync = async () => {
+    try{
+      let retrieved = await AsyncStorage.getItem('collection');
+      if(retrieved){
+        setArr(JSON.parse(retrieved));
+        console.log('loaded wordset in list',route.params.id);
       }
-    }, 500)
+    } catch(e){
+      console.log(e)
+    }
+  }
+  React.useEffect(() => {
+    setTimeout(loadAsync, 500)
   },[])
 
 
@@ -98,11 +97,13 @@ export const CardSetVar = ({route, navigation}) => {
       </View>
     );
   };
-  // end of renderItem
+  // 小单词条 renderItem 结束
 
+  // TODO: 拉丁名总页面
   return(
     <View style={{backgroundColor: 'white', flex: 1}}>
-      <View style={{paddingTop: theme.marginTop, left: 30, top: -10}}>
+      
+      <View style={{paddingTop: theme.marginTop, left: 30}}>
         <TouchableOpacity 
           onPress={()=>navigation.goBack()}>
             <Ionicons name='arrow-back' size={20} color='grey'/>
@@ -112,20 +113,26 @@ export const CardSetVar = ({route, navigation}) => {
       <View style={{alignItems: 'center'}}>
         <Text style={{fontSize: 20}}>
           {route.params.id === 1 ? '园林树木拉丁名150个' : '园林花卉拉丁名200个'}</Text>
-        <Image 
-          source={require('../../assets/images/divider-line.png')}
-          style={{height: 10, width: 150, marginTop: 15, marginBottom: 20}}
-        />
-        <View style={styles.flatlist}>
-          <FlatList
-            data={wordset.Sheet1}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-          />
-        </View>
+        <TouchableOpacity onPress={() => {setCardMode(!cardMode); cardMode ? loadAsync() : {}}}>
+          {cardMode ? 
+            <Entypo name="list" size={24} color="black" 
+              style={{height: 25, marginTop: 15, marginBottom: 20}}/> : 
+            <Image 
+              source={require('../../assets/images/flip-line-icon.png')}
+              style={{height: 25, width: 25, marginTop: 15, marginBottom: 20}}
+            /> 
+          }
+        </TouchableOpacity>
+
+        {cardMode ?
+          <Card data={wordset.Sheet1} wordset_id={route.params.id}></Card> : 
+          <View style={styles.flatlist}>
+            <FlatList data={wordset.Sheet1} renderItem={renderItem} keyExtractor={item => item.id}/>
+          </View> }
         
       </View>
-    </View>
+    </View> 
+
   )
 }
 
@@ -164,6 +171,7 @@ export const VocabCollection = ({navigation}) => {
       await sound.playAsync(); 
     }
 
+    // 单词本每个单词
     return (
       <View style={styles.lineContainer}>
       <View style={styles.lineCard}>
@@ -192,10 +200,10 @@ export const VocabCollection = ({navigation}) => {
     );
   };
 
-  // here  
+  // 单词本总页面  
   return(
     <View style={{backgroundColor: 'white', flex: 1}}>
-      <View style={{paddingTop: theme.marginTop, left: 30, top: -10}}>
+      <View style={{paddingTop: theme.marginTop, left: 30}}>
         <TouchableOpacity 
           onPress={()=>navigation.goBack()}>
             <Ionicons name='arrow-back' size={20} color='grey'/>

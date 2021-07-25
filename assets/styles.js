@@ -10,7 +10,7 @@ export const theme = {
   authWidth: Dimensions.get('window').width - 90,
   height: Dimensions.get('window').height - 400,
   padding: 30,
-  marginTop: 60,
+  marginTop: 50,
   
 } 
 

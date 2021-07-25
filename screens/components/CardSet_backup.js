@@ -24,33 +24,6 @@ export default function Cards(props) {
   React.useEffect(() => {get()}, [count])
   React.useEffect(() => {load()}, [])
 
-
-
-  // API calls
-  async function load() {
-    const wordset = await loadWordSet(id)
-    if (wordset) { 
-      setLoaded(wordset)
-      const storage = await getProgress(STORAGE_KEY)
-      const obj = JSON.parse(storage)
-      if (obj) {
-        if (obj.progress && obj.starred) { // progress and star
-          setCount(obj.progress)
-          setArrayStar(obj.starred)
-        }
-        else if (obj.progress) { // only progress no star
-          setCount(obj.progress)
-          setArrayStar(buildArray(wordset.length))
-        }
-      }
-      else {
-        setCount(1)
-        setArrayStar(buildArray(wordset.length))
-      }
-    }
-    else { console.log('error loading data') }
-  }
-
   async function get() {
     const value = await getProgress(STORAGE_KEY)
     const obj = JSON.parse(value)
@@ -81,14 +54,7 @@ export default function Cards(props) {
     setOneStar(arrayStar[count-2])
   }
 
-  const [sound, setSound] = React.useState();
-
-  async function playSound(){
-    const {sound} = await Audio.Sound.createAsync(require('../../assets/raw_assets/4_voice/0001.mp3'));
-    setSound(sound);
-    await sound.playAsync(); 
-    console.log('played sound');
-  }
+  
 
   return(
     <View style={styles.container}>
@@ -101,7 +67,7 @@ export default function Cards(props) {
 
       <View style={{height: 20}}></View>
 
-      <Card data={(loaded) ? loaded[count - 1] : loading} initflip={true}/>
+      <Card item={(loaded) ? loaded[count - 1] : loading}/>
 
       <View style={{height: 20}}></View>
       <Text> 第 {count} / {loaded ? loaded.length : '?'} 个</Text>
@@ -113,12 +79,6 @@ export default function Cards(props) {
             <Ionicons name="caret-back" size={50} color="black" />
         </TouchableOpacity>
         <View style={{width:100}}/>
-
-
-
-
-        <Button onPress={playSound} title='读音'> </Button>
-
 
 
 
