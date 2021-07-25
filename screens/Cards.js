@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Text, View, StyleSheet, ImageBackground } from 'react-native'
+import { Button, Text, View, StyleSheet, ImageBackground, Image } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -9,40 +9,38 @@ import { Ionicons } from '@expo/vector-icons';
 import { CardSetVar } from './components/CardSet'
 const Stack = createStackNavigator();
 
-
-
-export const MyCollections = ({ navigation }) => {
-  const CollectionsRoot = () => {
+export const MyCollections = () => {
+  const CollectionsRoot = ({navigation}) => {
     return(
-      <View style={styles.container}>
-        <View style={styles.oneLine}>
-          <Text style={styles.oneText}>我的收藏</Text>
-          <TouchableOpacity>
-            <Ionicons name="filter" size={24} color="black" />
+      <View style={{alignItems: 'center', backgroundColor: 'white', flex: 1}}>
+        <Text >我的收藏</Text>  
+        <View style={{display: 'flex', flexDirection: 'row'}}>
+          <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
+            <Image
+              source={require('../assets/images/notebook1.png')}
+              style={{width: 200, height: 200, resizeMode: 'stretch'}}/>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
+            <Image
+              source={require('../assets/images/notebook1.png')}
+              style={{width: 200, height: 200, resizeMode: 'stretch'}}/>
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
-          <ImageBackground
-            source={require('../assets/wallpaper/card-slim.png')}
-            imageStyle={{borderRadius: theme.border}}
-            style={styles.imageCard}>
-              <Text> 我的单词本 </Text>
-          </ImageBackground> 
-        </TouchableOpacity>
       </View>
     )
   }
 
   return(
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='CollectionsRoot'>
       <Stack.Screen name='CollectionsRoot' component={CollectionsRoot} options={{headerShown: false}}/>
       <Stack.Screen name='VocabCollection' component={VocabCollection} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
 }
-// end of 收藏
- 
+
+// TODO: 我的单词们页面
 export const Cards = () => {  
   const [order, setOrder] = React.useState(true);
   const changeOrder = () => {
@@ -117,6 +115,8 @@ export const Cards = () => {
 }
 
 const styles = StyleSheet.create({
+  // modal
+ 
   // top
   container: {
     alignItems: 'center',
