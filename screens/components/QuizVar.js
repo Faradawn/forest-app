@@ -45,11 +45,13 @@ export const QuizVar = ({route, navigation}) => {
     return(
       <View style={{width, height: 600, alignItems: 'center'}}>
         <ImageBackground
-            source={require('../../assets/images/hand-draw-frame.png')}
-            imageStyle={{borderRadius: theme.border}}
+            source={require('../../assets/images/quiz-frame6.png')}
+            imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
             style={styles.quizCard}>
-              <Text> {item.problem} </Text>
-
+              <Text
+                style={{fontSize: 17, marginBottom: 10}}>
+                {item.problem}? 
+              </Text>
               <TouchableOpacity style={styles.answerLine} onPress={() => checkAnswer(answerArr[0])}>
                 <Text>A: {answerArr[0]}</Text>
               </TouchableOpacity>
@@ -98,21 +100,26 @@ export const QuizVar = ({route, navigation}) => {
 
 const styles = StyleSheet.create({
   quizCard: {
-    height: 400,
-    borderRadius: theme.border,
+    marginTop: 10,
+    height: 500,
     width: theme.width,
     alignItems: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},
-    shadowRadius: 4,
+    shadowRadius: 10,
     shadowOpacity: 0.4,
+    paddingBottom: 40,
   },
   answerLine: {
     width: 200,
-    height: 40,
-    borderRadius: 10,
-    borderWidth: 1,
-    justifyContent: 'center'
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 7,
+    borderWidth: 0.5,
+    justifyContent: 'center',
+    marginTop: 15
   },
 
 
