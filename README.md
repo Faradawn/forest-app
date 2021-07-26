@@ -4,11 +4,13 @@ Built with React Native and utlizes async storage.
 From March.20,2021 - March.31.2021.   
 
 ## 数据结构
+登陆信息
 ```
-// 注册token和username
-'guest-token', '朋友'
+guest-token: '朋友'
+```
 
-// 单词本
+收藏单词本
+```
 collection: [
   {
     id: "10150",
@@ -21,9 +23,23 @@ collection: [
       "id": "1",
       "latin": "Ageratum conyzoides",
     }
-  }
+  },
 ]
+```
 
+Quiz progressArr 信息
+```
+progressArr = [
+  {
+    question: "苏铁的拉丁名是",
+    answer: "Cycus Bellitta",
+    answerArr: ["Cycus Bellitta", "Beta", "Charlie", "Gamma"]
+  },
+]
+```
+
+Store 存储
+```
 // store
 const initialState = {
   user: {
@@ -34,16 +50,12 @@ const initialState = {
   cloudErr: false,
   counter: 0,
 
-}
-
-
-
-
-  
+} 
 ```
 
 
-```
+
+
 ## Home Page
 ![home page demo](./assets/demo1.GIF)
 
@@ -55,7 +67,7 @@ const initialState = {
 
 ## Clear async storage data
 ![clear storage](./assets/demo4.GIF)
-```
+
 
 
 ## Production Log 

@@ -17,14 +17,14 @@ export default function ProgressBar(props) {
 
 const styles = (a) =>  StyleSheet.create({
   barContainer: {
-    width: Dimensions.get('window').width - 50,
+    width: Dimensions.get('window').width - 70,
     height: 10,
     backgroundColor: '#e6e6e6',
     borderRadius: 5,
     alignItems: 'flex-start',
   },
   rectangle: {
-    width: a * (Dimensions.get('window').width - 50),
+    width: a * (Dimensions.get('window').width - 70),
     height: 10,
     backgroundColor: 'orange',
     borderRadius: 5,    
