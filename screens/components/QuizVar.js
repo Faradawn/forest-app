@@ -38,15 +38,11 @@ export const QuizVar = ({route, navigation}) => {
   const [numDone, setNumDone] = React.useState(0);
   const [progressArr, setProgress] = React.useState([]);
   const [modalVisible, setModalVisible] = React.useState(false);
-
-
-  console.log('progressArr', progressArr);
+  const flatListRef = React.useRef(null);
 
   // Working: renderItem
   const renderItem = ({item, index}) => {
-
     var foundItem = progressArr.find((val) => val.id === index);
-
     var buttonList = item.answerArr.map((val, i) => (
       <TouchableOpacity 
        style={style1.button}
@@ -88,14 +84,12 @@ export const QuizVar = ({route, navigation}) => {
     // Done: 单张 render quiz 
     return(
       <View style={{width, height: 600, alignItems: 'center'}}>
-        
-
         <ImageBackground
           source={require('../../assets/images/quiz-frame6.png')}
           imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
           style={styles.quizCard}
         >
-          
+
           <Text style={{fontSize: 17, marginBottom: 10, maxWidth: 230}}>题{index+1}：{item.question}？ </Text>
           {buttonList}
 
@@ -119,11 +113,18 @@ export const QuizVar = ({route, navigation}) => {
         <Text style={{fontSize: 20, marginBottom: 10}}>
           {route.params.id === 1 ? '园林树木拉丁名测试题' : '园林花卉拉丁名测试题'}
         </Text>
+        <Button title='toggle modal' onPress={()=>setModalVisible(!modalVisible)}/>
 
         <Text style={{fontSize: 13, opacity: 0.7, marginBottom: 5}}>已完成 {numDone}/10 题</Text>
         <ProgressBar progress={numDone/10}/>
+        <Button title="Go To" onPress={() => {
+          if (flatListRef.current) {
+              flatListRef.current.scrollToIndex({index: 9}) // Scroll to day 10
+          }
+        }} />
 
         <FlatList 
+          ref={flatListRef}
           data={quizData} 
           renderItem={renderItem}
           keyExtractor={item => item.id}
@@ -131,28 +132,37 @@ export const QuizVar = ({route, navigation}) => {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
         />
-
-{/* Todo: modal */}
+        
         <Modal
           animationType="slide"
           transparent={true}
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
         >
-          <TouchableWithoutFeedback 
+          <TouchableWithoutFeedback
             style={{height, width, alignItems: 'center', paddingTop: 120}}
             onPress={() => setModalVisible(false)}>
-            <TouchableWithoutFeedback style={styles.modal}>
-              <View style={{width, height, top: 20}}>
-                
-                <Text>恭喜，得分{progressArr.filter((val)=>val.correct===val.select).length*10}分</Text>
-              </View>
-              
 
+            <TouchableWithoutFeedback style={styles.modal}>
+
+              <ImageBackground
+                source={require('../../assets/images/quiz-score.png')}
+                imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
+                style={styles.scoreCard}
+              >
+                
+                <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3}}
+                  >恭喜{'\n'}得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
+                </Text>
+
+              </ImageBackground>
             </TouchableWithoutFeedback>
+
+
           </TouchableWithoutFeedback>
 
         </Modal>
+        
         
       </View>
     </View> 
@@ -200,6 +210,26 @@ const style1 = StyleSheet.create({
 
 
 const styles = StyleSheet.create({
+  modal: {
+    backgroundColor: 'white',
+    marginTop: 20,
+    height: theme.width,
+    width: theme.width,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowOffset: {width: 5, height: 5},
+    shadowRadius: 20,
+    shadowOpacity: 0.4,
+    paddingBottom: 40,
+    borderRadius: theme.border,
+  },
+  scoreCard: {
+    height: 300,
+    width: 300,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
   quizCard: {
     marginTop: 20,
     height: 500,

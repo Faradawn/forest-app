@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
     shadowOffset: {width: 5, height: 0},
     shadowRadius: 20,
     shadowOpacity: 0.4,
-
   },
   container: {
     alignItems: 'center',
