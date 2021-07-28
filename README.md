@@ -85,6 +85,7 @@ Version Two: backend implementation
 问题集：
 - [ ] IOS simulator expo audio? 点击静音和和不静音按钮
 - [ ] useEffect 没反应？把async放在setTime out里
+- [x] Touchable Opacity 点不了，top 改成 marginTop
 
 
 

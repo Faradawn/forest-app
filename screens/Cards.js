@@ -1,14 +1,15 @@
 import * as React from 'react'
-import { Button, Text, View, StyleSheet, ImageBackground, Image } from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { Button, Text, View, StyleSheet, ImageBackground, Image, Dimensions, Modal } from 'react-native'
+import { TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
 import { VocabCollection } from './components/CardSet';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardSetVar } from './components/CardSet';
 import { QuizVar } from './components/QuizVar';
 const Stack = createStackNavigator();
+const {width, height} = Dimensions.get('screen');
 
 export const MyCollections = () => {
   const CollectionsRoot = ({navigation}) => {
@@ -43,14 +44,15 @@ export const MyCollections = () => {
 
 // TODO: 我的单词们页面
 export const Cards = () => {  
+  const [modalVisible, setModalVisible] = React.useState(false);
 
   const  CardsList = ({ navigation }) => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的单词们</Text>
-          <TouchableOpacity>
-            <Ionicons name="filter" size={24} color="black" />
+          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+          <MaterialCommunityIcons name="notebook" size={24} color="black" />
           </TouchableOpacity>
         </View>
 
@@ -78,9 +80,39 @@ export const Cards = () => {
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
             style={styles.imageCard}>
-              <Text> 考试1 </Text>
+              <Text> 「十道题」 园林树木拉丁名 </Text>
           </ImageBackground> 
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('QuizVar', {id: 2})} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 「十道题」 园林花卉拉丁名 </Text>
+          </ImageBackground> 
+        </TouchableOpacity>
+{/* TODO: modal */}
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        <TouchableWithoutFeedback 
+          style={{height, width, alignItems: 'center', paddingTop: 120}}
+          onPress={() => setModalVisible(false)}>
+          <TouchableWithoutFeedback style={styles.modal}>
+            <View style={{width, height, top: 20}}>
+              <MyCollections/>
+            </View>
+            
+
+          </TouchableWithoutFeedback>
+
+        </TouchableWithoutFeedback>
+
+      </Modal>
 
         </View>
         
@@ -101,7 +133,16 @@ export const Cards = () => {
 
 const styles = StyleSheet.create({
   // modal
- 
+  modal: {
+    width: width,
+    height: height,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    borderRadius: 30,
+    shadowOffset: {width: 5, height: 0},
+    shadowRadius: 20,
+    shadowOpacity: 0.4,
+  },
   // top
   container: {
     alignItems: 'center',
