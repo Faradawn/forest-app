@@ -3,17 +3,10 @@ import { Button, Text, View, StyleSheet, ImageBackground, Image } from 'react-na
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
-import { NavigationContainer } from '@react-navigation/native';
-
-import { VocabCollection } from './components/CardSet';
 import { Ionicons } from '@expo/vector-icons';
-
-import { CardSetVar } from './components/CardSet';
+import { CardSetVar } from './components/CardSetVar';
 import { QuizVar } from './components/QuizVar';
-
-
 const Stack = createStackNavigator();
-
 
 const Cards = () => {  
 

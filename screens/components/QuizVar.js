@@ -7,10 +7,10 @@ import quiz1 from '../data/quiz1.json';
 import quiz2 from '../data/quiz2.json';
 import ProgressBar from './ProgressBar';
 
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen');
 
 export const QuizVar = ({route, navigation}) => {
-  // === 随机取10道题 ===
+  // Done: === 随机取10道题 ===
   const raw_quiz1 = quiz1.Sheet1.sort(() => Math.random()-0.5).filter((val, index) => index < 10);
   const final_quiz1 = raw_quiz1.map((val, index) => ({
     question: val.problem,
@@ -19,7 +19,7 @@ export const QuizVar = ({route, navigation}) => {
   }))
   const raw_quiz2 = quiz2.Sheet1.sort(() => Math.random()-0.5).filter((val, index) => index < 10);
   const final_quiz2 = raw_quiz2.map((val, index) => ({
-    question: val.problem,
+    question: val.questions,
     answer: val[val.answer.substring(0,1)],
     answerArr: [val.A, val.B, val.C, val.D].sort(() => Math.random()-0.5)
   }))
@@ -29,15 +29,13 @@ export const QuizVar = ({route, navigation}) => {
   } else{
     quizset = final_quiz2;
   }
-  // === 定义quiz set结束 ===
-
   const [quizData, setQuiz] = React.useState(quizset);
-  const [numDone, setNumDone] = React.useState(0);
   const [progressArr, setProgress] = React.useState([]);
   const [modalVisible, setModalVisible] = React.useState(false);
   const flatListRef = React.useRef(null);
 
-  // Working: renderItem
+
+  // Done: renderItem
   const renderItem = ({item, index}) => {
     var foundItem = progressArr.find((val) => val.id === index);
     var buttonList = item.answerArr.map((val, i) => (
@@ -71,10 +69,15 @@ export const QuizVar = ({route, navigation}) => {
           select: str, 
           correct: item.answer
         }]);
-        setNumDone(numDone+1);
-        if(numDone+1 === 10){
-          setModalVisible(true);
+
+        if(progressArr.length+1 === 10){
+          setTimeout(()=>setModalVisible(true), 500)
         }
+        setTimeout(()=>{
+          if (flatListRef.current && progressArr.length <= 8)
+            flatListRef.current.scrollToIndex({index: progressArr.length+1})
+        }, 300)
+
       }
     }
 
@@ -110,21 +113,16 @@ export const QuizVar = ({route, navigation}) => {
         <Text style={{fontSize: 20, marginBottom: 10}}>
           {route.params.id === 1 ? '园林树木拉丁名测试题' : '园林花卉拉丁名测试题'}
         </Text>
-        <Button title='toggle modal' onPress={()=>setModalVisible(!modalVisible)}/>
+        {/* <Button title='toggle modal' onPress={()=>setModalVisible(!modalVisible)}/> */}
 
-        <Text style={{fontSize: 13, opacity: 0.7, marginBottom: 5}}>已完成 {numDone}/10 题</Text>
-        <ProgressBar progress={numDone/10}/>
-        <Button title="Go To" onPress={() => {
-          if (flatListRef.current) {
-              flatListRef.current.scrollToIndex({index: 9}) // Scroll to day 10
-          }
-        }} />
+        <Text style={{fontSize: 13, opacity: 0.7, marginBottom: 5}}>已完成 {progressArr.length}/10 题</Text>
+        <ProgressBar progress={progressArr.length/10}/>
 
         <FlatList 
           ref={flatListRef}
           data={quizData} 
           renderItem={renderItem}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.question}
           horizontal
           pagingEnabled
           showsHorizontalScrollIndicator={false}
@@ -136,28 +134,40 @@ export const QuizVar = ({route, navigation}) => {
           visible={modalVisible}
           onRequestClose={() => setModalVisible(false)}
         >
-          <TouchableWithoutFeedback
-            style={{height, width, alignItems: 'center', paddingTop: 120}}
-            onPress={() => setModalVisible(false)}>
+          <View style={{height, width, marginTop: 130, alignItems: 'center'}}>
+          <View style={styles.modal}>
 
-            <TouchableWithoutFeedback style={styles.modal}>
+            <TouchableOpacity
+                style={{marginTop: 15, marginLeft: 15}}
+                onPress={()=>setModalVisible(false)}>
+                <Ionicons name="close-outline" size={24} color="black" />
+            </TouchableOpacity>
 
+            <View style={{alignItems: 'center'}}>
               <ImageBackground
                 source={require('../../assets/images/quiz-score.png')}
                 imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
                 style={styles.scoreCard}
               >
-                
-                <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3}}
-                  >恭喜{'\n'}得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
+
+                <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3, marginTop: 110}}
+                  > 恭喜{'\n'} 得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
                 </Text>
 
+                <View style={{alignItems: 'center'}}>
+                  <TouchableOpacity style={style1.signupButton} onPress={()=>{
+                    setModalVisible(false);
+                    navigation.goBack()
+                  }}>
+                  <Text>完成</Text>
+                  </TouchableOpacity>
+
+                </View>
               </ImageBackground>
-            </TouchableWithoutFeedback>
-
-
-          </TouchableWithoutFeedback>
-
+            </View>
+            
+          </View>
+          </View>
         </Modal>
         
         
@@ -202,18 +212,28 @@ const style1 = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 15
   },
+  signupButton: {
+    width: 70,
+    height: 30,
+    marginTop: 10,
+    borderColor: 'orange',
+    backgroundColor: '#fffff7',
+    borderRadius: 5,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  signUpText: {
+
+  },
 
 })
-
-
 const styles = StyleSheet.create({
   modal: {
     backgroundColor: 'white',
     marginTop: 20,
-    height: theme.width,
+    height: 500,
     width: theme.width,
-    alignItems: 'center',
-    justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},
     shadowRadius: 20,
     shadowOpacity: 0.4,
@@ -223,8 +243,6 @@ const styles = StyleSheet.create({
   scoreCard: {
     height: 300,
     width: 300,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 
   quizCard: {
