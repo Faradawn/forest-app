@@ -9,7 +9,7 @@ import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { MyCollections } from './Cards';
+import { MyCollections } from './components/MyCollections'
 
 const {height, width} = Dimensions.get('screen');
 

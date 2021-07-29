@@ -4,43 +4,14 @@ import { TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-nat
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native';
-import { VocabCollection } from './components/CardSet';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardSetVar } from './components/CardSet';
 import { QuizVar } from './components/QuizVar';
+import { MyCollections } from './components/MyCollections'
+
 const Stack = createStackNavigator();
 const {width, height} = Dimensions.get('screen');
 
-export const MyCollections = () => {
-  const CollectionsRoot = ({navigation}) => {
-    return(
-      <View style={{alignItems: 'center', backgroundColor: 'white', flex: 1}}>
-        <Text >我的收藏</Text>  
-        <View style={{display: 'flex', flexDirection: 'row'}}>
-          <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
-            <Image
-              source={require('../assets/images/notebook1.png')}
-              style={{width: 200, height: 200, resizeMode: 'stretch'}}/>
-          </TouchableOpacity>
-
-          <TouchableOpacity onPress={() => navigation.navigate('VocabCollection')} >
-            <Image
-              source={require('../assets/images/notebook1.png')}
-              style={{width: 200, height: 200, resizeMode: 'stretch'}}/>
-          </TouchableOpacity>
-        </View>
-
-      </View>
-    )
-  }
-
-  return(
-    <Stack.Navigator initialRouteName='CollectionsRoot'>
-      <Stack.Screen name='CollectionsRoot' component={CollectionsRoot} options={{headerShown: false}}/>
-      <Stack.Screen name='VocabCollection' component={VocabCollection} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  )
-}
 
 // TODO: 我的单词们页面
 export const Cards = () => {  
@@ -51,7 +22,7 @@ export const Cards = () => {
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的单词们</Text>
-          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
           <MaterialCommunityIcons name="notebook" size={24} color="black" />
           </TouchableOpacity>
         </View>
