@@ -10,13 +10,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { CardSetVar } from './components/CardSet';
 import { QuizVar } from './components/QuizVar';
-import { MyCollections } from './components/MyCollections'
+
 
 const Stack = createStackNavigator();
 
 
-// TODO: 我的单词们页面
-export const Cards = () => {  
+const Cards = () => {  
 
   const  CardsList = ({ navigation }) => {
     return (
@@ -32,7 +31,7 @@ export const Cards = () => {
         </View>
 
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 1})} >
+          <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -41,7 +40,7 @@ export const Cards = () => {
           </ImageBackground> 
         </TouchableOpacity>
   
-        <TouchableOpacity onPress={() => navigation.navigate('CardSetVar', {id: 2})} >
+        <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -50,12 +49,21 @@ export const Cards = () => {
           </ImageBackground> 
         </TouchableOpacity>
         
-        <TouchableOpacity onPress={() => navigation.navigate('QuizVar', {id: 1})} >
+        <TouchableOpacity onPress={() => navigation.navigate('Quiz1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
             style={styles.imageCard}>
-              <Text> 考试1 </Text>
+              <Text> 「十道题」 园林树木拉丁名 </Text>
+          </ImageBackground> 
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Quiz2', {id: 2})} >
+          <ImageBackground
+            source={require('../assets/wallpaper/card-slim.png')}
+            imageStyle={{borderRadius: theme.border}}
+            style={styles.imageCard}>
+              <Text> 「十道题」 园林花卉拉丁名 </Text>
           </ImageBackground> 
         </TouchableOpacity>
 
@@ -75,6 +83,8 @@ export const Cards = () => {
   )
       
 }
+
+export default Cards;
 
 const styles = StyleSheet.create({
   // modal

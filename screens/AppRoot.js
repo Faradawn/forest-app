@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
 import Settings from './Settings';
 import Home from './Home'
-import { Cards, MyCollections } from './Cards'
-import {CardSet} from './components/CardSet';
-import { createStackNavigator } from '@react-navigation/stack';
+import Cards from './Cards'
+import { CardSetVar } from './components/CardSetVar';
+import { QuizVar } from './components/QuizVar';
+
+
 
 const Tabs = createBottomTabNavigator();
 const HomeTabs = () => (
@@ -30,16 +33,15 @@ const HomeTabs = () => (
   </Tabs.Navigator>
 )
 
-const Set1 = () => (<CardSet id={1}/>);
-const Set2 = () => (<CardSet id={2}/>);
 
 const Stack = createStackNavigator();
 const AppRoot = () => (
-  <Stack.Navigator>
+  <Stack.Navigator initialRouteName='HomeTabs'>
     <Stack.Screen name='HomeTabs' component={HomeTabs} options={{headerShown:false}}></Stack.Screen>
-    <Stack.Screen name='CardSet1' component={Set1} options={{headerShown:false}}></Stack.Screen>
-    <Stack.Screen name='CardSet2' component={Set2} options={{headerShown:false}}></Stack.Screen>
-    <Stack.Screen name='MyCollections' component={MyCollections} options={{headerShown: false}}/>
+    <Stack.Screen name='CardSet1' component={CardSetVar} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='CardSet2' component={CardSetVar} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='Quiz1' component={QuizVar} options={{headerShown:false}}></Stack.Screen>
+    <Stack.Screen name='Quiz2' component={QuizVar} options={{headerShown:false}}></Stack.Screen>
     
   </Stack.Navigator>
 )

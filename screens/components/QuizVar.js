@@ -2,10 +2,7 @@ import React from 'react';
 import { Button, Text, View, StyleSheet, FlatList, Image, ImageBackground, Dimensions, Modal } from 'react-native'
 import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../../assets/styles'
-import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import quiz1 from '../data/quiz1.json';
 import quiz2 from '../data/quiz2.json';
 import ProgressBar from './ProgressBar';

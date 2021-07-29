@@ -59,7 +59,7 @@ function General() {
   )
 }
 
-export default function Home() {  
+export default function Settings() {  
   return(
     <Stack.Navigator initialRouteName='SettingPage'>
       <Stack.Screen name='设置' component={SettingPage}/>

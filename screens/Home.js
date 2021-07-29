@@ -9,14 +9,12 @@ import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import { MyCollections } from './components/MyCollections'
 
 const {height, width} = Dimensions.get('screen');
 
 function HomePage({ navigation }) {
   const [fraction1, setFraction1] = React.useState(0)
   const [fraction2, setFraction2] = React.useState(0)
-  const [modalVisible, setModalVisible] = React.useState(false);
   var username = useSelector(state => state.user.name);
 
   async function getFraction() {
@@ -37,31 +35,11 @@ function HomePage({ navigation }) {
     <View style={styles.container}>
       <View style={styles.oneLine}>
         <Text style={styles.oneText}>嘿，{username}</Text>
-        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-        <MaterialCommunityIcons name="notebook" size={24} color="black" />
+        <TouchableOpacity onPress={() => {}}>
+          <MaterialCommunityIcons name="notebook" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <TouchableWithoutFeedback 
-          style={{height, width, alignItems: 'center', paddingTop: 120}}
-          onPress={() => setModalVisible(false)}>
-          <TouchableWithoutFeedback style={styles.modal}>
-            <View style={{width, height, top: 20}}>
-              <MyCollections/>
-            </View>
-            
-
-          </TouchableWithoutFeedback>
-
-        </TouchableWithoutFeedback>
-
-      </Modal>
 
       <HomeQuote/>
 
@@ -94,16 +72,6 @@ export default function Home() {
 }
 
 const styles = StyleSheet.create({
-  modal: {
-    width: width,
-    height: height,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    borderRadius: 30,
-    shadowOffset: {width: 5, height: 0},
-    shadowRadius: 20,
-    shadowOpacity: 0.4,
-  },
   container: {
     alignItems: 'center',
     paddingTop: theme.marginTop+20, 
