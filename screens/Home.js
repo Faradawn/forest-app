@@ -2,23 +2,25 @@ import * as React from 'react'
 import { Button, Text, View, Image, StyleSheet, Dimensions, ImageBackground, Modal} from 'react-native'
 import { TextInput, TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../assets/styles'
-import { createStackNavigator } from '@react-navigation/stack'
 import ProgressBar from './components/ProgressBar'
 import { buildArray, getProgress } from './api/API'
 import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { Feather } from '@expo/vector-icons';
 
 const {height, width} = Dimensions.get('screen');
 
-function HomePage({ navigation }) {
+export default function Home() {
   const [fraction1, setFraction1] = React.useState(0)
   const [fraction2, setFraction2] = React.useState(0)
+  const [v, setV] = React.useState(0);
   var username = useSelector(state => state.user.name);
+  var greetings = ['今天咋样', '最近如何','心情好么','梦见了什么','饭否','路上还顺'];
+  
 
   async function getFraction() {
-    // can change to multiget()
     const value1 = await getProgress('@wordset1') 
     const value2 = await getProgress('@wordset2')
     const obj1 = JSON.parse(value1)
@@ -34,9 +36,9 @@ function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.oneLine}>
-        <Text style={styles.oneText}>嘿，{username}</Text>
-        <TouchableOpacity onPress={() => {}}>
-          <MaterialCommunityIcons name="notebook" size={24} color="black" />
+        <Text style={styles.oneText}>{greetings[v]}，{username}</Text>
+        <TouchableOpacity onPress={() => {setV(Math.floor(Math.random()*greetings.length))}}>
+        <Feather name="sun" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -62,14 +64,6 @@ function HomePage({ navigation }) {
   )
 }
 
-const Stack = createStackNavigator();
-export default function Home() {  
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name='Home' component={HomePage} options={{headerShown: false}}/>
-    </Stack.Navigator>
-  )
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -84,8 +78,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    width: theme.authWidth,
+    width: theme.authWidth+20,
   },
+
   oneText:{
     fontSize: 25,
     letterSpacing: 2,

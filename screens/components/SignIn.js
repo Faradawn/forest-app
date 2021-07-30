@@ -21,7 +21,7 @@ export const Welcome = ({navigation}) => {
       </TouchableOpacity>
 
       <Text 
-        style={{fontSize: 20, letterSpacing: 2, marginBottom: 20}}>
+        style={{fontSize: 23, letterSpacing: 2, marginBottom: 30}}>
           拉丁园，终于等到你!
       </Text>
 
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
 
   // 第一页：欢迎
   imageCard: {
+    marginTop: 30,
     marginBottom: 30,
     height: theme.height,
     borderRadius: theme.border,
@@ -118,23 +119,16 @@ const styles = StyleSheet.create({
     width: theme.authWidth,
     height: 50,
     borderRadius: 5,
-    alignItems: 'center',
     justifyContent: 'center',
-    margin: 10,
+    alignItems: 'center',
   },
   signUpText: {
-    fontSize: 15,
-    letterSpacing: 50,
+    textAlign: 'center',
+    fontSize: 17,
+    letterSpacing: 20,
+    marginLeft: 20,
     color: 'white',
   },
-
-    bottomText: {
-      color: 'grey',
-      fontSize: 13,
-      letterSpacing: 5,
-      margin: 10,
-    },
-
 
 
   // 第二页：输入框子

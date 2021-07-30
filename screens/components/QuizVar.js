@@ -32,6 +32,9 @@ export const QuizVar = ({route, navigation}) => {
   const [quizData, setQuiz] = React.useState(quizset);
   const [progressArr, setProgress] = React.useState([]);
   const [modalVisible, setModalVisible] = React.useState(false);
+  // TODO: load, merge
+  const [thisID, setThisID] = React.useState([]);
+  var retrievedId = [];
   const flatListRef = React.useRef(null);
 
 

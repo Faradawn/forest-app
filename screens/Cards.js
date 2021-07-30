@@ -3,7 +3,7 @@ import { Button, Text, View, StyleSheet, ImageBackground, Image } from 'react-na
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { CardSetVar } from './components/CardSetVar';
 import { QuizVar } from './components/QuizVar';
 const Stack = createStackNavigator();
@@ -14,12 +14,10 @@ const Cards = () => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
-          <Text style={styles.oneText}>我的单词们</Text>
-
-
-          <TouchableOpacity>
-            <Ionicons name="filter" size={24} color="black" />
-
+          <Text style={styles.oneText}>我的学习场</Text>
+          {/* TODO: 改成bookmark */}
+          <TouchableOpacity onPress={() => {}}>
+          <MaterialCommunityIcons name="notebook-outline" size={26} color="black" />
           </TouchableOpacity>
         </View>
 
