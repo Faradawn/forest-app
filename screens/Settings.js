@@ -32,8 +32,8 @@ function SettingPage({ navigation }) {
       <Button title='关于' onPress={() => navigation.navigate('关于我们')}></Button>
       <View style={{height: 30}}/>
       <Button 
-        title='清除进度和收藏'
-        onPress={() => AsyncStorage.clear()}/>
+        title='清空单词本'
+        onPress={() => AsyncStorage.setItem('collection', '')}/>
       <View style={{height: 30}}/>
 
       <Button 
@@ -74,8 +74,9 @@ const style1 = StyleSheet.create({
     lineHeight: 30,
   },
   settingPage: {
-    paddingTop: 290,
+    justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: 70,
     flex: 1,
   },
   

@@ -1,28 +1,30 @@
 import * as React from 'react'
-import { Button, Text, View, StyleSheet, ImageBackground, Image } from 'react-native'
+import { Modal, Text, View, StyleSheet, ImageBackground, Image, Dimensions } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { CardSetVar } from './components/CardSetVar';
-import { QuizVar } from './components/QuizVar';
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { MyCollection } from './components/MyCollection';
+
+const {height, width} = Dimensions.get('screen');
 const Stack = createStackNavigator();
 
 const Cards = () => {  
 
   const  CardsList = ({ navigation }) => {
+    const [modalVisible, setModalVisible] = React.useState(false);
+
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
           <Text style={styles.oneText}>我的学习场</Text>
-          {/* TODO: 改成bookmark */}
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity onPress={() => {setModalVisible(!modalVisible)}}>
           <MaterialCommunityIcons name="notebook-outline" size={26} color="black" />
           </TouchableOpacity>
         </View>
 
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
+        <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -58,6 +60,29 @@ const Cards = () => {
           </ImageBackground> 
         </TouchableOpacity>
 
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={{height, width, marginTop: 110, alignItems: 'center'}}>
+          <View style={styles.modal}>
+
+            <TouchableOpacity
+                style={{marginTop: 15, marginLeft: 15}}
+                onPress={()=>setModalVisible(false)}>
+                <Ionicons name="close-outline" size={24} color="black" />
+            </TouchableOpacity>
+
+            <MyCollection/>
+            
+          </View>
+          </View>
+        </Modal>
+
+        
+
         </View>
         
       </View>
@@ -68,8 +93,6 @@ const Cards = () => {
   return(
     <Stack.Navigator>
       <Stack.Screen name='CardsList' component={CardsList} options={{headerShown: false}}/>
-      <Stack.Screen name='CardSetVar' component={CardSetVar} options={{headerShown: false}}/>
-      <Stack.Screen name='QuizVar' component={QuizVar} options={{headerShown: false}}/>
     </Stack.Navigator>
   )
       
@@ -79,6 +102,16 @@ export default Cards;
 
 const styles = StyleSheet.create({
   // modal
+  modal: {
+    backgroundColor: 'white',
+    height: height,
+    width: width,
+    shadowOffset: {width: 5, height: 5},
+    shadowRadius: 20,
+    shadowOpacity: 0.4,
+    paddingBottom: 40,
+    borderRadius: theme.border,
+  },
  
   // top
   container: {
