@@ -9,6 +9,8 @@ import wordset1 from '../data/wordset1.json';
 import wordset2 from '../data/wordset2.json';
 import ProgressBar from './ProgressBar';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useSelector,useDispatch } from 'react-redux';
+import { setQuizDone } from '../store/store';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -16,12 +18,16 @@ export const QuizVar = ({route, navigation}) => {
   // Done: === 随机取10道题 ===
   const raw_quiz1 = quiz1.Sheet1.sort(() => Math.random()-0.5).filter((val, index) => index < 10);
   const final_quiz1 = raw_quiz1.map((val, index) => ({
+    id: 10000 + parseInt(val.id),
+    quizset: 1,
     question: val.problem,
     answer: val[val.answer.substring(0,1)],
     answerArr: [val.A, val.B, val.C, val.D].sort(() => Math.random()-0.5)
   }))
   const raw_quiz2 = quiz2.Sheet1.sort(() => Math.random()-0.5).filter((val, index) => index < 10);
   const final_quiz2 = raw_quiz2.map((val, index) => ({
+    id: 20000 + parseInt(val.id),
+    quizset: 2,
     question: val.questions,
     answer: val[val.answer.substring(0,1)],
     answerArr: [val.A, val.B, val.C, val.D].sort(() => Math.random()-0.5)
@@ -38,13 +44,19 @@ export const QuizVar = ({route, navigation}) => {
   const [progressArr, setProgress] = React.useState([]);
   const [modalVisible, setModalVisible] = React.useState(false);
   const [arr, setArr] = React.useState([]);
+  const [doneQuiz, setDoneQuiz] = React.useState([]);
   const flatListRef = React.useRef(null);
   const loadAsync = async () => {
     try{
       let retrieved = await AsyncStorage.getItem('collection');
+      let quizDone = await AsyncStorage.getItem('quizDone');
       if(retrieved){
         setArr(JSON.parse(retrieved));
         console.log('loaded 收藏 in quiz',route.params.id);
+      }
+      if(quizDone){
+        setDoneQuiz(JSON.parse(quizDone));
+        console.log('loaded 做过的考试', quizDone);
       }
     } catch(e){
       console.log(e)
@@ -53,6 +65,7 @@ export const QuizVar = ({route, navigation}) => {
   React.useEffect(() => {
     setTimeout(loadAsync, 500)
   },[])
+  var username = useSelector(state => state.user.name);
 
   // Done: renderItem
   const renderItem = ({item, index}) => {
@@ -85,18 +98,30 @@ export const QuizVar = ({route, navigation}) => {
     var secondHalf = item.question.split('的')[1];
     var foundWord = wordset.find(val => val.chinese === firstHalf);
     var foundMark = arr.find(val => val.id%(route.params.id*10000) === parseInt(foundWord.id));
+    
 
     const checkAnswer = (str) => {
+      const dispatch = useDispatch();
       if(!foundAnswer){
         setProgress([...progressArr, {
           id: index,
           select: str, 
           correct: item.answer
         }]);
-
+        // TODO:
         if(progressArr.length+1 === 10){
+          let thisArr = [];
+          quizData.map(val => {
+            thisArr.push(val.id);
+          })
+          let mergeArr = [...doneQuiz, ...thisArr.filter((v) => doneQuiz.indexOf(v) === -1)];
+          AsyncStorage.setItem('quizDone', JSON.stringify(mergeArr));
+          dispatch(setQuizDone(mergeArr));
+
+
           setTimeout(()=>setModalVisible(true), 500)
         }
+
         setTimeout(()=>{
           if (flatListRef.current && progressArr.length <= 8)
             flatListRef.current.scrollToIndex({index: progressArr.length+1})
@@ -216,13 +241,13 @@ export const QuizVar = ({route, navigation}) => {
               >
 
                 <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3, marginTop: 110}}
-                  > 恭喜{'\n'} 得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
+                  > 恭喜{username}{'\n'} 得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
                 </Text>
 
                 <View style={{alignItems: 'center'}}>
                   <TouchableOpacity style={style1.signupButton} onPress={()=>{
                     setModalVisible(false);
-                    navigation.goBack()
+                    navigation.goBack();
                   }}>
                   <Text>完成</Text>
                   </TouchableOpacity>

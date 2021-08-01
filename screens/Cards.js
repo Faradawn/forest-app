@@ -5,6 +5,7 @@ import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { MyCollection } from './components/MyCollection';
+import { useSelector } from 'react-redux';
 
 const {height, width} = Dimensions.get('screen');
 const Stack = createStackNavigator();
@@ -14,10 +15,15 @@ const Cards = () => {
   const  CardsList = ({ navigation }) => {
     const [modalVisible, setModalVisible] = React.useState(false);
 
+    var username = useSelector(state => state.user.name);
+    if(username === '朋友'){
+      username = '我'
+    }
+
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
-          <Text style={styles.oneText}>我的学习场</Text>
+          <Text style={styles.oneText}>{username}的学习场</Text>
           <TouchableOpacity onPress={() => {setModalVisible(!modalVisible)}}>
           <MaterialCommunityIcons name="notebook-outline" size={26} color="black" />
           </TouchableOpacity>

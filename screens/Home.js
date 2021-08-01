@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Button, Text, View, Image, StyleSheet, Dimensions, ImageBackground, Modal} from 'react-native'
-import { TextInput, TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
+import { Text, View, Image, StyleSheet, Dimensions, ImageBackground, Modal} from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../assets/styles'
 import ProgressBar from './components/ProgressBar'
-import { buildArray, getProgress } from './api/API'
 import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
@@ -16,28 +15,19 @@ export default function Home() {
   const [fraction1, setFraction1] = React.useState(0)
   const [fraction2, setFraction2] = React.useState(0)
   const [v, setV] = React.useState(0);
+
   var username = useSelector(state => state.user.name);
   var greetings = ['今天咋样', '最近如何','心情好么','梦见了什么','饭否','路上还顺'];
   
-
-  async function getFraction() {
-    const value1 = await getProgress('@wordset1') 
-    const value2 = await getProgress('@wordset2')
-    const obj1 = JSON.parse(value1)
-    const obj2 = JSON.parse(value2)
-    if(obj1) {setFraction1(obj1.progress/obj1.totalLength)}
-    else {setFraction1(0)}
-    if(obj2) {setFraction2(obj2.progress/obj2.totalLength)}
-    else {setFraction2(0)}
-  }
-
-  React.useEffect(() => {getFraction()})
 
   return (
     <View style={styles.container}>
       <View style={styles.oneLine}>
         <Text style={styles.oneText}>{greetings[v]}，{username}</Text>
-        <TouchableOpacity onPress={() => {setV(Math.floor(Math.random()*greetings.length))}}>
+        <TouchableOpacity onPress={() => {
+          setV(Math.floor(Math.random()*greetings.length))
+          
+          }}>
         <Feather name="sun" size={24} color="black" />
         </TouchableOpacity>
       </View>

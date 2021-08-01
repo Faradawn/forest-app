@@ -31,11 +31,15 @@ Quiz progressArr 信息
 ```
 progressArr = [
   {
+    id: 10001,
+    quizset: 1,
     question: "苏铁的拉丁名是",
     answer: "Cycus Bellitta",
     answerArr: ["Cycus Bellitta", "Beta", "Charlie", "Gamma"]
   },
 ]
+
+quizDone = [10001, 10002, ]
 ```
 
 Store 存储

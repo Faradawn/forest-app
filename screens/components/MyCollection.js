@@ -1,20 +1,11 @@
 import * as React from 'react'
-import { Button, Text, View, StyleSheet, FlatList, Image } from 'react-native'
+import { Text, View, StyleSheet, FlatList } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../../assets/styles'
-import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
-import ProgressBar from './ProgressBar'
-import {loadWordSet, setProgress, getProgress, buildArray} from '../api/API'
 import { Audio } from 'expo-av'
-import { Sound } from 'expo-av/build/Audio'
-import wordset2 from '../data/wordset2.json';
-import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createStackNavigator } from '@react-navigation/stack';
 import { switchSound } from '../api/switchSound';
-import { Entypo } from '@expo/vector-icons';
-
 
 export const MyCollection = () => {
   const [arr, setArr] = React.useState([]);
@@ -22,7 +13,7 @@ export const MyCollection = () => {
     try{
       let retrieved = await AsyncStorage.getItem('collection');
       if(retrieved){
-        setArr(JSON.parse(retrieved));
+        setArr(JSON.parse(retrieved).reverse());
         console.log('loaded 单词本');
       }
     } catch(e){
@@ -59,6 +50,12 @@ export const MyCollection = () => {
               <Ionicons name="volume-medium-outline" size={24} color ="tomato" />
             </TouchableOpacity>
             <Text style={{fontSize: 20, marginLeft: 10}}>{item.info.chinese}</Text>
+
+            <View style={item.wordset === 1 ? {marginLeft: 10, backgroundColor: '#fffd8f'} : {marginLeft: 10, backgroundColor: '#e0fffb'}}>
+              <Text style={{fontSize: 13}}>{item.wordset === 1 ? '园林树木' : '园林花卉'}</Text>
+            </View>
+
+
           </View>
 
           <TouchableOpacity
