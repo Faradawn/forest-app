@@ -29,7 +29,7 @@ export const CardSetVar = ({route, navigation}) => {
       let retrieved = await AsyncStorage.getItem('collection');
       if(retrieved){
         setArr(JSON.parse(retrieved));
-        console.log('loaded wordset in list',route.params.id);
+        console.log('loaded 收藏 in list',route.params.id);
       }
     } catch(e){
       console.log(e)
@@ -38,7 +38,6 @@ export const CardSetVar = ({route, navigation}) => {
   React.useEffect(() => {
     setTimeout(loadAsync, 500)
   },[])
-
 
   const renderItem = ({ item }) => {
     let foundItem = arr.find(val => val.id%(route.params.id*10000) === parseInt(item.id));

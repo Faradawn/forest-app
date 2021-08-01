@@ -5,7 +5,10 @@ import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
 import quiz1 from '../data/quiz1.json';
 import quiz2 from '../data/quiz2.json';
+import wordset1 from '../data/wordset1.json';
+import wordset2 from '../data/wordset2.json';
 import ProgressBar from './ProgressBar';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -23,24 +26,37 @@ export const QuizVar = ({route, navigation}) => {
     answer: val[val.answer.substring(0,1)],
     answerArr: [val.A, val.B, val.C, val.D].sort(() => Math.random()-0.5)
   }))
-  var quizset;
+  var quizset, wordset;
   if(route.params.id === 1){
     quizset = final_quiz1;
+    wordset = wordset1.Sheet1;
   } else{
     quizset = final_quiz2;
+    wordset = wordset2.Sheet1;
   }
   const [quizData, setQuiz] = React.useState(quizset);
   const [progressArr, setProgress] = React.useState([]);
   const [modalVisible, setModalVisible] = React.useState(false);
-  // TODO: load, merge
-  const [thisID, setThisID] = React.useState([]);
-  var retrievedId = [];
+  const [arr, setArr] = React.useState([]);
   const flatListRef = React.useRef(null);
-
+  const loadAsync = async () => {
+    try{
+      let retrieved = await AsyncStorage.getItem('collection');
+      if(retrieved){
+        setArr(JSON.parse(retrieved));
+        console.log('loaded 收藏 in quiz',route.params.id);
+      }
+    } catch(e){
+      console.log(e)
+    }
+  }
+  React.useEffect(() => {
+    setTimeout(loadAsync, 500)
+  },[])
 
   // Done: renderItem
   const renderItem = ({item, index}) => {
-    var foundItem = progressArr.find((val) => val.id === index);
+    var foundAnswer = progressArr.find((val) => val.id === index);
     var buttonList = item.answerArr.map((val, i) => (
       <TouchableOpacity 
        style={style1.button}
@@ -51,12 +67,12 @@ export const QuizVar = ({route, navigation}) => {
       </TouchableOpacity>
     ));
 
-    if(foundItem){
+    if(foundAnswer){
       buttonList = item.answerArr.map((val, i) => (
         <TouchableOpacity 
           style={
-            val===foundItem.correct ? style1.buttonGreen : 
-            val===foundItem.select ? style1.buttonRed : style1.button}
+            val===foundAnswer.correct ? style1.buttonGreen : 
+            val===foundAnswer.select ? style1.buttonRed : style1.button}
           onPress={() => checkAnswer(item.answerArr[i])}
           key={i}
         >
@@ -65,8 +81,13 @@ export const QuizVar = ({route, navigation}) => {
       ));
     }
 
+    var firstHalf = item.question.split('的')[0];
+    var secondHalf = item.question.split('的')[1];
+    var foundWord = wordset.find(val => val.chinese === firstHalf);
+    var foundMark = arr.find(val => val.id%(route.params.id*10000) === parseInt(foundWord.id));
+
     const checkAnswer = (str) => {
-      if(!foundItem){
+      if(!foundAnswer){
         setProgress([...progressArr, {
           id: index,
           select: str, 
@@ -84,17 +105,58 @@ export const QuizVar = ({route, navigation}) => {
       }
     }
 
+    const addUnderline = async () => {
+      let newId = (parseInt(foundWord.id) + route.params.id*10000).toString();
+      if(!foundMark){
+        setArr([...arr, {id: newId, date: (new Date()).getTime(), wordset: route.params.id, info: foundWord}]);
+        await AsyncStorage.setItem('collection', JSON.stringify(
+          [...arr, {id: newId, date: (new Date()).getTime(), wordset: route.params.id, info: foundWord}]
+        ))
+      }
+      else{
+        setArr(arr.filter(val => val.id%(route.params.id*10000) !== parseInt(foundWord.id)));
+        await AsyncStorage.setItem('collection', JSON.stringify(
+          arr.filter(val => val.id%(route.params.id*10000) !== parseInt(foundWord.id))
+        ))
+      }
+    }
+
+    const RenderUnderline = () => {
+      if(foundWord){
+        if(foundMark){
+          return <Text style={{textDecorationLine: 'underline', color: '#d1a300', fontWeight: 'bold'}} onPress={addUnderline}>{firstHalf}</Text>
+        } else {
+          return <Text style={{textDecorationLine: 'underline'}} onPress={addUnderline}>{firstHalf}</Text>
+        }
+      } else {
+        return <Text>{firstHalf}</Text>
+      }
+    }
+
     // Done: 单张 render quiz 
     return(
       <View style={{width, height: 600, alignItems: 'center'}}>
         <ImageBackground
-          source={require('../../assets/images/quiz-frame6.png')}
+          source={require('../../assets/images/quiz-frame-final.png')}
           imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
           style={styles.quizCard}
         >
+          <View style={{alignItems:'flex-end', paddingRight: 30, marginTop: 10}}>
+            <TouchableOpacity
+              onPress={addUnderline}>
+              {foundMark ? <Ionicons name="bookmark" size={24} color="gold" />
+              : <Ionicons name="bookmark-outline" size={24} color="grey" />}
+            </TouchableOpacity>
+          </View>
 
-          <Text style={{fontSize: 17, marginBottom: 10, maxWidth: 230}}>题{index+1}：{item.question}？ </Text>
-          {buttonList}
+          <View style={{alignItems: 'center', marginTop: 50}}>
+            <Text style={{fontSize: 17, marginBottom: 10, marginLeft: 10, maxWidth: 230}}>
+              题{index+1}：
+              <RenderUnderline/> 的
+              <Text>{secondHalf}</Text>?
+            </Text>
+            {buttonList}
+          </View>
 
         </ImageBackground>
       </View>
@@ -252,12 +314,9 @@ const styles = StyleSheet.create({
     marginTop: 20,
     height: 500,
     width: theme.width,
-    alignItems: 'center',
-    justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},
     shadowRadius: 10,
     shadowOpacity: 0.4,
-    paddingBottom: 40,
   },
 
 
