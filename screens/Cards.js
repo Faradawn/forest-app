@@ -23,7 +23,7 @@ const Cards = () => {
     return (
       <View style={styles.container}>
         <View style={styles.oneLine}>
-          <Text style={styles.oneText}>{username}的学习场</Text>
+          <Text style={styles.oneText}>我的学习场</Text>
           <TouchableOpacity onPress={() => {setModalVisible(!modalVisible)}}>
           <MaterialCommunityIcons name="notebook-outline" size={26} color="black" />
           </TouchableOpacity>
@@ -128,6 +128,7 @@ const styles = StyleSheet.create({
     alignItems: 'baseline',
     justifyContent: 'space-between',
     width: theme.authWidth,
+    maxWidth: theme.authWidth+10,
   },
   oneText:{
     fontSize: 25,

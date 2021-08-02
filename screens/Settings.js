@@ -13,7 +13,6 @@ const Stack = createStackNavigator();
 
 function SettingPage({ navigation }) {
   const dispatch = useDispatch();
-  const token = useSelector(state => state.user.token);
 
   async function logOut(){
     try{
@@ -61,6 +60,15 @@ function About() {
 
 function General() {
   const dispatch = useDispatch();
+
+  async function logOut(){
+    try{
+      await AsyncStorage.setItem('guest-token', '');
+      dispatch(setUser('',''));
+    } catch (e) {
+      console.log(e);
+    }
+  }
   return(
     <View style={styles.homePage}>
       <Button 
@@ -77,6 +85,9 @@ function General() {
         }}
         style={{marginBottom: 30}}
       />
+      <Button 
+        title='更改昵称'
+        onPress={logOut}/>
 
     </View>
   )

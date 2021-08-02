@@ -6,6 +6,7 @@ import ProgressBar from './components/ProgressBar'
 import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
+import greeting1 from './data/greeting1.json';
 
 export default function Home() {
   var username = useSelector(state => state.user.name);
@@ -21,7 +22,7 @@ export default function Home() {
     temp2 = 1;
   }
 
-  var greetings = ['今天咋样', '最近如何','心情好么','梦见了什么','饭否','路上还顺'];
+  var greetings = greeting1.Sheet1;
   var day = new Date().getDay();
   var vIndex = Math.floor((day/31) * greetings.length);
   const [v, setV] = React.useState(vIndex);
@@ -34,7 +35,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.oneLine}>
-        <Text style={styles.oneText}>{greetings[v]}，{username}</Text>
+        <Text style={styles.oneText}>{greetings[v].sentence}，{username}</Text>
         <TouchableOpacity onPress={() => {
           setV(Math.floor(Math.random()*greetings.length))
           
@@ -46,7 +47,7 @@ export default function Home() {
       <HomeQuote/>
 
       <View style={{marginTop: 40}}>
-        <Text style={{marginBottom: 30, letterSpacing: 5, fontSize: 17, textAlign: 'center'}}>「{username2}的进度」</Text>
+        <Text style={{marginBottom: 30, letterSpacing: 5, fontSize: 17, textAlign: 'center'}}>「我的进度」</Text>
         <Text>园林树木150题</Text>
         <View style={{height: 10}}></View>
         <ProgressBar progress={temp1}/>
