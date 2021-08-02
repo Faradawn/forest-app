@@ -27,7 +27,6 @@ export default function Card(props) {
         let retrieved = await AsyncStorage.getItem('collection');
         if(retrieved){
           setArr(JSON.parse(retrieved));
-          console.log('loaded wordset in card',props.wordset_id);
         }
       }
     } catch(e){

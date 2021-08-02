@@ -86,15 +86,11 @@ const Cards = () => {
           </View>
           </View>
         </Modal>
-
         
-
-        </View>
-        
+        </View>        
       </View>
     )
   }
-
 
   return(
     <Stack.Navigator>

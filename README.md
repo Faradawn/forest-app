@@ -4,12 +4,12 @@ Built with React Native and utlizes async storage.
 From March.20,2021 - March.31.2021.   
 
 ## 数据结构
-登陆信息
+登陆信息 (async)
 ```
 guest-token: '朋友'
 ```
 
-收藏单词本
+收藏单词本 (async)
 ```
 collection: [
   {
@@ -26,6 +26,11 @@ collection: [
   },
 ]
 ```
+quizDone (async)
+```
+quizDone: [10001, 10002, 10003]
+```
+
 
 Quiz progressArr 信息
 ```
@@ -39,7 +44,6 @@ progressArr = [
   },
 ]
 
-quizDone = [10001, 10002, ]
 ```
 
 Store 存储
@@ -51,8 +55,7 @@ const initialState = {
     name: '',
   },
   loading: false,
-  cloudErr: false,
-  counter: 0,
+  quizDone: []
 
 } 
 ```

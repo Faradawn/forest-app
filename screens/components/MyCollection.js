@@ -14,7 +14,6 @@ export const MyCollection = () => {
       let retrieved = await AsyncStorage.getItem('collection');
       if(retrieved){
         setArr(JSON.parse(retrieved).reverse());
-        console.log('loaded 单词本');
       }
     } catch(e){
       console.log(e)

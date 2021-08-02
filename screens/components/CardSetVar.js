@@ -29,7 +29,6 @@ export const CardSetVar = ({route, navigation}) => {
       let retrieved = await AsyncStorage.getItem('collection');
       if(retrieved){
         setArr(JSON.parse(retrieved));
-        console.log('loaded 收藏 in list',route.params.id);
       }
     } catch(e){
       console.log(e)

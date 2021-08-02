@@ -1,13 +1,18 @@
 import React from 'react'
 import { View, Text, Button, ImageBackground, StyleSheet, Dimensions, Image } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import styles, { theme } from '../../assets/styles'
+import { theme } from '../../assets/styles'
 import goldQuotes from '../data/gold1.json'
 
 export const HomeQuote = () => {
   const [flip, setFlip] = React.useState('true')
-  const date = new Date()
-  const quoteToday = goldQuotes.Sheet1[date.getDate()%34].sentence 
+  var date = new Date();
+  var day = date.getDay();
+  const [quoteToday, setQuoteToday] = React.useState(goldQuotes.Sheet1[day%34].sentence);
+
+  React.useEffect(()=>{
+    setQuoteToday(goldQuotes.Sheet1[day%34].sentence)
+  },[day])
 
   function front() {
 
@@ -17,8 +22,7 @@ export const HomeQuote = () => {
         imageStyle={{borderRadius: theme.border}}
         style={style1.imageCard}>
           <View style={{maxWidth: 200}}>
-
-            <Text style={{lineHeight: 20}}>{quoteToday}</Text>
+            <Text style={{lineHeight: 20, textAlign: 'center'}}>{quoteToday}</Text>
           </View>
       </ImageBackground> 
     )
