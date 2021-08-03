@@ -161,7 +161,7 @@ export const QuizVar = ({route, navigation}) => {
 
     // Done: 单张 render quiz 
     return(
-      <View style={{width, height: 600, alignItems: 'center'}}>
+      <View style={{width, height: width < 600 ? 600 : 900, alignItems: 'center'}}>
         <ImageBackground
           source={require('../../assets/images/quiz-frame-final.png')}
           imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
@@ -323,8 +323,8 @@ const styles = StyleSheet.create({
   modal: {
     backgroundColor: 'white',
     marginTop: 20,
-    height: 500,
-    width: theme.width,
+    height: width < 600 ? 500 : 800,
+    width: width < 600 ? theme.width : theme.width-200,
     shadowOffset: {width: 5, height: 5},
     shadowRadius: 20,
     shadowOpacity: 0.4,
@@ -338,8 +338,8 @@ const styles = StyleSheet.create({
 
   quizCard: {
     marginTop: 20,
-    height: 500,
-    width: theme.width,
+    height: width < 600 ? 500 : 800,
+    width: width < 600 ? theme.width : theme.width-200,
     shadowOffset: {width: 5, height: 5},
     shadowRadius: 10,
     shadowOpacity: 0.4,

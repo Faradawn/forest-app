@@ -14,7 +14,7 @@ import { Entypo } from '@expo/vector-icons';
 
 export const CardSetVar = ({route, navigation}) => {
   const [arr, setArr] = React.useState([]);
-  const [cardMode, setCardMode] = React.useState(true);
+  const [cardMode, setCardMode] = React.useState(false);
   var wordset;
   switch (route.params.id) {
     case 2:
