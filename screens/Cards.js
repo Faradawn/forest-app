@@ -33,7 +33,7 @@ const Cards = () => {
         <TouchableOpacity onPress={() => navigation.navigate('CardSet1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
-            imageStyle={{borderRadius: theme.border}}
+            imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
             style={styles.imageCard}>
               <Text> 园林树木拉丁名150个 </Text>
           </ImageBackground> 
@@ -42,7 +42,7 @@ const Cards = () => {
         <TouchableOpacity onPress={() => navigation.navigate('CardSet2', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
-            imageStyle={{borderRadius: theme.border}}
+            imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
             style={styles.imageCard}>
               <Text> 园林花卉拉丁名200个 </Text>
           </ImageBackground> 
@@ -51,7 +51,7 @@ const Cards = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Quiz1', {id: 1})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
-            imageStyle={{borderRadius: theme.border}}
+            imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
             style={styles.imageCard}>
               <Text> 「十道题」 园林树木拉丁名 </Text>
           </ImageBackground> 
@@ -60,7 +60,7 @@ const Cards = () => {
         <TouchableOpacity onPress={() => navigation.navigate('Quiz2', {id: 2})} >
           <ImageBackground
             source={require('../assets/wallpaper/card-slim.png')}
-            imageStyle={{borderRadius: theme.border}}
+            imageStyle={{borderRadius: theme.border, resizeMode:'stretch'}}
             style={styles.imageCard}>
               <Text> 「十道题」 园林花卉拉丁名 </Text>
           </ImageBackground> 
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    width: theme.authWidth,
+    width: width < 600 ? theme.authWidth : theme.authWidth-100,
     maxWidth: theme.authWidth+10,
   },
   oneText:{
@@ -138,9 +138,9 @@ const styles = StyleSheet.create({
 
   // image card 
   imageCard: {
-    height: 130,
+    height: width < 600 ? 120 : 200,
     borderRadius: theme.border,
-    width: theme.width+50,
+    width: width < 600 ? theme.width+50 : theme.width-200,
     alignItems: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},

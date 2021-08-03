@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, Dimensions } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../assets/styles'
 import ProgressBar from './components/ProgressBar'
@@ -7,6 +7,8 @@ import { HomeQuote } from './components/HomeQuote'
 import { useSelector } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
 import greeting1 from './data/greeting1.json';
+
+const {width, height} = Dimensions.get('screen');
 
 export default function Home() {
   var username = useSelector(state => state.user.name);
@@ -46,7 +48,7 @@ export default function Home() {
 
       <HomeQuote/>
 
-      <View style={{marginTop: 40}}>
+      <View style={width < 600 ? {marginTop: 40} : {marginTop: 40, width: width-400, alignItems: 'center'}}>
         <Text style={{marginBottom: 30, letterSpacing: 5, fontSize: 17, textAlign: 'center'}}>「我的进度」</Text>
         <Text>园林树木150题</Text>
         <View style={{height: 10}}></View>
@@ -58,9 +60,7 @@ export default function Home() {
         <ProgressBar progress={temp2}/>
 
         <View style={{height: 90}}></View>
-        <TouchableOpacity style={{alignItems:'center'}}onPress={() => getFraction()}>
-          <View style={{height: 230, width: 130, }}></View>
-        </TouchableOpacity>
+
       </View>
     </View>
   )
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'baseline',
     justifyContent: 'space-between',
-    width: theme.authWidth+20,
+    width: width < 600 ? theme.authWidth+20 : theme.authWidth-100,
   },
 
   oneText:{

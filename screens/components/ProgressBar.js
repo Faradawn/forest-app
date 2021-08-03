@@ -4,6 +4,7 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import Card from './CardUnit'
 import { Ionicons } from '@expo/vector-icons';
 
+const {width, height} = Dimensions.get('screen'); 
 
 export default function ProgressBar(props) {
   
@@ -17,14 +18,14 @@ export default function ProgressBar(props) {
 
 const styles = (a) =>  StyleSheet.create({
   barContainer: {
-    width: Dimensions.get('window').width - 70,
+    width: width<600 ? width-80 : width-300,
     height: 10,
     backgroundColor: '#e6e6e6',
     borderRadius: 5,
     alignItems: 'flex-start',
   },
   rectangle: {
-    width: a * (Dimensions.get('window').width - 70),
+    width: width<600 ? a * (width-80) : a*(width-300),
     height: 10,
     backgroundColor: 'orange',
     borderRadius: 5,    

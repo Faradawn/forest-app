@@ -4,6 +4,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../../assets/styles'
 import goldQuotes from '../data/gold1.json'
 
+const {width, height} = Dimensions.get('screen');
+
 export const HomeQuote = () => {
   const [flip, setFlip] = React.useState('true')
   var date = new Date();
@@ -54,8 +56,8 @@ export const HomeQuote = () => {
 const style1 = StyleSheet.create({
   imageCard: {
     borderRadius: theme.border,
-    width: theme.width,
-    height: 200,
+    width: width < 600 ? theme.width : theme.width-200,
+    height: width < 600 ? 200 : 300,
     alignItems: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},
