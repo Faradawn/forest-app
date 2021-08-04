@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { Text, View, StyleSheet, FlatList } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
 import { Audio } from 'expo-av'

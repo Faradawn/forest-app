@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, Text, View, StyleSheet, FlatList, Image } from 'react-native'
+import { Button, Text, View, StyleSheet, FlatList, Image, Dimensions } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { theme } from '../../assets/styles'
 import Card from './CardUnit'
@@ -10,6 +10,8 @@ import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { switchSound } from '../api/switchSound';
 import { Entypo } from '@expo/vector-icons';
+
+const {width, height} = Dimensions.get('screen');
 
 
 export const CardSetVar = ({route, navigation}) => {
@@ -96,8 +98,8 @@ export const CardSetVar = ({route, navigation}) => {
   // TODO: 拉丁名总页面
   return(
     <View style={{backgroundColor: 'white', flex: 1}}>
-      
-      <View style={{paddingTop: theme.marginTop, left: 30}}>
+    
+      <View style={{marginTop: theme.marginTop, left: 30}}>
         <TouchableOpacity 
           onPress={()=>navigation.goBack()}>
             <Ionicons name='arrow-back' size={20} color='grey'/>
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   flatlist: {
-    height: theme.height+200,
+    height: height-theme.marginTop-100,
   },
   lineContainer:{
     width: theme.width+50,

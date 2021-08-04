@@ -89,6 +89,8 @@ Version Two: backend implementation
 - [ ] connect to a firebase db
 - [ ]
 <br></br>
+FIX IOS:
+- [ ] QuizSetVar - flatlist style - height
 问题集：
 - [ ] IOS simulator expo audio? 点击静音和和不静音按钮
 - [ ] useEffect 没反应？把async放在setTime out里

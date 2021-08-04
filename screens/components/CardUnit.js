@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { FlatList, Text, View, StyleSheet, ImageBackground, Dimensions } from 'react-native'
-import {TouchableOpacity } from 'react-native-gesture-handler'
+import { FlatList, Text, View, StyleSheet, ImageBackground, Dimensions, TouchableOpacity } from 'react-native'
+
 import styles, {theme} from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
@@ -17,6 +17,7 @@ const { width, height } = Dimensions.get('screen');
 export default function Card(props) {
   const [flip, setFlip] = React.useState(true);
   const [arr, setArr] = React.useState([]);
+  const [prevent, setPrevent] = React.useState(false);
   var data = props.data;
   if(!data){
     data = {id: "0", chinese: "加载中", latin: "", category: "", family: ""};
@@ -60,9 +61,20 @@ export default function Card(props) {
       await sound.playAsync(); 
     }
 
+    const clickSound = () => {
+      setPrevent(true);
+      playSound();
+      setTimeout(()=>setPrevent(false), 500);
+    }
+    const clickMark = () => {
+      setPrevent(true);
+      addMark();
+      setTimeout(()=>setPrevent(false), 500);
+    }
+
     return(
       <View style={{width, height: 230, alignItems: 'center'}}>
-        <TouchableOpacity onPress={() => {setFlip(!flip)}}>
+        <TouchableOpacity onPress={() => {prevent ? {} : setFlip(!flip)}}>
           <ImageBackground
             source={require('../../assets/wallpaper/card-orange.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -72,7 +84,7 @@ export default function Card(props) {
                   <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
                     <TouchableOpacity
                       style={{padding: 10}}
-                      onPress={playSound}>
+                      onPress={()=>{clickSound()}}>
                       <Ionicons name="volume-medium-outline" size={26} color ="tomato" />
                     </TouchableOpacity>
                     <Text style={{fontSize: 20, marginRight: 10}}> {item.chinese}</Text>
@@ -81,7 +93,7 @@ export default function Card(props) {
 
                   <TouchableOpacity
                     style={{alignItems: 'center', padding: 10}}
-                    onPress={addMark}>
+                    onPress={clickMark}>
                     {foundItem ? 
                       <Ionicons name="bookmark" size={24} color="gold" /> :
                       <Ionicons name="bookmark-outline" size={20} color="grey" />

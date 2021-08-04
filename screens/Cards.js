@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { Modal, Text, View, StyleSheet, ImageBackground, Image, Dimensions } from 'react-native'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { Modal, Text, View, StyleSheet, ImageBackground, Image, Dimensions, TouchableOpacity } from 'react-native'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
@@ -76,7 +75,7 @@ const Cards = () => {
           <View style={styles.modal}>
 
             <TouchableOpacity
-                style={{marginTop: 15, marginLeft: 15}}
+                style={{marginTop: 18, marginLeft: 20}}
                 onPress={()=>setModalVisible(false)}>
                 <Ionicons name="close-outline" size={24} color="black" />
             </TouchableOpacity>
@@ -140,7 +139,7 @@ const styles = StyleSheet.create({
   imageCard: {
     height: width < 600 ? 120 : 200,
     borderRadius: theme.border,
-    width: width < 600 ? theme.width+50 : theme.width-200,
+    width: width < 600 ? theme.width+40 : theme.width-200,
     alignItems: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},

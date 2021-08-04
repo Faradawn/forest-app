@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button, Text, View, StyleSheet, FlatList, Image, ImageBackground, Dimensions, Modal } from 'react-native'
-import { TouchableWithoutFeedback, TouchableOpacity } from 'react-native-gesture-handler'
+import { Button, Text, View, StyleSheet, FlatList, Image, ImageBackground, Dimensions, Modal, TouchableOpacity } from 'react-native'
 import { theme } from '../../assets/styles'
 import { Ionicons } from '@expo/vector-icons';
 import quiz1 from '../data/quiz1.json';
@@ -240,20 +239,23 @@ export const QuizVar = ({route, navigation}) => {
                 imageStyle={{borderRadius: theme.border, resizeMode: 'stretch'}}
                 style={styles.scoreCard}
               >
+                <View>
 
-                <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3, marginTop: 110}}
-                  > 恭喜{username}{'\n'} 得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
-                </Text>
+                  <Text style={{textAlign: 'center', lineHeight: 20, letterSpacing: 3, marginTop: 110}}
+                    > 恭喜{username}{'\n'} 得分 {progressArr.filter((val)=>val.correct===val.select).length*10} 分!
+                  </Text>
 
-                <View style={{alignItems: 'center'}}>
-                  <TouchableOpacity style={style1.signupButton} onPress={()=>{
-                    setModalVisible(false);
-                    navigation.goBack();
-                  }}>
-                  <Text>完成</Text>
-                  </TouchableOpacity>
+                  <View style={{alignItems: 'center'}}>
+                    <TouchableOpacity style={style1.signupButton} onPress={()=>{
+                      setModalVisible(false);
+                      navigation.goBack();
+                    }}>
+                    <Text>完成</Text>
+                    </TouchableOpacity>
 
+                  </View>
                 </View>
+
               </ImageBackground>
             </View>
             
@@ -344,8 +346,6 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.4,
   },
-
-
   container: {
     alignItems: 'center',
     paddingTop: theme.marginTop, 

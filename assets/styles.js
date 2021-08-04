@@ -2,7 +2,7 @@
  * @providesModule login
  */
 
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet, Dimensions, StatusBar, Platform } from 'react-native'
 
 export const theme = {
   border: 20,
@@ -10,7 +10,7 @@ export const theme = {
   authWidth: Dimensions.get('window').width - 90,
   height: Dimensions.get('window').height - 400,
   padding: 30,
-  marginTop: 50,
+  marginTop: Platform.OS === "android" ? StatusBar.currentHeight+10 : 50,
   
 } 
 

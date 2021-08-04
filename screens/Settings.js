@@ -5,15 +5,12 @@ import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setQuizDone } from './store/store';
-
-
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
-
 function SettingPage({ navigation }) {
   const dispatch = useDispatch();
-
   async function logOut(){
     try{
       await AsyncStorage.setItem('guest-token', '');
@@ -25,19 +22,22 @@ function SettingPage({ navigation }) {
 
   return (
     <ImageBackground style={style1.settingPage} source={require('../assets/wallpaper/bg-setting.png')}>
-      <Button 
-        title='关于'
-        onPress={() => navigation.navigate('关于我们')}>
-      </Button>
-      <View style={{height: 10}}></View>
-      <Button 
-        title='通用'
-        onPress={() => navigation.navigate('通用')}>
-      </Button>
-      <View style={{height: 10}}></View>
-      <Button 
-        title='退出登陆'
-        onPress={logOut}/>
+      <TouchableOpacity
+        style={style1.button}
+        onPress={()=>navigation.navigate('关于我们')}>
+        <Text>关于我们</Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+        style={style1.button}
+        onPress={()=>navigation.navigate('通用')}>
+        <Text>通用</Text>
+        </TouchableOpacity>
+      <TouchableOpacity
+        style={style1.button}
+        onPress={logOut}>
+        <Text>退出登陆</Text>
+        </TouchableOpacity>
+      
     </ImageBackground>
 
   )
@@ -71,23 +71,27 @@ function General() {
   }
   return(
     <View style={styles.homePage}>
-      <Button 
-        title='清空单词本'
+      <TouchableOpacity
         onPress={() => AsyncStorage.setItem('collection', '')}
-        style={{marginBottom: 30}}
-      />
-      <Button 
-        title='清空做题进度'
+        style={style1.button}>
+        <Text>清空单词本</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
         onPress={() => {
           AsyncStorage.setItem('quizDone', '');
           dispatch(setQuizDone([]));
-
         }}
-        style={{marginBottom: 30}}
-      />
-      <Button 
-        title='更改昵称'
-        onPress={logOut}/>
+        style={style1.button}>
+        <Text>清空做题进度</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={logOut}
+        style={style1.button}>
+        <Text>更改昵称</Text>
+      </TouchableOpacity>
+     
 
     </View>
   )
@@ -113,6 +117,16 @@ const style1 = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 70,
     flex: 1,
+  },
+  button: {
+    width: 200,
+    height: 50,
+    marginTop: 20,
+    borderColor: 'grey',
+    borderRadius: 5,
+    borderWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   
 })

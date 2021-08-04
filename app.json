@@ -2,7 +2,7 @@
   "expo": {
     "name": "拉丁园",
     "slug": "latin-garden",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,16 +20,16 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.huayuanbaobao.latin",
       "buildNumber": "1.0.1"
-      
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.huayuanbaobao.latin"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/icon.png"
     },
     "description": "背诵园林拉丁名"
   }

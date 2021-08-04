@@ -70,7 +70,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingTop: theme.marginTop+20, 
+    paddingTop: theme.marginTop+10, 
     backgroundColor: 'white',
     flex: 1,
   },

@@ -25,7 +25,7 @@ const HomeTabs = () => (
       }
     })}
     
-    tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey'}}>
+    tabBarOptions={{activeTintColor: 'tomato', inactiveTintColor: 'grey', style:{paddingBottom: 5}}}>
     <Tabs.Screen name='卡片' component={Cards} options={{}}/>
     <Tabs.Screen name='首页' component={Home}/>
     <Tabs.Screen name='设置' component={Settings}/>
