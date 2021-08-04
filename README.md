@@ -96,6 +96,16 @@ FIX IOS:
 - [ ] useEffect 没反应？把async放在setTime out里
 
 
+- touable opacity 点击出发
+import from 'react native' not guesture handler 
+
+- expo android appkey fail
+下载jdk
+https://www.oracle.com/java/technologies/javase-downloads.html
+
+
+
+
 
 ### Thanks for reading and wish you a great day!
 -- Faradawn
