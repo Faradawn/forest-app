@@ -1,5 +1,5 @@
 # 拉丁园
-![app screens](./assets/wallpaper/app-screens.png)
+![app screens](./assets/wallpaper/app-screen-new.png)
 
 ## 简介 ☘️
 为刻苦背诵拉丁的园林学子，提供的解决方案；  
