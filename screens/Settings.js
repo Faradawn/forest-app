@@ -4,7 +4,7 @@ import styles from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, setQuizDone } from './store/store';
+import { setUser, setQuizDone, setWordDone1, setWordDone2 } from './store/store';
 
 
 
@@ -77,11 +77,20 @@ function General() {
         style={{marginBottom: 30}}
       />
       <Button 
+        title='清空单词进度'
+        onPress={() => {
+          AsyncStorage.setItem('mylist1', '');
+          AsyncStorage.setItem('mylist2', '');
+          dispatch(setWordDone1(0));
+          dispatch(setWordDone2(0));
+        }}
+        style={{marginBottom: 30}}
+      />
+      <Button 
         title='清空做题进度'
         onPress={() => {
           AsyncStorage.setItem('quizDone', '');
           dispatch(setQuizDone([]));
-
         }}
         style={{marginBottom: 30}}
       />

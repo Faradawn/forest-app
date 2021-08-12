@@ -57,7 +57,9 @@ const initialState = {
     name: '',
   },
   loading: false,
-  quizDone: []
+  quizDone: [], -> quizDone
+  wordDone1: 0, -> mylist1
+  wordDone2: 0, -> mylist2
 
 } 
 ```
@@ -83,6 +85,7 @@ v2.0
 问题集：
 - [x] IOS simulator expo audio? 点击静音和和不静音按钮
 - [x] useEffect 没反应？把async放在setTime out里
+= [x] onViewableItems 触发两次？添加`const viewabilityConfig = {itemVisiblePercentThreshold: 50}`
 
 
 ## 感谢阅读 🎉

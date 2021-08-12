@@ -10,11 +10,15 @@ import wordset1 from '../data/wordset1.json';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { switchSound } from '../api/switchSound';
 import { Entypo } from '@expo/vector-icons';
+import { useDispatch } from 'react-redux'
+import { setQuizDone, setWordDone1, setWordDone2 } from '../store/store'
 
 
 export const CardSetVar = ({route, navigation}) => {
   const [arr, setArr] = React.useState([]);
-  const [cardMode, setCardMode] = React.useState(false);
+  const [cardMode, setCardMode] = React.useState(null);
+  const [cardIndex, setCardIndex] = React.useState(-1);
+  var dispatch = useDispatch();
   var wordset;
   switch (route.params.id) {
     case 2:
@@ -24,23 +28,27 @@ export const CardSetVar = ({route, navigation}) => {
       wordset = wordset1;
       break;
   }
+
   const loadAsync = async () => {
-    try{
-      let retrieved = await AsyncStorage.getItem('collection');
-      if(retrieved){
-        setArr(JSON.parse(retrieved));
-      }
-    } catch(e){
-      console.log(e)
+    let retrievedStar = await AsyncStorage.getItem('collection');
+    if(retrievedStar){setArr(JSON.parse(retrievedStar));}
+
+    let retrievedFlip = await AsyncStorage.getItem(`flip${route.params.id}`)
+    if(cardMode === null){
+      if(retrievedFlip === null || retrievedFlip === 'false'){setCardMode(false)}
+      else{setCardMode(true)}
     }
+
+    let retrievedCardIndex = await AsyncStorage.getItem(`mylist${route.params.id}`);
+    if(retrievedCardIndex){ setCardIndex(parseInt(retrievedCardIndex)); }else{setCardIndex(0);}
   }
   React.useEffect(() => {
-    setTimeout(loadAsync, 500)
+    setTimeout(loadAsync, 10)
   },[])
+
 
   const renderItem = ({ item }) => {
     let foundItem = arr.find(val => val.id%(route.params.id*10000) === parseInt(item.id));
-    // trucation
     let str = item.latin.concat(" ", item.family, " ", item.category);
     
     const addMark = async () => {
@@ -91,15 +99,23 @@ export const CardSetVar = ({route, navigation}) => {
       </View>
     );
   };
-  // 小单词条 renderItem 结束
 
   // TODO: 拉丁名总页面
+  if(cardIndex < 0 || cardMode === null){
+    return <View></View>
+  } else {
   return(
     <View style={{backgroundColor: 'white', flex: 1}}>
-      
       <View style={{paddingTop: theme.marginTop, left: 30}}>
         <TouchableOpacity 
-          onPress={()=>navigation.goBack()}>
+          onPress={async ()=>{
+            await AsyncStorage.setItem(`flip${route.params.id}`, JSON.stringify(cardMode));
+            let index1 = await AsyncStorage.getItem('mylist1') 
+            let index2 = await AsyncStorage.getItem('mylist2')
+            if(index1){dispatch(setWordDone1(parseInt(index1)))}
+            if(index2){dispatch(setWordDone2(parseInt(index2)))}
+            navigation.goBack(); 
+          }}>
             <Ionicons name='arrow-back' size={20} color='grey'/>
         </TouchableOpacity>
       </View>
@@ -107,10 +123,15 @@ export const CardSetVar = ({route, navigation}) => {
       <View style={{alignItems: 'center'}}>
         <Text style={{fontSize: 20}}>
           {route.params.id === 1 ? '园林树木拉丁名150个' : '园林花卉拉丁名200个'}</Text>
-        <TouchableOpacity onPress={() => {setCardMode(!cardMode); cardMode ? loadAsync() : {}}}>
+        <TouchableOpacity onPress={() => {
+          setCardMode(!cardMode);
+          cardMode ? loadAsync() : {}
+          }
+           }>
           {cardMode ? 
             <Entypo name="list" size={24} color="black" 
-              style={{height: 25, marginTop: 15, marginBottom: 20}}/> : 
+              style={{height: 25, marginTop: 15, marginBottom: 20}}/> 
+            : 
             <Image 
               source={require('../../assets/images/flip-line-icon.png')}
               style={{height: 25, width: 25, marginTop: 15, marginBottom: 20}}
@@ -119,15 +140,24 @@ export const CardSetVar = ({route, navigation}) => {
         </TouchableOpacity>
 
         {cardMode ?
-          <Card data={wordset.Sheet1} wordset_id={route.params.id}></Card> : 
+          <Card 
+            data={wordset.Sheet1} 
+            collection={arr}
+            wordset_id={route.params.id}
+            cardIndex={cardIndex}/>
+          : 
           <View style={styles.flatlist}>
-            <FlatList data={wordset.Sheet1} renderItem={renderItem} keyExtractor={item => item.id}/>
-          </View> }
+            <FlatList 
+              data={wordset.Sheet1}
+              renderItem={renderItem} 
+              keyExtractor={item => item.id}
+              />
+          </View>}
         
       </View>
     </View> 
 
-  )
+  )}
 }
 
 
@@ -139,18 +169,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   flatlist: {
-    height: theme.height+200,
+    height: theme.height+220,
   },
   lineContainer:{
     width: theme.width+50,
     display: 'flex',
     alignItems: 'center',    
-    marginBottom: 40,
+    paddingBottom: 10,
+    height: 90
   },
   lineCard:{
     backgroundColor: 'white',
     borderBottomWidth: 1,
-
   },
   oneLine:{
     display: 'flex',

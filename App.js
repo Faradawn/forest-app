@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider, useDispatch } from 'react-redux';
-import store, { setUser, setLoading, setQuizDone } from './screens/store/store';
+import store, { setUser, setQuizDone, setWordDone1, setWordDone2 } from './screens/store/store';
 import { useSelector } from 'react-redux';
 
 import AuthRoot from './screens/AuthRoot'
@@ -19,25 +19,20 @@ export default function App() {
     const dispatch = useDispatch();
 
     React.useEffect(() => {
-      console.log('初始化：载入用户名和进度');
       setTimeout(async() => {
-        dispatch(setLoading(true));
         try{
           let username = await AsyncStorage.getItem('guest-token');
           let quizDone = await AsyncStorage.getItem('quizDone');
-          if(username){
-            dispatch(setUser('guest-token', username));
-            console.log('Async用户名已载入selector');
-          }
-          if(quizDone){
-            dispatch(setQuizDone(JSON.parse(quizDone)));
-            console.log('Async进度已载入selector');
-          }
+          let wordDone1 = await AsyncStorage.getItem('mylist1');
+          let wordDone2 = await AsyncStorage.getItem('mylist2');
+          if(username){dispatch(setUser('guest-token', username))}
+          if(quizDone){dispatch(setQuizDone(JSON.parse(quizDone)))}
+          if(wordDone1){dispatch(setWordDone1(parseInt(wordDone1)))}
+          if(wordDone2){dispatch(setWordDone2(parseInt(wordDone2)))}
+          console.log('App.js 载入用户和进入完成')
         } catch (e) {
           console.log(e);
-        } finally {
-          dispatch(setLoading(false));
-        }
+        } 
       }, 500)
     }, []);
   

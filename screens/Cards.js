@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { Modal, Text, View, StyleSheet, ImageBackground, Image, Dimensions } from 'react-native'
+import { Modal, Text, View, StyleSheet, ImageBackground, Dimensions, Button } from 'react-native'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { MyCollection } from './components/MyCollection';
 import { useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const {height, width} = Dimensions.get('screen');
 const Stack = createStackNavigator();
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
   imageCard: {
     height: width < 600 ? 120 : 200,
     borderRadius: theme.border,
-    width: width < 600 ? theme.width+50 : theme.width-200,
+    width: width < 600 ? theme.width+20 : theme.width-200,
     alignItems: 'center',
     justifyContent: 'center',
     shadowOffset: {width: 5, height: 5},

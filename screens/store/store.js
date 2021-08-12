@@ -9,8 +9,12 @@ export const setLoading = (val) => {
 export const setQuizDone = (val) => {
   return ({type: 'SET_QUIZDONE', payload: val})
 }
-
-
+export const setWordDone1 = (val) => {
+  return ({type: 'SET_WORDDONE1', payload: val})
+}
+export const setWordDone2 = (val) => {
+  return ({type: 'SET_WORDDONE2', payload: val})
+}
 
 const initialState = {
   user: {
@@ -20,7 +24,8 @@ const initialState = {
   loading: false,
   cloudErr: false,
   quizDone: [],
-
+  wordDone1: 0,
+  wordDone2: 0,
 }
 
 const userReducer = (state = initialState, action) => {
@@ -40,7 +45,16 @@ const userReducer = (state = initialState, action) => {
         ...state,
         quizDone: action.payload
       }
-
+    case 'SET_WORDDONE1':
+      return {
+        ...state,
+        wordDone1: action.payload
+      }
+    case 'SET_WORDDONE2':
+      return {
+        ...state,
+        wordDone2: action.payload
+      }
 
     default:
       return state;
