@@ -6,7 +6,7 @@ import { Audio } from 'expo-av';
 import { switchSound } from '../api/switchSound';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCallback } from 'react';
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get('screen');
 
 /**
  * Form for user login
@@ -116,20 +116,9 @@ export default function Card(props) {
       await sound.playAsync(); 
     }
 
-    const clickSound = () => {
-      setPrevent(true);
-      playSound();
-      setTimeout(()=>setPrevent(false), 500);
-    }
-    const clickMark = () => {
-      setPrevent(true);
-      addMark();
-      setTimeout(()=>setPrevent(false), 500);
-    }
-
     return(
       <View style={{width, height: 230, alignItems: 'center'}}>
-        <TouchableOpacity onPress={() => {prevent ? {} : setFlip(!flip)}}>
+        <TouchableOpacity onPress={() => {setFlip(!flip)}}>
           <ImageBackground
             source={require('../../assets/wallpaper/card-orange.png')}
             imageStyle={{borderRadius: theme.border}}
@@ -139,7 +128,7 @@ export default function Card(props) {
                   <View style={{display: 'flex', flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center'}}>
                     <TouchableOpacity
                       style={{padding: 10}}
-                      onPress={()=>{clickSound()}}>
+                      onPress={playSound}>
                       <Ionicons name="volume-medium-outline" size={26} color ="tomato" />
                     </TouchableOpacity>
                     <Text style={{fontSize: 20, marginRight: 10}}> {item.chinese}</Text>
@@ -148,7 +137,7 @@ export default function Card(props) {
 
                   <TouchableOpacity
                     style={{alignItems: 'center', padding: 10}}
-                    onPress={clickMark}>
+                    onPress={addMark}>
                     {foundItem ? 
                       <Ionicons name="bookmark" size={24} color="gold" /> :
                       <Ionicons name="bookmark-outline" size={20} color="grey" />
