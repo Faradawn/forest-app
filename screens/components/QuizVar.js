@@ -45,7 +45,6 @@ export const QuizVar = ({route, navigation}) => {
   const [arr, setArr] = React.useState([]);
   const [doneQuiz, setDoneQuiz] = React.useState([]);
   const flatListRef = React.useRef(null);
-  var testArr = useSelector(state => state.quizDone);
   var username = useSelector(state => state.user.name);
   var dispatch = useDispatch();
   

@@ -1,9 +1,13 @@
-# Latin Garden
-A flashcard app for Beijing Forestry University students to memorize gardener epistemology.  
-Built with React Native and utlizes async storage.  
-From March.20,2021 - March.31.2021.   
+# 拉丁园
+![app screens](./assets/wallpaper/app-screen-new.png)
 
-## 数据结构
+## 简介 ☘️
+为刻苦背诵拉丁的园林学子，提供的解决方案；  
+内含150个园林树木、200个园林花卉拉丁名；  
+将词汇做成单词卡和考试题，还有精心录制的读音，陪伴你度过背诵的历程！  
+
+
+## 数据模式 ⚙️
 登陆信息 (async)
 ```
 guest-token: '朋友'
@@ -30,8 +34,6 @@ quizDone (async)
 ```
 quizDone: [10001, 10002, 10003]
 ```
-
-
 Quiz progressArr 信息
 ```
 progressArr = [
@@ -55,45 +57,37 @@ const initialState = {
     name: '',
   },
   loading: false,
-  quizDone: []
+  quizDone: [], -> quizDone
+  wordDone1: 0, -> mylist1
+  wordDone2: 0, -> mylist2
 
 } 
 ```
 
 
-
-
-## Home Page
-![home page demo](./assets/demo1.GIF)
-
-## Card Deck Page
-![card deck demo](./assets/demo2.GIF)
-
-## Flipping through flashcards
-![flashcard demo](./assets/demo3.GIF)
-
-## Clear async storage data
-![clear storage](./assets/demo4.GIF)
-
-
-
-## Production Log 
-Version One: a hard-coded flashcard app
+## 进展记录 📝 
+v1.0
 - [x] screen navigation and card stacks
 - [x] flashcard flip functionality
 - [x] store progress locally
 - [x] store starred locally
 - [x] Xcode build and submit to app store
 <br></br>
-Version Two: backend implementation
-- [ ] connect to a firebase db
-- [ ]
+v2.0
+- [x] add authentication with async storage
+- [x] add useContext for login
+- [x] add redux storage
+- [x] add voice
+- [x] add bookmark and collection
+- [x] add quiz mode and modal
+- [x] add toggle list and card
 <br></br>
 FIX IOS:
 - [ ] QuizSetVar - flatlist style - height
 问题集：
-- [ ] IOS simulator expo audio? 点击静音和和不静音按钮
-- [ ] useEffect 没反应？把async放在setTime out里
+- [x] IOS simulator expo audio? 点击静音和和不静音按钮
+- [x] useEffect 没反应？把async放在setTime out里
+= [x] onViewableItems 触发两次？添加`const viewabilityConfig = {itemVisiblePercentThreshold: 50}`
 
 
 - touable opacity 点击出发
@@ -107,8 +101,8 @@ https://www.oracle.com/java/technologies/javase-downloads.html
 
 
 
-### Thanks for reading and wish you a great day!
--- Faradawn
+-- Faradawn  
+2021.8.06
 
 
 

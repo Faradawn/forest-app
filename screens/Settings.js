@@ -4,8 +4,10 @@ import styles from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, setQuizDone } from './store/store';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { setUser, setQuizDone, setWordDone1, setWordDone2 } from './store/store';
+
+
 
 const Stack = createStackNavigator();
 
@@ -73,11 +75,23 @@ function General() {
     <View style={styles.homePage}>
       <TouchableOpacity
         onPress={() => AsyncStorage.setItem('collection', '')}
-        style={style1.button}>
-        <Text>清空单词本</Text>
+        style={{marginBottom: 30}}
+      />
+      
+      <TouchableOpacity 
+        title='清空单词进度'
+        style={style1.button}
+        onPress={() => {
+          AsyncStorage.setItem('mylist1', '');
+          AsyncStorage.setItem('mylist2', '');
+          dispatch(setWordDone1(0));
+          dispatch(setWordDone2(0));
+        }}>
+        <Text>清空单词进度</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
+      <TouchableOpacity 
+        title='清空做题进度'
         onPress={() => {
           AsyncStorage.setItem('quizDone', '');
           dispatch(setQuizDone([]));
