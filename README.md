@@ -11,6 +11,7 @@
 登陆信息 (async)
 ```
 guest-token: '朋友'
+firstTime: true
 ```
 
 收藏单词本 (async)
