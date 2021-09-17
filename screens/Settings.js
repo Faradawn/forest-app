@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { Text, View, StyleSheet, ImageBackground, Dimensions, Modal, ScrollView, TouchableOpacity} from 'react-native'
-import {WebView} from 'react-native-webview'
 import styles, {theme} from '../assets/styles'
 import { createStackNavigator } from '@react-navigation/stack'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, setQuizDone, setWordDone1, setWordDone2 } from './store/store';
 import { Ionicons } from '@expo/vector-icons';
-import PrivacyText from './data/PrivacyText';
+import { PrivacyText, UserText } from './data/PrivacyText';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -17,6 +16,7 @@ function SettingPage({ navigation }) {
   const [firstTime, setFirstTime] = React.useState(false)
   const [modal1, setModal1] = React.useState(false)
   const [modal2, setModal2] = React.useState(false)
+
   const dispatch = useDispatch();
   async function logOut(){
     try{
@@ -25,12 +25,6 @@ function SettingPage({ navigation }) {
     } catch (e) {
       console.log(e);
     }
-  }
-  function handleOpen(num){
-    if(num === 1){
-      
-    }
-
   }
 
   return (
@@ -71,13 +65,30 @@ function SettingPage({ navigation }) {
             <Ionicons name="close-outline" size={24} color="black" />
             </TouchableOpacity>
 
-            <PrivacyText/>
+            <UserText/>
 
           </View>
           </View>
         </Modal>
 
+        <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modal2}
+        onRequestClose={() => setModal2(false)}>
+          <View style={{height, width, alignItems: 'center'}}>
+          <View style={style1.modalPri}>
+            <TouchableOpacity
+            style={{marginTop: 10, marginLeft: -10, marginBottom: 10}}
+            onPress={()=>setModal2(false)}>
+            <Ionicons name="close-outline" size={24} color="black" />
+            </TouchableOpacity>
 
+            <PrivacyText/>
+
+          </View>
+          </View>
+        </Modal>
 
         <Modal
         animationType="slide"
@@ -85,7 +96,7 @@ function SettingPage({ navigation }) {
         visible={firstTime}
         onRequestClose={() => setFirstTime(false)}
       >
-        <View style={{height, width, marginTop: 40, alignItems: 'center'}}>
+        <View style={{height, width, marginTop: 60, alignItems: 'center'}}>
         <View style={style1.modal}>
           <View style={style1.view1}>
 
@@ -97,9 +108,9 @@ style={{textAlign: 'center', fontSize: 20, marginBottom: 20}}>
 <Text>
 
 请你务必审慎阅读、充分理解“服务协议"和”隐私政策“各条款，包括但不限于：
-为了向你提供定制化的服务，我们可能需要收集你的昵称。你可以在“设置”中查看、变更、删除个人信息并管理你的授权。你可阅读
+为了向你提供定制化的服务，我们可能需要你填写昵称。你可以在“设置”中查看、变更昵称信息并管理你的授权。你可阅读
 <Text style={{color: 'blue'}} onPress={()=>setModal1(true)}>《服务协议》</Text> 和
-<Text>《隐私政策》</Text>
+<Text style={{color: 'blue'}} onPress={()=>setModal2(true)}>《隐私政策》</Text>
 了解详细信息。如你同意，请点击“同意”开始接受我们的服务。
 
 </Text>   
@@ -216,9 +227,6 @@ const style1 = StyleSheet.create({
     marginBottom: 20,
   },
   view1:{
-    height: 450,
-    padding: 30,
-    width: width < 600 ? theme.width-70 : theme.width-220,
     paddingHorizontal: 10,
   },
   view2:{
@@ -227,8 +235,9 @@ const style1 = StyleSheet.create({
   modal: {
     alignItems: 'center',
     backgroundColor: 'white',
-    height: width < 600 ? 600 : 800,
+    height: width < 600 ? 400 : 600,
     width: width < 600 ? theme.width-50 : theme.width-200,
+    padding: 30,
     shadowOffset: {width: 5, height: 5},
     shadowRadius: 20,
     shadowOpacity: 0.4,
@@ -239,7 +248,7 @@ const style1 = StyleSheet.create({
   buttonOne: {
     width: 90,
     height: 30,
-    marginTop: 15,
+    marginTop: 30,
     borderColor: 'grey',
     borderRadius: 5,
     borderWidth: 1,
