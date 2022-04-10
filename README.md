@@ -1,4 +1,5 @@
 # 拉丁园
+App Store 搜索拉丁园
 ![app screens](./assets/wallpaper/app-screen-new.png)
 
 ## 简介 ☘️
