@@ -1,6 +1,9 @@
 # 拉丁园
-<img src="./assets/wallpaper/app-store-1.png" alt="apple store" width="250"/>
-
+<p float="left">
+<img src="./assets/wallpaper/app-store-1.jpg" alt="apple store" width="250"/>
+<img src="./assets/wallpaper/app-store-2.jpg" alt="apple store" width="250"/>
+<img src="./assets/wallpaper/app-store-3.jpg" alt="apple store" width="250"/>
+</p>
 
 ![app screens](./assets/wallpaper/app-screen-new.png)
 
